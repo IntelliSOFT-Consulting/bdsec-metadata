@@ -4,7 +4,6 @@ febdca98-6781-46d9-844d-1083abcc6132,,Verified patient details and wrist band,Ve
 74f4dc7f-7441-49f2-8ca7-931d98d9063e,,Eye cleaned with Iodine,Eye cleaned with Iodine,Eye cleaned with Iodine,Question,Coded,,Yes;No,1,2
 3f7d8a73-cd2a-44c8-9f0d-be436d45e79f,,Verified consent form,Verified consent form,Verified consent form,Question,Coded,,Yes;No,1,3
 5baa7935-9bab-40b0-8edf-c031503811ab,,Preoperative instruction given,Preoperative instruction given,Preoperative instruction given,Question,Coded,,Yes;No,1,4
-3de39624-378a-4fe3-8384-46598bcfe865,,Blood Pressure,Blood Pressure,Blood Pressure,Question,Numeric,,,1.0,5
 d6bb1269-1dce-414d-8180-c84b83bf5e66,,Pulse Rate,Pulse Rate,Pulse Rate,Question,Numeric,,,1.0,5
 8cff7e7a-f4f4-4572-be76-e89c0fb7e6cb,,"IOP, Duct results attached","IOP, Duct results attached","IOP, Duct results attached",Question,Coded,,Yes;No,1,6
 763bc614-87f5-44cc-a14a-5ddc8713de54,,A-scan report attached,A-scan report attached,A-scan report attached,Question,Coded,,Yes;No,1,7
@@ -15,7 +14,7 @@ c2f1c1f7-944d-47ff-8194-b920d9d7773e,,Check case sheet,Check case sheet,Check ca
 813966fa-7f2e-44c4-a53d-310546da1365,,Date,Date,Date,Question,Date,,,1.0,12
 aad352f1-a735-43ae-b1a1-3ff29c932854,,Drug,Drug,Drug,Question,Text,,,1.0,12
 085cad01-8be5-4cfb-95b4-80eb7daa8313,,Dosage,Dosage,Dosage,Question,Text,,,1.0,13
-175534da-c9d2-46a7-9162-380c6c0c02c4,,Systemic Disease(Pre-operative),Systemic Disease(Pre-operative),Systemic Disease(Pre-operative),Question,Text,,,1.0,14
+175534da-c9d2-46a7-9162-380c6c0c02c4,,Systemic Disease(Pre-operative),Systemic Disease,Systemic Disease,Question,Text,,,1.0,14
 85a6dc75-7913-4860-b20f-ee7c0d13124e,,Frequency,Frequency,Frequency,Question,Text,,,1.0,15
 977bb170-1c62-492d-9533-30d6e3db18ca,,Route,Route,Route,Question,Text,,,1.0,16
 0b96314c-0c2e-4a19-bca9-954517582f0b,,Time,Time,Time,Question,Text,,,1.0,17
@@ -35,13 +34,11 @@ c98f018b-b9ea-407a-9856-4b05f04c86d0,,PPBS Time,PPBS Time,PPBS Time,Question,Tex
 a07e03d2-af03-489a-85e7-f324e7611c72,,Diet taken,Diet taken,Diet taken,Question,Coded,,Yes;No,1,31
 d6b04a20-4fa7-427c-924d-6833d0ff82a8,,Pre op systemic medications taken,Pre op systemic medications taken,Pre op systemic medications taken,Question,Coded,,Yes;No,1,32
 d3aa36a3-481a-4571-b2d0-8ca2628d4f2f,,Culture report collected,Culture report collected,Culture report collected,Question,Coded,,Yes;No,1,33
-d5a12d22-26bb-45ee-9340-153f2c4dc682,,Date,Date,Date,Question,Date,,,1.0,34
 2b00dc64-8219-429e-915d-04278304dcba,,Datetime,Datetime,Datetime,Question,Datetime,,,1.0,35
 fe786d8c-3664-4b9e-9133-0e9567e09afa,,BP (mm/Hg),BP (mm/Hg),BP (mm/Hg),Question,Numeric,,,1.0,35
 5aab87c6-9d74-498c-ba26-f1c4f9a8435c,,Pulse rate/min,Pulse rate/min,Pulse rate/min,Question,Numeric,,,1.0,36
 bc9e1f17-3012-4b62-a094-14b80790de12,,Res rate/min,Res rate/min,Res rate/min,Question,Numeric,,,1.0,37
 61f0fa11-6f0d-429d-8896-58ed164f404a,,Checked by,Checked by,Checked by,Question,Text,,,1.0,38
-aad6f7c1-d04b-4f26-965a-d8a4ee4e4806,,Time,Time,Time,Question,Text,,,1.0,39
 c9eb725e-0723-4989-80b3-f3f2b53b9217,,Drug name,Drug name,Drug name,Question,Text,,,1.0,40
 eab3adc2-0c10-41d9-b0a8-9a0ebd6c164a,,RE,RE,RE,Question,Text,,,1.0,41
 6064bab5-a02d-40a7-9486-64cea79a9c1d,,LE,LE,LE,Question,Text,,,1.0,42
@@ -70,30 +67,30 @@ c11de21e-a5ba-4f02-a839-68869a2974aa,,Traumatic,Traumatic,Traumatic,Misc,N/A,,,1
 f917d501-ac67-4325-8bd5-503dfb978e8d,,Sublaxated lens,Sublaxated lens,Sublaxated lens,Misc,N/A,,,1,65
 7cff22f6-d90a-471e-8b91-2d2a2e93b386,,Phacolytic,Phacolytic,Phacolytic,Misc,N/A,,,1,66
 7326d499-276c-40af-a6a0-b00e32d37828,,Phamarcomorphic,Phamarcomorphic,Phamarcomorphic,Misc,N/A,,,1,67
-a3f15955-29f0-48cb-93fb-fa54be91e632,,Aphakia,Aphakia,Aphakia,Misc,N/A,,,1,68
-6036a414-fb37-472a-966a-f0ccca5ff5e6,,Pseudophakia,Pseudophakia,Pseudophakia,Misc,N/A,,,1,69
 dfab3c42-7dc6-44eb-bb75-6d5de0d556ac,,Co-existing Disease,Co-existing Disease,Co-existing Disease,Question,Coded,,None;Glaucoma;Diabetic Retinopathy;Macular Degeneration;Amblyopia;Previous refractive/intraocular surgery;Others,1,71
-c24056e2-eb82-4ce7-a5d4-911b83336f3b,,Glaucoma,Glaucoma,Glaucoma,Misc,N/A,,,1,73
-cc65e061-cd5a-4fff-9cfa-b1234794c24a,,Diabetic Retinopathy,Diabetic Retinopathy,Diabetic Retinopathy,Misc,N/A,,,1,74
+c24056e2-eb82-4ce7-a5d4-911b83336f3b,,Glaucoma (cataract surgery),Glaucoma,Glaucoma,Misc,N/A,,,1,73
+cc65e061-cd5a-4fff-9cfa-b1234794c24a,,Diabetic Retinopathy (cataract surgery),Diabetic Retinopathy,Diabetic Retinopathy,Misc,N/A,,,1,74
 5aa21890-c2a6-48db-ab89-ca2084988cba,,Macular Degeneration,Macular Degeneration,Macular Degeneration,Misc,N/A,,,1,75
-bf4fe516-3fcf-4858-8a2b-210f4edd7541,,Amblyopia,Amblyopia,Amblyopia,Misc,N/A,,,1,76
 a00ff5ce-0d60-4af2-923d-be7463fdba50,,Previous refractive/intraocular surgery,Previous refractive/intraocular surgery,Previous refractive/intraocular surgery,Misc,N/A,,,1,77
 46104d1c-2acd-455b-9c6b-258f21096302,,Complicating Co-morbidity,Complicating Co-morbidity,Complicating Co-morbidity,Question,Coded,,None;Small pupil(4mm or less);Pseudoexfoliation;Corneal opacity;Shallow AC;High myopia;Others,1,7
+3faaa3cd-bc8c-4b50-b795-b7501e7a8359,,High myopia,High myopia,High myopia,Misc,N/A,,,1,78
+746789cb-092d-4c56-b339-589306ff12d0,,Small pupil(4mm or less),Small pupil(4mm or less),Small pupil(4mm or less),Misc,N/A,,,1,79
+21d35ba2-d68b-4069-a977-097e93635e48,,Others (Answer),Others,Others,Misc,N/A,,,1,80
+bd7ff524-6e9f-4b20-bd11-5075629dcac8,,Pseudoexfoliation,Pseudoexfoliation,Pseudoexfoliation,Misc,N/A,,,1,80
 6f128354-9226-4504-8088-9290ecf5a6c8,,Doctor's signature,Doctor's signature,Doctor's signature,Image,Complex,ImageUrlHandler,,1.0,78
 77de696f-196e-4a67-a5fa-bf928b698373,,Fit for surgery,Fit for surgery,Fit for surgery,Question,Coded,,Yes;No,1,79
-f23f680b-b82f-4920-b94e-3c1519d52deb,,Systemic Disease,Systemic Disease,Systemic Disease,Question,Text,,,1.0,80
 e9d96042-faab-4801-8d19-4e217588ebf9,,Pre Block - Pulse,Pre Block - Pulse,Pre Block - Pulse,Question,Numeric,,,1.0,81
 4cfa0a3a-0729-4dd0-a7b7-9f8a74668446,,SPO2,SPO2,SPO2,Question,Numeric,,,1.0,82
 0c3eed4d-ae86-4178-8b53-f81f70a39425,,Intraoperative Problems,Intraoperative Problems,Intraoperative Problems,Question,Coded,,Yes;No,1,83
 75cd6e45-6bac-4a68-a8c5-003999fd5b7c,,Post-Operative Problems,Post-Operative Problems,Post-Operative Problems,Question,Coded,,Yes;No,1,84
 658f75aa-7c06-498d-9d81-b7ff4f438411,,Signature,Signature,Signature,Image,Complex,ImageUrlHandler,,1.0,85
-0e8b8f80-7073-43e2-a6db-e3d9e2f3de72,,Eye,Eye,Eye,Question,Coded,,RE;LE,1,86
-0e68bc5b-acdc-4094-8f9f-78f2f4e161a6,,RE,RE,RE,Misc,N/A,,,1,87
-b01e0738-a44c-435b-9715-fab34ad21151,,LE,LE,LE,Misc,N/A,,,1,88
+0e8b8f80-7073-43e2-a6db-e3d9e2f3de72,,Eye (Surgery Record),Eye,Eye,Question,Coded,,RE;LE,1,86
+0e68bc5b-acdc-4094-8f9f-78f2f4e161a6,,RE (Answer),RE,RE,Misc,N/A,,,1,87
+b01e0738-a44c-435b-9715-fab34ad21151,,LE (Answer),LE,LE,Misc,N/A,,,1,88
 aff3c1db-2677-47a1-b435-6934e38582ce,,Date of surgery,Date of surgery,Date of surgery,Question,Date,,,1.0,89
 96c2ea69-138d-4c07-8020-1bcb3143da7b,,The patient has confirmed:,The patient has confirmed:,The patient has confirmed:,Question,Coded,,Identify(Name and address);Eye;Use of topical antibiotics;Pre-op systematic medications taken;Type of surgery and IOL;Billing details verified;A-scan verified,1,90
 f018df33-cdae-4756-a422-925f1d69781e,,Identify(Name and address),Identify(Name and address),Identify(Name and address),Misc,N/A,,,1,91
-7eec65dc-2759-442b-95e9-5da751a13832,,Eye,Eye,Eye,Misc,N/A,,,1,92
+7eec65dc-2759-442b-95e9-5da751a13832,,Eye (Answer),Eye,Eye,Misc,N/A,,,1,92
 ef53d157-1ace-4a6b-9ad8-6b7af4d818f7,,Use of topical antibiotics,Use of topical antibiotics,Use of topical antibiotics,Misc,N/A,,,1,93
 c29d1529-058e-48d7-98e0-8f91add6a569,,Pre-op systematic medications taken,Pre-op systematic medications taken,Pre-op systematic medications taken,Misc,N/A,,,1,94
 8e197266-c856-4ee3-a8bf-fee4d3476a15,,Type of surgery and IOL,Type of surgery and IOL,Type of surgery and IOL,Misc,N/A,,,1,95
@@ -112,6 +109,10 @@ c7c8b325-0437-4545-b067-ea9e136522c8,,Draped & speculum applied,Draped & speculu
 28f25d02-3145-4751-abce-eb6017712d5b,,Name of the procedures recorded,Name of the procedures recorded,Name of the procedures recorded,Misc,N/A,,,1,109
 db50337c-10fd-432b-aaac-4cfb85ccee9f,,Any specific post op instructions,Any specific post op instructions,Any specific post op instructions,Misc,N/A,,,1,110
 264def3f-e5cb-4b8b-b888-3ccc8b5be554,,Anesthesia,Anesthesia,Anesthesia,Question,Coded,,Topical;Retrobulbar;Peribulbar;Sedation;GA,1,111
+9496470e-d3ec-412d-a083-8e5a93f7c624,,Retrobulbar,Retrobulbar,Retrobulbar,Misc,N/A,,,1,112
+26853482-3333-41d9-83a5-aabc160ba711,,Peribulbar,Peribulbar,Peribulbar,Misc,N/A,,,1,113
+116c8ccb-5f45-4c0a-92ec-afb60eb8939a,,Sedation,Sedation,Sedation,Misc,N/A,,,1,114
+ca4d8025-9b0a-415f-92f9-2c202bffe6ce,,GA,GA,GA,Misc,N/A,,,1,115
 a27db3c1-caea-4946-b6a5-b7ecff045576,,Given by Sign,Given by Sign,Given by Sign,Image,Complex,ImageUrlHandler,,1.0,112
 93f04e3c-e6c0-4471-a35e-2606ee648841,,Given by Name,Given by Name,Given by Name,Question,Text,,,1.0,113
 6fcca436-ec04-40a0-8f7d-d406829ecf3d,,Given by Time,Given by Time,Given by Time,Question,Text,,,1.0,114
