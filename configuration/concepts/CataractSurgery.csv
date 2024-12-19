@@ -97,14 +97,14 @@ c29d1529-058e-48d7-98e0-8f91add6a569,,Pre-op systematic medications taken,Pre-op
 b8325633-088b-4201-b21a-71107eb39ed1,,Billing details verified,Billing details verified,Billing details verified,Misc,N/A,,,1,96
 4b6f5d34-8b3c-48a4-a07d-f0e5f7203110,,A-scan verified,A-scan verified,A-scan verified,Misc,N/A,,,1,97
 c6d33671-53a8-4412-84d7-322a38e434ed,,Any known allergy,Any known allergy,Any known allergy,Question,Coded,,Yes;No,1,98
-eb26d611-5a36-4e46-892c-4ab6edbfbbac,,Pre-op iodine applied,Pre-op iodine applied,Pre-op iodine applied,Question,Coded,,Yes;No,1,99
+eb26d611-5a36-4e46-892c-4ab6edbfbbac,,Cataract Pre-op iodine applied,Pre-op iodine applied,Pre-op iodine applied,Question,Coded,,Yes;No,1,99
 62fa60c9-3bbc-47ba-85a6-11edd79cfb31,,Surgeon & Nurse verbally confirm,Surgeon & Nurse verbally confirm,Surgeon & Nurse verbally confirm,Question,Coded,,Patient identify;Eye;Procedure;Lens model and power,1,100
 f7bb36ff-c2e3-4f73-b379-f6b4e4c638e6,,Patient identify,Patient identify,Patient identify,Misc,N/A,,,1,101
-d493b6f9-b857-4fc5-a279-c00faca9153f,,Procedure,Procedure,Procedure,Misc,N/A,,,1,103
+d493b6f9-b857-4fc5-a279-c00faca9153f,,Cataract procedure,Procedure,Procedure,Misc,N/A,,,1,103
 cb1b561f-32ef-41a6-81bd-cd0e2b5e6e5b,,Lens model and power,Lens model and power,Lens model and power,Misc,N/A,,,1,104
-ff74447e-120b-40fc-8148-8c79b743ac4e,,Aseptic precautions taken,Aseptic precautions taken,Aseptic precautions taken,Question,Coded,,Yes;No,1,105
+ff74447e-120b-40fc-8148-8c79b743ac4e,,Cataract surgical aseptic precautions taken,Aseptic precautions taken,Aseptic precautions taken,Question,Coded,,Yes;No,1,105
 a9b5de5a-5547-4c6c-a08d-8b150c1431d6,,Eye cleaned with Betadine,Eye cleaned with Betadine,Eye cleaned with Betadine,Question,Coded,,Yes;No,1,106
-c7c8b325-0437-4545-b067-ea9e136522c8,,Draped & speculum applied,Draped & speculum applied," ""Draped & speculum applied""",Question,Coded,,Yes;No,1,107
+c7c8b325-0437-4545-b067-ea9e136522c8,,Cataract surgery patient draped & speculum applied,Draped & speculum applied," ""Draped & speculum applied""",Question,Coded,,Yes;No,1,107
 83465bc8-5bd2-4b05-976c-288808e93e21,,Nurse verbally confirms with team:,Nurse verbally confirms with team:,Nurse verbally confirms with team:,Question,Coded,,Name of the procedures recorded;Any specific post op instructions,1,108
 28f25d02-3145-4751-abce-eb6017712d5b,,Name of the procedures recorded,Name of the procedures recorded,Name of the procedures recorded,Misc,N/A,,,1,109
 db50337c-10fd-432b-aaac-4cfb85ccee9f,,Any specific post op instructions,Any specific post op instructions,Any specific post op instructions,Misc,N/A,,,1,110
@@ -122,12 +122,12 @@ cc62678d-f42f-444e-8c42-de0cd8341279,,If repeated by Time,If repeated by Time,If
 d03d41ad-d01a-45ed-9363-9f5622a17e09,,Complications if any,Complications if any,Complications if any,Question,Coded,,IV Mannitol;Xylocaine testdose,1,118
 5e5e39c2-a747-49df-86f7-641ad2553700,,IV Mannitol,IV Mannitol,IV Mannitol,Misc,N/A,,,1,119
 129b32d4-0314-45df-9713-1f2411a8e460,,Xylocaine testdose,Xylocaine testdose,Xylocaine testdose,Misc,N/A,,,1,120
-f3be375b-88f9-49c2-925b-fa65820131bf,,Surgeon Name,Surgeon Name,Surgeon Name,Question,Text,,,1.0,121
+166688AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Surgeon Name,Surgeon Name,Surgeon Name,Question,Text,,,1.0,121
 e6f6857b-88f5-44ea-b6ea-24a48d82bb3f,,Assistant Nurse,Assistant Nurse,Assistant Nurse,Question,Text,,,1.0,122
 f477762f-ce98-4cbf-a091-e25310125378,,Starting time,Starting time,Starting time,Question,Time,,,1.0,123
 7dee3b47-20e0-4978-ad8e-afd4e85a635b,,Finishing time,Finishing time,Finishing time,Question,Time,,,1.0,124
 8d06d078-9a51-48ec-85f1-b3e5405a3220,,Phaco time,Phaco time,Phaco time,Question,Time,,,1.0,125
-8a2963ee-85bc-4880-9ac1-7a5622e10989,,Type of surgery,Type of surgery,Type of surgery,Question,Coded,,ECCE;SICS;Phaco;Lens removal;Secondary IOL;Resurgery (outside operated),1,126
+8a2963ee-85bc-4880-9ac1-7a5622e10989,,Type of cataract surgery,Type of surgery,Type of surgery,Question,Coded,,ECCE;SICS;Phaco;Lens removal;Secondary IOL;Resurgery (outside operated),1,126
 7f7c184b-8767-4bb0-bd48-eac1a8d118a7,,ECCE,ECCE,ECCE,Misc,N/A,,,1,127
 b4d468b7-cce7-4748-aa83-d48d3973dc07,,SICS,SICS,SICS,Misc,N/A,,,1,128
 cf750cf2-ec81-4e3b-b036-1d51a685f18f,,Phaco,Phaco,Phaco,Misc,N/A,,,1,129
@@ -143,7 +143,7 @@ e60c3903-05fd-4742-9690-2fe5b9513940,,Auroflex,Auroflex,Auroflex,Misc,N/A,,,1,13
 986a156d-1372-4e34-812f-30d5058b8575,,Multifocal,Multifocal,Multifocal,Misc,N/A,,,1,139
 ef48720c-190c-4c24-a364-688ca2bd5017,,Auro Toric,Auro Toric,Auro Toric,Misc,N/A,,,1,140
 f7f9a3a9-c1ba-4c97-ac91-840aa2e466c6,,Imported Toric,Imported Toric,Imported Toric,Misc,N/A,,,1,141
-719fb560-74b1-4c23-92a2-1856bae0497d,,Section,Section,Section,Question,Coded,,Corneal;Limbal;Scleral,1,142
+719fb560-74b1-4c23-92a2-1856bae0497d,,Cataract surgery section,Section,Section,Question,Coded,,Corneal;Limbal;Scleral,1,142
 806c39c7-6585-4598-bcd6-74ec52c28221,,Corneal,Corneal,Corneal,Misc,N/A,,,1,143
 1b18468d-8f89-4015-b2f3-71530c8957ed,,Limbal,Limbal,Limbal,Misc,N/A,,,1,144
 ba698d09-3b2a-4828-a0de-6ec8b9add9ff,,Scleral,Scleral,Scleral,Misc,N/A,,,1,145
@@ -164,13 +164,13 @@ bc5588bd-aee6-4f1e-9db5-cda90fcc1c68,,LRI,LRI,LRI,Misc,N/A,,,1,149
 dc3f47b6-676e-42fe-804a-bc29f0fe2567,,PI,PI,PI,Misc,N/A,,,1,162
 c7449c76-50ce-4971-a1ba-45e721d96d4d,,SI,SI,SI,Misc,N/A,,,1,163
 4076104b-c2bc-4d4f-a447-bee41306c7c3,,ST,ST,ST,Misc,N/A,,,1,164
-c2bb48da-b923-459d-8efd-683a9562e024,,Intracameral,Intracameral,Intracameral,Question,Coded,,Xylocaine;Adrenaline;Trypanblue;Pilocarpine;Antibiotic;Triamcinolone,1,165
+c2bb48da-b923-459d-8efd-683a9562e024,,Intracameral,Intracameral,Intracameral,Question,Coded,,Xylocaine;Adrenaline;Trypanblue;Pilocarpine;Antibiotic;Triamcinolone for cataract surgery,1,165
 4382051b-bff0-4746-8777-674923b3da56,,Xylocaine,Xylocaine,Xylocaine,Misc,N/A,,,1,166
 3713e0a8-da8a-4c64-b908-74df845fb33e,,Adrenaline,Adrenaline,Adrenaline,Misc,N/A,,,1,167
 36fad84c-e081-423a-bd48-0be159f6a539,,Trypanblue,Trypanblue,Trypanblue,Misc,N/A,,,1,168
-cf73b2b3-4dfd-40a7-afd5-b74e7386d525,,Pilocarpine,Pilocarpine,Pilocarpine,Misc,N/A,,,1,169
+cf73b2b3-4dfd-40a7-afd5-b74e7386d525,,Pilocarpine for cataract surgery,Pilocarpine,Pilocarpine,Misc,N/A,,,1,169
 03468a20-cc38-4537-a18d-18bf5f48fbbc,,Antibiotic,Antibiotic,Antibiotic,Misc,N/A,,,1,170
-6a7565fc-c279-42bc-8c18-71faa4ef8247,,Triamcinolone,Triamcinolone,Triamcinolone,Misc,N/A,,,1,171
+6a7565fc-c279-42bc-8c18-71faa4ef8247,,Triamcinolone for cataract surgery,Triamcinolone,Triamcinolone,Misc,N/A,,,1,171
 ff743e5b-3a86-49c9-b890-ce1fc0b49d9a,,Devices,Devices,Devices,Question,Coded,,CTR;Iris hooks;Capsule hooks;Modified CTR,1,172
 4d3f248f-e881-4b46-8aa1-b5fa5af3253b,,CTR,CTR,CTR,Misc,N/A,,,1,173
 3ba0680e-9c1a-4d4a-835e-d94833efbd79,,Iris hooks,Iris hooks,Iris hooks,Misc,N/A,,,1,174
@@ -178,7 +178,7 @@ ff743e5b-3a86-49c9-b890-ce1fc0b49d9a,,Devices,Devices,Devices,Question,Coded,,CT
 de719617-2efe-4bfa-812e-0a2156f1126f,,Modified CTR,Modified CTR,Modified CTR,Misc,N/A,,,1,176
 cf9c0edc-1078-41cc-9445-c3bb7dd4f343,,Sutures,Sutures,Sutures,Question,Coded,,Yes;No,1,177
 ef27dd12-ab56-45a8-a43f-febebb9ce7cf,,"If yes, material","If yes, material","If yes, material",Question,Text,,,1,178
-d7c927f4-806d-49ba-850f-cfa582534394,,Complications,Complications,Complications,Question,Coded,,Premature Entry;Rhexis tear;PC Rent;DM detachment;Iridodialysis (>3hrs);Drop (Nucleus/ Epinucleus/IOL);Zonular Dialysis;Vitreous Disturbance;Failure to implant;IOL damage / exchange,1,179
+d7c927f4-806d-49ba-850f-cfa582534394,,Complications in cataract surgery,Complications,Complications,Question,Coded,,Premature Entry;Rhexis tear;PC Rent;DM detachment;Iridodialysis (>3hrs);Drop (Nucleus/ Epinucleus/IOL);Zonular Dialysis;Vitreous Disturbance;Failure to implant;IOL damage / exchange,1,179
 53a8d87b-f6be-4a92-a4c2-31ea23c448d8,,Premature Entry,Premature Entry,Premature Entry,Misc,N/A,,,1,180
 ee91956e-de56-4b12-8c4d-06ff5c5b9357,,Rhexis tear,Rhexis tear,Rhexis tear,Misc,N/A,,,1,181
 de70d0bc-eda0-4644-9586-da090f955fd3,,PC Rent,PC Rent,PC Rent,Misc,N/A,,,1,182
@@ -193,23 +193,23 @@ f094d80c-da03-482b-bd81-5e5350f470dc,,Failure to implant,Failure to implant,Fail
 e65540b5-176a-43bb-b7fa-09faaadb9340,,Nucleus Delivery,Nucleus Delivery,Nucleus Delivery,Misc,N/A,,,1,191
 8dbdc07c-4efb-4a9a-9ebd-e264ff56fbe5,,Emulsification,Emulsification,Emulsification,Misc,N/A,,,1,192
 d7cf1e60-1360-4806-a573-ec77e3abbcd2,,I/A IOL Implantation,I/A IOL Implantation,I/A IOL Implantation,Misc,N/A,,,1,193
-cf647b0b-4551-4c25-87d3-48850a97c74e,,Vitrectomy,Vitrectomy,Vitrectomy,Question,Coded,,Yes;No;Automated;Weck sponge,1,194
+cf647b0b-4551-4c25-87d3-48850a97c74e,,Vitrectomy for cataract surgery,Vitrectomy,Vitrectomy,Question,Coded,,Yes;No;Automated;Weck sponge,1,194
 d7efcd4a-e829-4a0c-bffb-a80cb147771c,,Automated,Automated,Automated,Misc,N/A,,,1,195
 fa95e39d-17c2-4bd9-957e-fb09bbd5de13,,Weck sponge,Weck sponge,Weck sponge,Misc,N/A,,,1,196
 5076fc11-5a8d-41a5-96eb-82db82aebe73,,Remarks,Remarks,Remarks,Question,Text,,,1.0,197
-311de46d-220d-42a2-8237-9d8ed7eec98b,,Signature,Signature,Signature,Image,Complex,ImageUrlHandler,,1.0,198
-630b75a4-85b3-4303-98d4-b44c92f61a23,,Complaints,Complaints,Complaints,Question,Text,,,1.0,199
+311de46d-220d-42a2-8237-9d8ed7eec98b,,"Surgical safety checklist, signature",Signature,Signature,Image,Complex,ImageUrlHandler,,1.0,198
+630b75a4-85b3-4303-98d4-b44c92f61a23,,Post operative complaints,Complaints,Complaints,Question,Text,,,1.0,199
 d74f1773-e9a4-49cd-9220-bcef9ca687de,,Well-opposed (Normal),Well-opposed (Normal),Well-opposed (Normal),Question,Coded,,Yes;No,1,200
-a2de24b2-84b8-4894-a296-4b1acd0f74b3,,Wound Leak,Wound Leak,Wound Leak,Question,Coded,,Yes;No,1,201
+a2de24b2-84b8-4894-a296-4b1acd0f74b3,,Post Operative Wound Leak,Wound Leak,Wound Leak,Question,Coded,,Yes;No,1,201
 4ac1ea89-5fe8-4283-b136-f6cd0662b898,,Iris Prolapse,Iris Prolapse,Iris Prolapse,Question,Coded,,Yes;No,1,202
 9f3e98a5-ea17-4c42-bc5d-931010f83e43,,Clear(Normal),Clear(Normal),Clear(Normal),Question,Coded,,Yes;No,1,203
-d6c2b39d-3229-4282-a783-436d7fa6bf37,,Striate Keratitis,Striate Keratitis,Striate Keratitis,Question,Coded,,1+;2+;3+,1,204
+d6c2b39d-3229-4282-a783-436d7fa6bf37,,Post operative Striate Keratitis,Striate Keratitis,Striate Keratitis,Question,Coded,,1+;2+;3+,1,204
 1e5790ce-27bd-40e1-b56b-78c6a21f4a3c,,Epithelial Edema,Epithelial Edema,Epithelial Edema,Question,Coded,,1+;2+;3+,1,205
 2b3ed171-c11c-4f1d-8c60-a8ec75e026ec,,Epithelial defect,Epithelial defect,Epithelial defect,Question,Coded,,Yes;No,1,206
 7eb15723-2841-47b4-b995-76801856bcf4,,DM strip more than 1/3,DM strip more than 1/3,DM strip more than 1/3,Question,Coded,,Yes;No,1,207
-eae96cc4-f250-45ab-a0f7-1ab6f25e48ce,,Normal,Normal,Normal,Question,Coded,,Yes;No,1,208
+eae96cc4-f250-45ab-a0f7-1ab6f25e48ce,,Normal anterior chamber,Normal,Normal,Question,Coded,,Yes;No,1,208
 6ff9f807-461e-44b2-b07b-bb9d238928e5,,Shallow AC,Shallow AC,Shallow AC,Question,Coded,,Yes;No,1,209
-12083f7f-bbe1-460d-b642-042f2b73a2e8,,Iritis,Iritis,Iritis,Question,Coded,,1+;2+;3+,1,210
+12083f7f-bbe1-460d-b642-042f2b73a2e8,,Post Operative Iritis,Iritis,Iritis,Question,Coded,,1+;2+;3+,1,210
 eb89f780-22f1-4fd5-a805-c242da21ef92,,1+,1+,1+,Misc,N/A,,,1,211
 849aec4f-2eb6-421c-b953-290aaca41944,,2+,2+,2+,Misc,N/A,,,1,212
 375f1332-31c5-46c0-b9b9-1106e596071e,,3+,3+,3+,Misc,N/A,,,1,213
@@ -223,41 +223,41 @@ c7ae07f9-6bc5-44ad-a80f-b6d65c4155da,,Severe uveitis with hypopyon,Severe uveiti
 acd30872-bca7-4cbb-94d2-8b6056416d88,,Vitreous in AC/Section,Vitreous in AC/Section,Vitreous in AC/Section,Question,Coded,,Yes;No,1,221
 be361b05-98aa-40aa-8bf3-c6f52281a260,,Round (Normal),Round (Normal),Round (Normal),Question,Coded,,Yes;No,1,222
 1b089202-fc1d-4f62-8179-c5294ca8f45e,,Irregular,Irregular,Irregular,Question,Coded,,Yes;No,1,223
-e9a361de-16fb-4683-95f8-7e93a829141c,,Iridodialysis,Iridodialysis,Iridodialysis,Question,Coded,,Yes;No,1,224
-542e00d9-5751-4cc8-955f-7e87b4ff05c0,,In bag,In bag,In bag,Question,Coded,,Yes;No,1,225
+e9a361de-16fb-4683-95f8-7e93a829141c,,Postoperative Iridodialysis,Iridodialysis,Iridodialysis,Question,Coded,,Yes;No,1,224
+542e00d9-5751-4cc8-955f-7e87b4ff05c0,,"IOL Position, In bag",In bag,In bag,Question,Coded,,Yes;No,1,225
 c882c4ee-f19a-4605-ab7b-5e8a6fe851e0,,In sulcus,In sulcus,In sulcus,Question,Coded,,Yes;No,1,226
 ce12127b-75cb-4188-abab-fb8789061234,,Not assessable,Not assessable,Not assessable,Question,Coded,,Yes;No,1,227
 fd7d8346-e8ba-446b-a187-6eaa4a0927a4,,Decentered,Decentered,Decentered,Question,Coded,,Yes;No,1,228
 2ed6d559-2986-4775-b200-a14dd25a4caf,,Dislocated,Dislocated,Dislocated,Question,Coded,,Yes;No,1,229
-4487778d-2da4-4727-81e3-2e629041aa59,,Aphakia,Aphakia,Aphakia,Question,Coded,,Yes;No,1,230
+4487778d-2da4-4727-81e3-2e629041aa59,,"IOL Position, Aphakia",Aphakia,Aphakia,Question,Coded,,Yes;No,1,230
 56f3093a-1a70-4602-a9d4-35eb6e41cf99,,Intact,Intact,Intact,Question,Coded,,Yes;No,1,231
 15ac9602-25cd-4634-b796-8853f87bc6ce,,Rent,Rent,Rent,Question,Coded,,Yes;No,1,232
-e1fa2ce8-34a4-4a0e-a7c8-01656f081966,,Zonular dialysis,Zonular dialysis,Zonular dialysis,Question,Coded,,Yes;No,1,233
-79f69632-a21d-483e-a7cd-6512e01213a8,,Normal,Normal,Normal,Question,Coded,,Yes;No,1,234
+e1fa2ce8-34a4-4a0e-a7c8-01656f081966,,"PC, Zonular dialysis",Zonular dialysis,Zonular dialysis,Question,Coded,,Yes;No,1,233
+79f69632-a21d-483e-a7cd-6512e01213a8,,Normal Fundus,Normal,Normal,Question,Coded,,Yes;No,1,234
 99053ee2-1443-4858-8dfd-468f5a6d9276,,Pathology,Pathology,Pathology,Question,Coded,,Yes;No,1,235
 64d638a0-eb62-4f25-aee6-430c99364142,,Discharged by,Discharged by,Discharged by,Question,Text,,,1.0,236
 4ef47ef5-6516-4db0-bc60-4c8bbaa3b8e0,,Follow up date,Follow up date,Follow up date,Question,Date,,,1.0,237
 e8267f4e-5274-48ec-976c-fcb8ffb47e7a,,Counselled by,Counselled by,Counselled by,Question,Text,,,1.0,238:
-c1948760-a7de-4820-aea9-7cb9cb601b08,,Eye,Eye,Eye,Question,Text,,,1.0,239
+c1948760-a7de-4820-aea9-7cb9cb601b08,,Postoperative Eye,Eye,Eye,Question,Text,,,1.0,239
 6b0160ce-33db-4dd4-8d9f-4b342f0e717e,,Vn. un aided,Vn. un aided,Vn. un aided,Question,Text,,,1.0,240
 1a8d0a31-1b73-486e-8a8e-2e02d387734f,,Vn. with PH,Vn. with PH,Vn. with PH,Question,Text,,,1.0,241
 fb33810e-4db4-450d-a5e8-8d1c2de49319,,Reason (If UCVA 6/24 and less),Reason (If UCVA 6/24 and less),Reason (If UCVA 6/24 and less),Question,Text,,,1.0,242
 fb3fef65-0651-4471-b591-a5df1a1b2eee,,Patient-related risk factors Surgical or immediate post-operative complications Checked by,Patient-related risk factors Surgical or immediate post-operative complications Checked by,Patient-related risk factors Surgical or immediate post-operative complications Checked by,Question,Text,,,1.0,243
-d30de769-8713-4f36-aad4-8d016462c2c5,,Time,Time,Time,Question,Text,,,1.0,244
+d30de769-8713-4f36-aad4-8d016462c2c5,,Post operative review time,Time,Time,Question,Text,,,1.0,244
 21d2ae12-969a-40d5-92b5-d80f4ad1f63b,,Clinic Intime,Clinic Intime,Clinic Intime,Question,Time,,,1.0,245
 8f10750e-89e2-419c-9e8a-44e5529b5c9c,,Surgery Date,Surgery Date,Surgery Date,Question,Date,,,1.0,246
-5e4df4f9-fbfe-4103-8905-0615c77514ce,,Complaints,Complaints,Complaints,Question,Text,,,1.0,247
+5e4df4f9-fbfe-4103-8905-0615c77514ce,,Follow up complaints,Complaints,Complaints,Question,Text,,,1.0,247
 e4d27c6c-7574-4e61-b2ae-7898b3ceafc3,,Present medication,Present medication,Present medication,Question,Text,,,1.0,248
 d2e138d5-c15d-4193-be6c-d991279de519,,Dilation done,Dilation done,Dilation done,Question,Coded,,Yes;No,1,249
 4cb37493-d025-4da7-8bfa-13a418dc293b,,Dilation applied by,Dilation applied by,Dilation applied by,Question,Text,,,1.0,250
-471aa592-3202-40f7-b828-443892bf0d05,,Duration,Duration,Duration,Question,Text,,,1.0,251
+471aa592-3202-40f7-b828-443892bf0d05,,Refraction record duration,Duration,Duration,Question,Text,,,1.0,251
 7820ca45-fd84-4107-be72-9dd1a1955ff2,,Type of glass,Type of glass,Type of glass,Question,Text,,,1.0,252
-5d75a468-3157-46c7-8726-10f7e2b4c6db,,Lens,Lens,Lens,Question,Text,,,1.0,253
+5d75a468-3157-46c7-8726-10f7e2b4c6db,,Refraction record lens,Lens,Lens,Question,Text,,,1.0,253
 e892340c-7a7f-477c-af7c-7bade2c601a9,,Frame,Frame,Frame,Question,Text,,,1.0,254
 f1ce299d-973d-484b-a35f-d177455050fb,,D BOC,D BOC,D BOC,Question,Text,,,1.0,255
 f57b07d6-9741-4648-910b-44ee87c55c05,,Condition of Spectacles,Condition of Spectacles,Condition of Spectacles,Question,Coded,,Good;Fair;Poor,1,256
-7e6f4f60-260f-4183-aa51-3011bf9807f4,,RE,RE,RE,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,257
-21aa94f1-c2f5-4ebb-ad25-7d4f5ba96c5d,,LE,LE,LE,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,258
+7e6f4f60-260f-4183-aa51-3011bf9807f4,,refraction record RE,RE,RE,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,257
+21aa94f1-c2f5-4ebb-ad25-7d4f5ba96c5d,,Refraction record LE,LE,LE,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,258
 192d54dd-93f7-415b-8cda-32f22bc9cb43,,RE: Add,RE: Add,RE: Add,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,259
 81c7483e-93c5-4a34-ad20-013a9b6b3a15,,LE: Add,LE: Add,LE: Add,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,1,260
 afdb1229-f8a5-4949-9d73-84ef03b1de6e,,Spherical,Spherical,Spherical,Misc,N/A,,,1,261
