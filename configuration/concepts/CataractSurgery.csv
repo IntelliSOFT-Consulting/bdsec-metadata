@@ -100,7 +100,7 @@ c6d33671-53a8-4412-84d7-322a38e434ed,,Any known allergy,Any known allergy,Any kn
 eb26d611-5a36-4e46-892c-4ab6edbfbbac,,Cataract Pre-op iodine applied,Pre-op iodine applied,Pre-op iodine applied,Question,Coded,,Yes;No,1,99
 62fa60c9-3bbc-47ba-85a6-11edd79cfb31,,Surgeon & Nurse verbally confirm,Surgeon & Nurse verbally confirm,Surgeon & Nurse verbally confirm,Question,Coded,,Patient identify;Eye;Procedure;Lens model and power,1,100
 f7bb36ff-c2e3-4f73-b379-f6b4e4c638e6,,Patient identify,Patient identify,Patient identify,Misc,N/A,,,1,101
-d493b6f9-b857-4fc5-a279-c00faca9153f,,Cataract procedure,Procedure,Procedure,Misc,N/A,,,1,103
+d493b6f9-b857-4fc5-a279-c00faca9153f,,Procedure,Procedure,Procedure,Misc,N/A,,,1,103
 cb1b561f-32ef-41a6-81bd-cd0e2b5e6e5b,,Lens model and power,Lens model and power,Lens model and power,Misc,N/A,,,1,104
 ff74447e-120b-40fc-8148-8c79b743ac4e,,Cataract surgical aseptic precautions taken,Aseptic precautions taken,Aseptic precautions taken,Question,Coded,,Yes;No,1,105
 a9b5de5a-5547-4c6c-a08d-8b150c1431d6,,Eye cleaned with Betadine,Eye cleaned with Betadine,Eye cleaned with Betadine,Question,Coded,,Yes;No,1,106
@@ -122,7 +122,7 @@ cc62678d-f42f-444e-8c42-de0cd8341279,,If repeated by Time,If repeated by Time,If
 d03d41ad-d01a-45ed-9363-9f5622a17e09,,Complications if any,Complications if any,Complications if any,Question,Coded,,IV Mannitol;Xylocaine testdose,1,118
 5e5e39c2-a747-49df-86f7-641ad2553700,,IV Mannitol,IV Mannitol,IV Mannitol,Misc,N/A,,,1,119
 129b32d4-0314-45df-9713-1f2411a8e460,,Xylocaine testdose,Xylocaine testdose,Xylocaine testdose,Misc,N/A,,,1,120
-166688AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Surgeon Name,Surgeon Name,Surgeon Name,Question,Text,,,1.0,121
+6b2a4612-8031-433a-878e-d1e26b051b0f,,Surgeon Name,Surgeon Name,Surgeon Name,Question,Text,,,1.0,121
 e6f6857b-88f5-44ea-b6ea-24a48d82bb3f,,Assistant Nurse,Assistant Nurse,Assistant Nurse,Question,Text,,,1.0,122
 f477762f-ce98-4cbf-a091-e25310125378,,Starting time,Starting time,Starting time,Question,Time,,,1.0,123
 7dee3b47-20e0-4978-ad8e-afd4e85a635b,,Finishing time,Finishing time,Finishing time,Question,Time,,,1.0,124
@@ -148,7 +148,7 @@ f7f9a3a9-c1ba-4c97-ac91-840aa2e466c6,,Imported Toric,Imported Toric,Imported Tor
 1b18468d-8f89-4015-b2f3-71530c8957ed,,Limbal,Limbal,Limbal,Misc,N/A,,,1,144
 ba698d09-3b2a-4828-a0de-6ec8b9add9ff,,Scleral,Scleral,Scleral,Misc,N/A,,,1,145
 a7cbcd0b-2fc1-40c7-b309-779551794506,,Site,Site,Site,Question,Coded,,Superior;Temporal;LRI,1,146
-cda1974a-e1b8-48b4-bdbc-b679a6c8eff4,,Superior,Superior,Superior,Misc,N/A,,,1,147
+cda1974a-e1b8-48b4-bdbc-b679a6c8eff4,,Superior(Answer),Superior,Superior,Misc,N/A,,,1,147
 0d8631eb-ba7f-4ab7-9e80-528d194aa9b5,,Temporal,Temporal,Temporal,Misc,N/A,,,1,148
 bc5588bd-aee6-4f1e-9db5-cda90fcc1c68,,LRI,LRI,LRI,Misc,N/A,,,1,149
 2f7c550f-c6ba-43c6-a635-c74e7c3f4058,,IOL,IOL,IOL,Question,Coded,,In Bag;Sulcus;IF IOL;SF IOL;Nil,1,150
@@ -156,6 +156,7 @@ bc5588bd-aee6-4f1e-9db5-cda90fcc1c68,,LRI,LRI,LRI,Misc,N/A,,,1,149
 246fd739-a199-4911-8dd5-76a19e31b121,,Sulcus,Sulcus,Sulcus,Misc,N/A,,,1,152
 23186df6-5d19-47d7-8b60-0d92e16ee6d5,,IF IOL,IF IOL,IF IOL,Misc,N/A,,,1,153
 26bc4667-1a4a-4b72-aa8c-744303a5852d,,SF IOL,SF IOL,SF IOL,Misc,N/A,,,1,154
+03b0b838-7c8c-4b45-9ac9-5ab8514cc7a9,,Nil,Nil,Nil,Misc,N/A,,,1,155
 8f7dfb54-c06c-48a7-a3d2-d508519564f7,,Capsulotomy,Capsulotomy,Capsulotomy,Question,Coded,,Canopener;CCC;Envelope,1,156
 56a89196-ad73-4a91-a4de-32ea747ce219,,Canopener,Canopener,Canopener,Misc,N/A,,,1,157
 146f3189-5027-4b7a-a491-d1ae4778f246,,CCC,CCC,CCC,Misc,N/A,,,1,158
@@ -166,7 +167,6 @@ c7449c76-50ce-4971-a1ba-45e721d96d4d,,SI,SI,SI,Misc,N/A,,,1,163
 4076104b-c2bc-4d4f-a447-bee41306c7c3,,ST,ST,ST,Misc,N/A,,,1,164
 c2bb48da-b923-459d-8efd-683a9562e024,,Intracameral,Intracameral,Intracameral,Question,Coded,,Xylocaine;Adrenaline;Trypanblue;Pilocarpine;Antibiotic;Triamcinolone for cataract surgery,1,165
 4382051b-bff0-4746-8777-674923b3da56,,Xylocaine,Xylocaine,Xylocaine,Misc,N/A,,,1,166
-3713e0a8-da8a-4c64-b908-74df845fb33e,,Adrenaline,Adrenaline,Adrenaline,Misc,N/A,,,1,167
 36fad84c-e081-423a-bd48-0be159f6a539,,Trypanblue,Trypanblue,Trypanblue,Misc,N/A,,,1,168
 cf73b2b3-4dfd-40a7-afd5-b74e7386d525,,Pilocarpine for cataract surgery,Pilocarpine,Pilocarpine,Misc,N/A,,,1,169
 03468a20-cc38-4537-a18d-18bf5f48fbbc,,Antibiotic,Antibiotic,Antibiotic,Misc,N/A,,,1,170
@@ -217,7 +217,6 @@ e58aaf01-8bdb-43d8-943b-9272df32be70,,Hyphema less than 3mm,Hyphema less than 3m
 1e8c1e85-dc59-4aa2-9415-80c5db628086,,Hyphema more than 3mm,Hyphema more than 3mm,Hyphema more than 3mm,Question,Coded,,Yes;No,1,215
 688cc34e-49d2-46ac-ba1b-b7b10b4f77a5,,Minimal cortex,Minimal cortex,Minimal cortex,Question,Coded,,Yes;No,1,216
 301f4b1e-e029-4f92-a832-848561f30c1e,,Significant cortex/epinucleus,Significant cortex/epinucleus,Significant cortex/epinucleus,Question,Coded,,Yes;No,1,217
-e46b8a20-17dc-4181-bdab-12da9c255b52,,Vitreous loss,Vitreous loss,Vitreous loss,Question,Coded,,Yes;No,1,218
 8e618e85-142f-41a2-acb4-2c99435f84cb,,Fibrinous uveitis,Fibrinous uveitis,Fibrinous uveitis,Question,Coded,,Yes;No,1,219
 c7ae07f9-6bc5-44ad-a80f-b6d65c4155da,,Severe uveitis with hypopyon,Severe uveitis with hypopyon,Severe uveitis with hypopyon,Question,Coded,,Yes;No,1,220
 acd30872-bca7-4cbb-94d2-8b6056416d88,,Vitreous in AC/Section,Vitreous in AC/Section,Vitreous in AC/Section,Question,Coded,,Yes;No,1,221
