@@ -1,76 +1,76 @@
 Uuid,Void/Retire,Same as mappings,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,_version:1:,_order:40
-0ee6d0c3-6a06-4dba-b1b1-6148ba4cfe4a,,,Procedure explained,Procedure explained,,Misc,N/A,,,,""
-bddfef69-6b65-4e41-9e17-8116fe96fd09,,,Complication explained,Complication explained,,Misc,N/A,,,,""
-e84af75f-185b-40ca-b85c-d9b3439fb6fe,,,Infection risk Explained,Infection risk Explained,,Misc,N/A,,,,""
-474d56da-7330-4bf9-9a68-074e4738fdde,,,Guarded out come explained -if any,Guarded out come explained -if any,,Misc,N/A,,,,""
-ae342d0e-410e-4591-8627-c56e06b508ee,,,Comorbidity counselling done,Comorbidity counselling done,,Misc,N/A,,,,""
-e2a27144-1bd5-484e-948d-127f9cbe2cc3,,,Expected hospital days,Expected hospital days,,Misc,N/A,,,,""
-b697be2c-c325-47b6-ae79-1a87bc35a8b9,,,For All Surgeries,For All Surgeries,,Question,Coded,Procedure explained;Complication explained;Infection risk Explained;Guarded out come explained -if any;Comorbidity counselling done;Expected hospital days;,,,""
-af9e4031-da21-46f6-84ba-0544cdd21801,,,Possibility of Pco after surgery explained,Possibility of Pco after surgery explained,,Misc,N/A,,,,""
-2028d710-c7a7-4dac-ab5c-9330df9f05e6,,,IOL type explained,IOL type explained,,Misc,N/A,,,,""
-e201744b-3511-4f8d-a1b3-a8ff1257f4d8,,,Cylinder power explained,Cylinder power explained,,Misc,N/A,,,,""
-78625e93-bd03-4717-80e6-45aa48f28e44,,,NV power explained,NV power explained,,Misc,N/A,,,,""
-bbd57245-515c-4d6e-aef6-7770aeeccda9,,,Suture explained,Suture explained,,Misc,N/A,,,,""
-7b3c2d88-252f-4dc8-a13c-6202aa224045,,,For cataract surgery,For cataract surgery,,Question,Coded,Possibility of Pco after surgery explained;IOL type explained;Cylinder power explained;NV power explained;Suture explained;,,,""
-72cd4a3d-d663-4a2f-a3c4-1b5cc7678c7c,,,Check wrist Band -correct eye,Check wrist Band -correct eye,,Misc,N/A,,,,""
-f35e0591-52ae-4e5e-9aa3-4def88473be0,,,Verbally conform preop antibiotic usage,Verbally conform preop antibiotic usage,,Misc,N/A,,,,""
-3b49189a-8ebd-4b2e-9634-f9733d591402,,,Preop instruction given,Preop instruction given,,Misc,N/A,,,,""
-157d2754-e1dd-4103-b4bf-24d86ef7c185,,,A scan report completed,A scan report completed,,Misc,N/A,,,,""
-ae93d0a2-ffc0-4243-bebd-b6e9fa3287b1,,,IOP normal range,IOP normal range,,Misc,N/A,,,,""
-f2197781-f1af-4dc3-b111-8ee2798821d0,,,Duct Normal,Duct Normal,,Misc,N/A,,,,""
-42dcbe63-91cb-47b4-a8d2-06fdd7637525,,,Blood sugar-random _Normal,Blood sugar-random _Normal,,Misc,N/A,,,,""
-7a4f89f8-e1f3-42d4-8073-80fc4dd27831,,,Consent form signed,Consent form signed,,Misc,N/A,,,,""
-c8de92b0-0073-4c07-bc4d-3206306524a3,,,Preop checklist,Preop checklist,,Question,Coded,Check wrist Band -correct eye;Verbally conform preop antibiotic usage;Preop instruction given;A scan report completed;IOP normal range;Duct Normal;Blood sugar-random _Normal;Consent form signed;,,,""
-08d24c7b-467c-4ae6-af5b-b67732febd50,,,Check wrist band,Check wrist band,,Misc,N/A,,,,""
-85d7d1d6-7cd0-4935-bbea-1b0d9169afa5,,,Verbally confirm Preop Antibiotic,Verbally confirm Preop Antibiotic,,Misc,N/A,,,,""
-cc7bd06c-b7b7-4d2e-84ce-a3efb5313571,,,Eye marking,Eye marking,,Misc,N/A,,,,""
-a28f26f3-3e0e-40c0-8940-facd7eabf1d7,,,Verbally conform diabetic medication take -if patient is diabetic,Verbally conform diabetic medication take -if patient is diabetic,,Misc,N/A,,,,""
-c4485dae-f7d9-460e-b9d7-5599edad0909,,,Diet taken,"Surgery preparation, Diet taken",,Misc,N/A,,,,""
-cdfc474e-7f99-42e4-bfd6-e0d0bf65c375,,,Dilation completed,Dilation completed,,Misc,N/A,,,,""
-9bf5d4a0-1e7f-4dcd-ba47-82a7ea1fd2f6,,,Surgery preparation check list,Surgery preparation check list,,Question,Coded,"Check wrist band;Verbally confirm Preop Antibiotic;Eye marking;Verbally conform diabetic medication take -if patient is diabetic;Surgery preparation, Diet taken;Dilation completed;",,,""
-8512ac6d-ede8-41a8-9249-7e0572081f8b,,,Check type of surgery &IOL,Check type of surgery &IOL,,Misc,N/A,,,,""
-55d202b9-4707-4792-b80c-a21dd310e86f,,,Conform patient identity-MRN,Conform patient identity-MRN,,Misc,N/A,,,,""
-e69b6d34-9622-49da-aedc-c32e6ab465ef,,,Verbally conform patient name &Eye,Verbally conform patient name &Eye,,Misc,N/A,,,,""
-4bdd194e-08a3-4677-9695-85273f1a403c,,,Verbally conform diabetic medication taken,Verbally conform diabetic medication taken,,Misc,N/A,,,,""
-4ca3ff44-eae7-42c6-b32e-dc610bc0762d,,,Any allergy -Check,Any allergy -Check,,Misc,N/A,,,,""
-ad8a6884-c66b-4c87-87c3-2f4a6ae9c944,,,Preop Iodine 5 % drop applied,Preop Iodine 5 % drop applied,,Misc,N/A,,,,""
-4aa7badb-e2ac-42f9-84ec-6d44f7f07e2d,,,Billing details verified,Billing details verified,,Misc,N/A,,,,""
-fe3c249d-94bc-46bf-b042-dcd17c63d885,,,A scan report complete,A scan report complete,,Misc,N/A,,,,""
-85b68e1c-1737-46f9-834f-dc51b2511f6a,,,Block room checklist (Before Anesthesia),Block room checklist (Before Anesthesia),,Question,Coded,Check type of surgery &IOL;Conform patient identity-MRN;Verbally conform patient name &Eye;Verbally conform diabetic medication taken;Any allergy -Check;Preop Iodine 5 % drop applied;Billing details verified;A scan report complete;,,,""
-073a2e8b-6573-4b33-92df-bcd1d4995bd4,,,Check Pulse oximetry on patient finger,Check Pulse oximetry on patient finger,,Misc,N/A,,,,""
-04e97710-547e-49d1-b20a-a6ee98f00aa9,,,Block Taken,Block Taken,,Misc,N/A,,,,""
-c5c6f778-31f0-441f-8fc5-77d9b79b34c4,,,Pressure applied for 5 minutes,Pressure applied for 5 minutes,,Misc,N/A,,,,""
-fdef5052-4d62-48e0-8473-29eecbc25259,,,Check Pain sensation on the blocked eye,Check Pain sensation on the blocked eye,,Misc,N/A,,,,""
-b745eee7-154f-4221-8972-3311025e6674,,,Check Akensia on the blocked eye,Check Akensia on the blocked eye,,Misc,N/A,,,,""
-922bc5fd-8939-4699-a203-ba15ebf5b053,,,Preop Iodine applied,Preop Iodine applied,,Misc,N/A,,,,""
-7bba3415-0ed2-4877-9d27-90f7ba293f57,,,Block room checklist (After Anesthesia),Block room checklist (After Anesthesia),,Question,Coded,Check Pulse oximetry on patient finger;Block Taken;Pressure applied for 5 minutes;Check Pain sensation on the blocked eye;Check Akensia on the blocked eye;Preop Iodine applied;,,,""
-1cce75fb-0746-4c60-bbe5-18e630a4a725,,,Aseptic precaution taken,Aseptic precaution taken,,Misc,N/A,,,,""
-b9d66d32-16f3-4ed2-a1ff-cd9419045baf,,,Eye cleaned with betadine/Iodine 10%,Eye cleaned with betadine/Iodine 10%,,Misc,N/A,,,,""
-eb83c592-46a5-4317-8fa4-144442351a08,,,Draped &speculum applied,Draped &speculum applied,,Misc,N/A,,,,""
-468f916c-0440-4929-aad5-017cbbd8fac0,,,Before surgery checklist,Before surgery checklist,,Question,Coded,Aseptic precaution taken;Eye cleaned with betadine/Iodine 10%;Draped &speculum applied;,,,""
-3aab2dac-28e3-4c7e-a572-d3556f805297,,,Verbally conform patient identity,Verbally conform patient identity,,Misc,N/A,,,,""
-169a41d1-2a59-46cc-a644-8251a700625d,,,Verbally conform procedure,Verbally conform procedure,,Misc,N/A,,,,""
-fba9c12d-b4df-458a-bac4-c63fa6e591be,,,Verbally conform lens model &power,Verbally conform lens model &power,,Misc,N/A,,,,""
-9479c8ab-4383-496b-b96e-f45036278c73,,,Before Incision check list,Before Incision check list,,Question,Coded,Verbally conform patient identity;Verbally conform patient name &eye;Verbally conform procedure;Verbally conform lens model &power;,,,""
-9c94eee2-6800-4a51-a5f3-f175e897cfd5,,,Conform Surgeon name,Conform Surgeon name,,Misc,N/A,,,,""
-bb4ee963-bcaf-4a84-8640-b8c6f7ceaedd,,,Conform Assistant name,Conform Assistant name,,Misc,N/A,,,,""
-ff613507-cb21-495c-8842-fb34dcd7e0a6,,,Confirm name of procedure,Confirm name of procedure,,Misc,N/A,,,,""
-fdc1997a-627b-42a2-b264-f8e68e168a4b,,,Conform complication,Conform complication,,Misc,N/A,,,,""
-9d31d904-7885-43ed-8b17-c013acea8a25,,,Confirm any specific post op instruction,Confirm any specific post op instruction,,Misc,N/A,,,,""
-2671ad24-01af-44e9-962e-6bbcbe3ff787,,,Operating Room after Incision,Operating Room after Incision,,Question,Coded,Conform Surgeon name;Conform Assistant name;Confirm name of procedure;Conform complication;Confirm any specific post op instruction;,,,""
-29f94235-8c71-48db-b85d-b63381337300,,,Surgical procedure explained,Surgical procedure explained,,Misc,N/A,,,,""
-d037b99a-95ad-4238-9f95-d7ad587c5e4a,,,Medical leave /certification handed over,Medical leave /certification handed over,,Misc,N/A,,,,""
-d504ec60-3944-41e5-b81b-7af1e2438447,,,Eye cleaning method explained,Eye cleaning method explained,,Misc,N/A,,,,""
-153a7bd9-3151-4519-9574-9e79254f7da4,,,Post Operative check list,Post Operative check list,,Question,Coded,Surgical procedure explained;Medical leave /certification handed over;Eye cleaning method explained,,,""
-7f252ef9-1147-4ac6-909a-e308b0265d90,,,Explained method of opening bottle without touching nozzle,Explained method of opening bottle without touching nozzle,,Misc,N/A,,,,""
-9ad2223e-9e5f-4c84-828d-5e50845b71e4,,,Explained to use two drops of each medication,Explained to use two drops of each medication,,Misc,N/A,,,,""
-9aa08ad1-d7f6-4bb3-b5f9-3b2004c1c3fe,,,Explained daily medication schedule,Explained daily medication schedule,,Misc,N/A,,,,""
-26607933-142e-4044-be1f-918c3161cddf,,,Explained interval between medications,Explained interval between medications,,Misc,N/A,,,,""
-b6f86819-bb4a-4080-9a6d-e9627280d16e,,,"If medication got over before follow up ,buy new one","If medication got over before follow up ,buy new one",,Misc,N/A,,,,""
-970a8e7b-3337-446c-86f7-34fa4c52daba,,,Instruction about Medication,Instruction about Medication,,Question,Coded,"Explained method of opening bottle without touching nozzle;Explained to use two drops of each medication;Explained daily medication schedule;Explained interval between medications;If medication got over before follow up ,buy new one",,,""
-796a8135-20d3-4240-ba49-cf2461be6cb6,,,Conform convenience of followup &explain importance,Conform convenience of followup &explain importance,,Misc,N/A,,,,""
-51d91688-6592-4a32-ac36-5f829d21a57c,,,Explain how to change followup date if required,Explain how to change followup date if required,,Misc,N/A,,,,""
-8bc660eb-eba3-4eb2-a2ce-cb49c2ee15a2,,,Explain importance of continuing medication in case of delayed follow up,Explain importance of continuing medication in case of delayed follow up,,Misc,N/A,,,,""
-2e312743-932c-446f-9457-7881baabbb77,,,Explain to come back immediately in case of pain/redness/visual reduction,Explain to come back immediately in case of pain/redness/visual reduction,,Misc,N/A,,,,""
-2db395bf-57c8-47a7-a1de-81541cd6bd9d,,,Follow up check list,Follow up check list,,Question,Coded,Conform convenience of followup &explain importance;Explain how to change followup date if required;Explain importance of continuing medication in case of delayed follow up;Explain to come back immediately in case of pain/redness/visual reduction;,,,""
-3aab2dac-28e3-4c7e-a572-d3556f805297,,,Verbally conform patient identity,Verbally conform patient identity,,Misc,N/A,,,,""
+0ee6d0c3-6a06-4dba-b1b1-6148ba4cfe4a,,,Procedure explained,Procedure explained,,Misc,N/A,,,,
+bddfef69-6b65-4e41-9e17-8116fe96fd09,,,Complication explained,Complication explained,,Misc,N/A,,,,
+e84af75f-185b-40ca-b85c-d9b3439fb6fe,,,Infection risk Explained,Infection risk Explained,,Misc,N/A,,,,
+474d56da-7330-4bf9-9a68-074e4738fdde,,,Guarded out come explained -if any,Guarded out come explained -if any,,Misc,N/A,,,,
+ae342d0e-410e-4591-8627-c56e06b508ee,,,Comorbidity counselling done,Comorbidity counselling done,,Misc,N/A,,,,
+e2a27144-1bd5-484e-948d-127f9cbe2cc3,,,Expected hospital days,Expected hospital days,,Misc,N/A,,,,
+b697be2c-c325-47b6-ae79-1a87bc35a8b9,,,For All Surgeries,For All Surgeries,,Question,Coded,Procedure explained;Complication explained;Infection risk Explained;Guarded out come explained -if any;Comorbidity counselling done;Expected hospital days;,,,
+af9e4031-da21-46f6-84ba-0544cdd21801,,,Possibility of Pco after surgery explained,Possibility of Pco after surgery explained,,Misc,N/A,,,,
+2028d710-c7a7-4dac-ab5c-9330df9f05e6,,,IOL type explained,IOL type explained,,Misc,N/A,,,,
+e201744b-3511-4f8d-a1b3-a8ff1257f4d8,,,Cylinder power explained,Cylinder power explained,,Misc,N/A,,,,
+78625e93-bd03-4717-80e6-45aa48f28e44,,,NV power explained,NV power explained,,Misc,N/A,,,,
+bbd57245-515c-4d6e-aef6-7770aeeccda9,,,Suture explained,Suture explained,,Misc,N/A,,,,
+7b3c2d88-252f-4dc8-a13c-6202aa224045,,,For cataract surgery,For cataract surgery,,Question,Coded,Possibility of Pco after surgery explained;IOL type explained;Cylinder power explained;NV power explained;Suture explained;,,,
+72cd4a3d-d663-4a2f-a3c4-1b5cc7678c7c,,,Check wrist Band -correct eye,Check wrist Band -correct eye,,Misc,N/A,,,,
+f35e0591-52ae-4e5e-9aa3-4def88473be0,,,Verbally conform preop antibiotic usage,Verbally conform preop antibiotic usage,,Misc,N/A,,,,
+3b49189a-8ebd-4b2e-9634-f9733d591402,,,Preop instruction given,Preop instruction given,,Misc,N/A,,,,
+157d2754-e1dd-4103-b4bf-24d86ef7c185,,,A scan report completed,A scan report completed,,Misc,N/A,,,,
+ae93d0a2-ffc0-4243-bebd-b6e9fa3287b1,,,IOP normal range,IOP normal range,,Misc,N/A,,,,
+f2197781-f1af-4dc3-b111-8ee2798821d0,,,Duct Normal,Duct Normal,,Misc,N/A,,,,
+42dcbe63-91cb-47b4-a8d2-06fdd7637525,,,Blood sugar-random _Normal,Blood sugar-random _Normal,,Misc,N/A,,,,
+7a4f89f8-e1f3-42d4-8073-80fc4dd27831,,,Consent form signed,Consent form signed,,Misc,N/A,,,,
+c8de92b0-0073-4c07-bc4d-3206306524a3,,,Preop checklist,Preop checklist,,Question,Coded,Check wrist Band -correct eye;Verbally conform preop antibiotic usage;Preop instruction given;A scan report completed;IOP normal range;Duct Normal;Blood sugar-random _Normal;Consent form signed;,,,
+08d24c7b-467c-4ae6-af5b-b67732febd50,,,Check wrist band,Check wrist band,,Misc,N/A,,,,
+85d7d1d6-7cd0-4935-bbea-1b0d9169afa5,,,Verbally confirm Preop Antibiotic,Verbally confirm Preop Antibiotic,,Misc,N/A,,,,
+cc7bd06c-b7b7-4d2e-84ce-a3efb5313571,,,Eye marking,Eye marking,,Misc,N/A,,,,
+a28f26f3-3e0e-40c0-8940-facd7eabf1d7,,,Verbally conform diabetic medication take -if patient is diabetic,Verbally conform diabetic medication take -if patient is diabetic,,Misc,N/A,,,,
+fe091f27-43f7-4005-9375-13629a9833ef,,,"Surgery preparation, Diet taken",Diet Taken,,Misc,N/A,,,,
+cdfc474e-7f99-42e4-bfd6-e0d0bf65c375,,,Dilation completed,Dilation completed,,Misc,N/A,,,,
+9bf5d4a0-1e7f-4dcd-ba47-82a7ea1fd2f6,,,Surgery preparation check list,Surgery preparation check list,,Question,Coded,"Check wrist band;Verbally confirm Preop Antibiotic;Eye marking;Verbally conform diabetic medication take -if patient is diabetic;Surgery preparation, Diet taken;Dilation completed;",,,
+8512ac6d-ede8-41a8-9249-7e0572081f8b,,,Check type of surgery &IOL,Check type of surgery &IOL,,Misc,N/A,,,,
+55d202b9-4707-4792-b80c-a21dd310e86f,,,Conform patient identity-MRN,Conform patient identity-MRN,,Misc,N/A,,,,
+e69b6d34-9622-49da-aedc-c32e6ab465ef,,,Verbally conform patient name &Eye,Verbally conform patient name &Eye,,Misc,N/A,,,,
+4bdd194e-08a3-4677-9695-85273f1a403c,,,Verbally conform diabetic medication taken,Verbally conform diabetic medication taken,,Misc,N/A,,,,
+4ca3ff44-eae7-42c6-b32e-dc610bc0762d,,,Any allergy -Check,Any allergy -Check,,Misc,N/A,,,,
+ad8a6884-c66b-4c87-87c3-2f4a6ae9c944,,,Preop Iodine 5 % drop applied,Preop Iodine 5 % drop applied,,Misc,N/A,,,,
+b8325633-088b-4201-b21a-71107eb39ed1,,,Billing details verified,Billing details verified,,Misc,N/A,,,,
+fe3c249d-94bc-46bf-b042-dcd17c63d885,,,A scan report complete,A scan report complete,,Misc,N/A,,,,
+85b68e1c-1737-46f9-834f-dc51b2511f6a,,,Block room checklist (Before Anesthesia),Block room checklist (Before Anesthesia),,Question,Coded,Check type of surgery &IOL;Conform patient identity-MRN;Verbally conform patient name &Eye;Verbally conform diabetic medication taken;Any allergy -Check;Preop Iodine 5 % drop applied;Billing details verified;A scan report complete;,,,
+073a2e8b-6573-4b33-92df-bcd1d4995bd4,,,Check Pulse oximetry on patient finger,Check Pulse oximetry on patient finger,,Misc,N/A,,,,
+04e97710-547e-49d1-b20a-a6ee98f00aa9,,,Block Taken,Block Taken,,Misc,N/A,,,,
+c5c6f778-31f0-441f-8fc5-77d9b79b34c4,,,Pressure applied for 5 minutes,Pressure applied for 5 minutes,,Misc,N/A,,,,
+fdef5052-4d62-48e0-8473-29eecbc25259,,,Check Pain sensation on the blocked eye,Check Pain sensation on the blocked eye,,Misc,N/A,,,,
+b745eee7-154f-4221-8972-3311025e6674,,,Check Akensia on the blocked eye,Check Akensia on the blocked eye,,Misc,N/A,,,,
+922bc5fd-8939-4699-a203-ba15ebf5b053,,,Preop Iodine applied,Preop Iodine applied,,Misc,N/A,,,,
+7bba3415-0ed2-4877-9d27-90f7ba293f57,,,Block room checklist (After Anesthesia),Block room checklist (After Anesthesia),,Question,Coded,Check Pulse oximetry on patient finger;Block Taken;Pressure applied for 5 minutes;Check Pain sensation on the blocked eye;Check Akensia on the blocked eye;Preop Iodine applied;,,,
+1cce75fb-0746-4c60-bbe5-18e630a4a725,,,Aseptic precaution taken,Aseptic precaution taken,,Misc,N/A,,,,
+b9d66d32-16f3-4ed2-a1ff-cd9419045baf,,,Eye cleaned with betadine/Iodine 10%,Eye cleaned with betadine/Iodine 10%,,Misc,N/A,,,,
+eb83c592-46a5-4317-8fa4-144442351a08,,,Draped &speculum applied,Draped &speculum applied,,Misc,N/A,,,,
+468f916c-0440-4929-aad5-017cbbd8fac0,,,Before surgery checklist,Before surgery checklist,,Question,Coded,Aseptic precaution taken;Eye cleaned with betadine/Iodine 10%;Draped &speculum applied;,,,
+3aab2dac-28e3-4c7e-a572-d3556f805297,,,Verbally conform patient identity,Verbally conform patient identity,,Misc,N/A,,,,
+169a41d1-2a59-46cc-a644-8251a700625d,,,Verbally conform procedure,Verbally conform procedure,,Misc,N/A,,,,
+fba9c12d-b4df-458a-bac4-c63fa6e591be,,,Verbally conform lens model &power,Verbally conform lens model &power,,Misc,N/A,,,,
+9479c8ab-4383-496b-b96e-f45036278c73,,,Before Incision check list,Before Incision check list,,Question,Coded,Verbally conform patient identity;Verbally conform patient name &eye;Verbally conform procedure;Verbally conform lens model &power;,,,
+9c94eee2-6800-4a51-a5f3-f175e897cfd5,,,Conform Surgeon name,Conform Surgeon name,,Misc,N/A,,,,
+bb4ee963-bcaf-4a84-8640-b8c6f7ceaedd,,,Conform Assistant name,Conform Assistant name,,Misc,N/A,,,,
+ff613507-cb21-495c-8842-fb34dcd7e0a6,,,Confirm name of procedure,Confirm name of procedure,,Misc,N/A,,,,
+fdc1997a-627b-42a2-b264-f8e68e168a4b,,,Conform complication,Conform complication,,Misc,N/A,,,,
+9d31d904-7885-43ed-8b17-c013acea8a25,,,Confirm any specific post op instruction,Confirm any specific post op instruction,,Misc,N/A,,,,
+2671ad24-01af-44e9-962e-6bbcbe3ff787,,,Operating Room after Incision,Operating Room after Incision,,Question,Coded,Conform Surgeon name;Conform Assistant name;Confirm name of procedure;Conform complication;Confirm any specific post op instruction;,,,
+29f94235-8c71-48db-b85d-b63381337300,,,Surgical procedure explained,Surgical procedure explained,,Misc,N/A,,,,
+d037b99a-95ad-4238-9f95-d7ad587c5e4a,,,Medical leave /certification handed over,Medical leave /certification handed over,,Misc,N/A,,,,
+d504ec60-3944-41e5-b81b-7af1e2438447,,,Eye cleaning method explained,Eye cleaning method explained,,Misc,N/A,,,,
+153a7bd9-3151-4519-9574-9e79254f7da4,,,Post Operative check list,Post Operative check list,,Question,Coded,Surgical procedure explained;Medical leave /certification handed over;Eye cleaning method explained,,,
+7f252ef9-1147-4ac6-909a-e308b0265d90,,,Explained method of opening bottle without touching nozzle,Explained method of opening bottle without touching nozzle,,Misc,N/A,,,,
+9ad2223e-9e5f-4c84-828d-5e50845b71e4,,,Explained to use two drops of each medication,Explained to use two drops of each medication,,Misc,N/A,,,,
+9aa08ad1-d7f6-4bb3-b5f9-3b2004c1c3fe,,,Explained daily medication schedule,Explained daily medication schedule,,Misc,N/A,,,,
+26607933-142e-4044-be1f-918c3161cddf,,,Explained interval between medications,Explained interval between medications,,Misc,N/A,,,,
+b6f86819-bb4a-4080-9a6d-e9627280d16e,,,"If medication got over before follow up ,buy new one","If medication got over before follow up ,buy new one",,Misc,N/A,,,,
+970a8e7b-3337-446c-86f7-34fa4c52daba,,,Instruction about Medication,Instruction about Medication,,Question,Coded,"Explained method of opening bottle without touching nozzle;Explained to use two drops of each medication;Explained daily medication schedule;Explained interval between medications;If medication got over before follow up ,buy new one",,,
+796a8135-20d3-4240-ba49-cf2461be6cb6,,,Conform convenience of followup &explain importance,Conform convenience of followup &explain importance,,Misc,N/A,,,,
+51d91688-6592-4a32-ac36-5f829d21a57c,,,Explain how to change followup date if required,Explain how to change followup date if required,,Misc,N/A,,,,
+8bc660eb-eba3-4eb2-a2ce-cb49c2ee15a2,,,Explain importance of continuing medication in case of delayed follow up,Explain importance of continuing medication in case of delayed follow up,,Misc,N/A,,,,
+2e312743-932c-446f-9457-7881baabbb77,,,Explain to come back immediately in case of pain/redness/visual reduction,Explain to come back immediately in case of pain/redness/visual reduction,,Misc,N/A,,,,
+2db395bf-57c8-47a7-a1de-81541cd6bd9d,,,Follow up check list,Follow up check list,,Question,Coded,Conform convenience of followup &explain importance;Explain how to change followup date if required;Explain importance of continuing medication in case of delayed follow up;Explain to come back immediately in case of pain/redness/visual reduction;,,,
+3aab2dac-28e3-4c7e-a572-d3556f805297,,,Verbally conform patient identity,Verbally conform patient identity,,Misc,N/A,,,,
