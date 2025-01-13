@@ -1,5 +1,23 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,_version:1,_order:24
-0e1e97ab-41fe-4af6-954d-b43c4fc617dd,,"Complaints, History",Complaints,Patient's presenting complaints,Question,Text,,,
+15785b72-e158-47f0-bdea-c99278cd6592,,Itching sensation,Itching sensation,Itching sensation,Misc,N/A,,,
+ddeb76b6-ee18-4fa5-9791-11b89ea8f238,,Burning sensation complaint,Burning sensation,Burning sensation,Misc,N/A,,,
+1ac95c0c-a8da-41ca-9ab4-c197d07b9e27,,Watery eye,Watery eye,Watery eye,Misc,N/A,,,1
+ca7cd0f8-fd86-41b7-b9a7-c0511068ad60,,Trauma complaint,Trauma,Trauma,Misc,N/A,,,
+d0ab46f4-592b-41a7-9384-bbd41cecb739,,Head ache,Head ache,Head ache,Misc,N/A,,,
+d8194b4e-6fa9-4f22-87c1-52a566d2aacd,,Photo phobia,Photo phobia,Photo phobia,Misc,N/A,,,
+b62103ed-b171-4e60-bf6a-80b269ebcd31,,Blurred vision complaint,Blurred vision,Blurred vision,Misc,N/A,,,
+08214756-0da4-4704-8a87-f993829eb660,,Visual reduction,Visual reduction,Visual reduction,Misc,N/A,,,
+a4e84d8b-ed2e-4b8e-98b8-c7238689d2c8,,Difficult of reading,Difficult of reading,Difficult of reading,Misc,N/A,,,
+a3168817-b04d-4b98-9826-688512d1c1f6,,Crossed eye,Crossed eye,Crossed eye,Misc,N/A,,,
+4a0cf7a0-23e0-4ca0-9585-f74b97ae31a4,,Painful eye,Painful eye,Painful eye,Misc,N/A,,,
+b9a4fd7a-791c-42b9-b0ce-0fdf96958f1b,,Swollen eye lid,Swollen eye lid,Swollen eye lid,Misc,N/A,,,
+3d3a6eb5-76b7-4b16-9e1a-0550fea796c5,,Rash over eye lid,Rash over eye lid,Rash over eye lid,Misc,N/A,,,1
+f83fc2f4-d491-4e0c-85e0-bde46fcd64e5,,Blisters over eye lid,Blisters over eye lid,Blisters over eye lid,Misc,N/A,,,1
+8f5cfbac-a0fd-4436-a10f-4444f0670822,,Protrusion of eye ball,Protrusion of eye ball,Protrusion of eye ball,Misc,N/A,,,1
+38570477-3bc5-44eb-b133-248b4d2f748b,,Complaints Nil,Nil,Nil,Misc,N/A,,,
+44f42990-837c-4501-ba80-d261e6e97410,,Complaints Other,Other,Other,Misc,N/A,,,1
+0e1e97ab-41fe-4af6-954d-b43c4fc617dd,,"Complaints, History",Complaints,Patient's presenting complaints,Question,Coded,Itching sensation;Burning sensation complaint;Watery eye;Trauma complaint;Head ache;Photo phobia;Blurred vision complaint;Visual reduction;Difficult of reading;Crossed eye;Painful eye;Swollen eye lid;Rash over eye lid;Blisters over eye lid;Protrusion of eye ball;Complaints Nil;Complaints Other,,
+89a15bef-e67d-4ede-9c08-d051557c3253,,Ophthalmology complaints Other, Other,Other complaints related to ophthalmology,Question,Text,,,
 ee0e58e6-c416-430e-ad7d-9e35b5005852,,"History, History",History,History of presenting illness,Question,Text,,,
 ecfb049d-ad4f-413f-a86a-f17e21f4ccb4,,"History,Ophthalmology",History,,Misc,N/A,,,
 8dad4d67-9924-4852-93f3-79cb97ab957d,,"Diabetes, Systemic Examination ",Diabetes,Whether the patient has diabetes,Question,Boolean,,,
@@ -8,7 +26,7 @@ a5fa1f21-3c95-4a00-9b5b-1c59a44576e4,,"Cardiac, Systemic Examination ",Cardiac,W
 5fe9d89c-30e8-4a38-9fc6-e6148bd96365,,"Renal Diseases, Systemic Examination ",Renal Disease,Whether the patient has renal diseases,Question,Boolean,,,
 882551c6-2b72-4876-9b8b-168f7d418ce6,,"Asthma, Systemic Examination ",Asthma,Whether the patient has asthma,Question,Boolean,,,
 e031d40b-5aa9-46ea-933d-d5686b65165b,,"Allergies, Systemic Examination ",Allergies,Whether the patient has any allergies,Question,Boolean,,,
-59db8535-3275-4985-bd08-61afe6a98c08,,"Other, Systemic Examination ",Other,Whether the patient has any other systemic illness,Question,Boolean,,,
+59db8535-3275-4985-bd08-61afe6a98c08,,"Other, Systemic Examination ",Other,Whether the patient has any other systemic illness,Question,Text,,,
 03fa9cb8-70cd-11ef-bf56-325096b39f47,,"Lids, Left Eye (string)","Lids,",The status of the lids,Question,Text,,,
 03fa9f92-70cd-11ef-afbf-325096b39f47,,"Lids, Right Eye (string)","Lids,",The status of the lids,Question,Text,,,
 03faa03c-70cd-11ef-80a6-325096b39f47,,"Conjuctiva, Left Eye (string)",Conjuctiva,The status of conjuctiva,Question,Text,,,
