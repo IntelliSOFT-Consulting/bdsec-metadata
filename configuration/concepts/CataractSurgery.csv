@@ -274,33 +274,3 @@ f57b07d6-9741-4648-910b-44ee87c55c05,,Condition of Spectacles,Condition of Spect
 21aa94f1-c2f5-4ebb-ad25-7d4f5ba96c5d,,Refraction record LE,LE,LE,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,,
 192d54dd-93f7-415b-8cda-32f22bc9cb43,,RE: Add,RE: Add,RE: Add,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,,
 81c7483e-93c5-4a34-ad20-013a9b6b3a15,,LE: Add,LE: Add,LE: Add,Question,Coded,,Spherical;Cylinder;Axis;V/A with PG,,
-8d0720a1-0c4a-423f-851c-57609018883a,,Receiving the patient in ward time,Time,Time,Question,Text,,,1.0,265
-a648c1fd-8767-4e59-9e96-a60206a6b378,,Verified patient details time,Time,Time,Question,Text,,,1.0,266
-2ccfe40d-39db-4f68-8816-f7eb188c3586,,Eye cleaned time,Time,Time,Question,Text,,,1.0,267
-da805a9d-108f-49a1-a96f-0697b037150d,,Verified consent form time,Time,Time,Question,Text,,,1.0,268
-69ad4ee6-4feb-412f-aa1b-c9b9128b46d5,,Preoperative instruction time,Time,Time,Question,Text,,,1.0,269
-46d9c407-3dfd-4d38-9845-7d87eb9c9229,,Well opposed(follow-up),Well opposed(follow-up),Well opposed(follow-up),Question,Coded,,Yes;No,1,270
-ff245a76-db2c-4748-90f9-0cfd236f131a,,Iris Prolapse(follow-up),Iris Prolapse(follow-up),Iris Prolapse(follow-up),Question,Coded,,Yes;No,1,271
-2a28a2ff-3351-41ca-a4b2-3153d2908a97,,Clear Cornea(follow-up),Clear(follow-up),Clear(follow-up),Question,Coded,,Yes;No,1,272
-16701b0d-2a78-49c1-b2c6-6c6fee5f7fee,,Striate keratitis(follow-up),Striate keratitis(follow-up),Striate keratitis(follow-up),Question,Coded,,1+;2+;3+,1,273
-0d804f49-2020-483e-b07a-036ade70a54e,,Epithelial Edema(follow-up),Epithelial Edema(follow-up),Epithelial Edema(follow-up),Question,Coded,,1+;2+;3+,1,274
-8fb81b94-2cbf-4242-a477-7bad0475779a,,DM strip more than 1/3(follow-up),DM strip more than 1/3(follow-up),DM strip more than 1/3(follow-up),Question,Coded,,Yes;No,1,275
-6cebc504-559d-471e-a505-d35c2089fd5d,,Normal(follow-up),Normal(follow-up),Normal(follow-up),Question,Coded,,Yes;No,1,276
-8500e444-da2c-4d24-ab98-441f12874a98,,Iritis(follow-up),Iritis(follow-up),Iritis(follow-up),Question,Coded,,1+;2+;3+,1,277
-f6602b87-31b7-4cda-89de-5b2d873f144d,,Minimal cortex(follow-up),Minimal cortex(follow-up),Minimal cortex(follow-up),Question,Coded,,Yes;No,1,278
-d9bce10d-6f40-499d-bdb6-ecb593bf63c2,,Significant cortex/epinucleus(follow-up),Significant cortex/epinucleus(follow-up),Significant cortex/epinucleus(follow-up),Question,Coded,,Yes;No,1,279
-eee8acc6-6a90-47f0-ae14-51c699e6f59d,,Fibrinous uveitis(follow-up),Fibrinous uveitis(follow-up),Fibrinous uveitis(follow-up),Question,Coded,,Yes;No,1,280
-b1507a1c-5588-4d43-8e91-83027d50481d,,Uveitis with hypopyon(follow-up),Uveitis with hypopyon(follow-up),Uveitis with hypopyon(follow-up),Question,Coded,,Yes;No,1,281
-743bf916-e665-4ccd-a7fc-933c3bc71fd6,,Vitreous in AC / Section(follow-up),Vitreous in AC / Section(follow-up),Vitreous in AC / Section(follow-up),Question,Coded,,Yes;No,1,282
-ab0f060e-d35a-4cf3-aef7-1a3b67191434,,Round and reacting to light(follow-up),Round and reacting to light(follow-up),Round and reacting to light(follow-up),Question,Coded,,Yes;No,1,283
-d621f194-be86-4f26-b7f5-ec42f33e22cb,,Irregular(follow-up),Irregular(follow-up),Irregular(follow-up),Question,Coded,,Yes;No,1,284
-393d9ca6-723b-4522-a97c-8b1ea002bd53,,Iridodialysis(follow-up),Iridodialysis(follow-up),Iridodialysis(follow-up),Question,Coded,,Yes;No,1,285
-532d4c3b-c9d7-4213-876a-b19b3def8298,,In bag(follow-up),In bag(follow-up),In bag(follow-up),Question,Coded,,Yes;No,1,286
-1c6c3bb5-8e30-4c9b-b835-92ac33d9d17c,,In sulcus(follow-up),In sulcus(follow-up),In sulcus(follow-up),Question,Coded,,Yes;No,1,287
-b6bb2f35-2113-46cb-a5ee-858f253c63a3,,Not assessable(follow-up),Not assessable(follow-up),Not assessable(follow-up),Question,Coded,,Yes;No,1,288
-2717dec1-1350-4b91-b6e3-f9c2eccada23,,Decentered IOL(follow-up),Decentered IOL(follow-up),Decentered IOL(follow-up),Question,Coded,,Yes;No,1,289
-9c18b0fc-5eb9-4b42-b743-c3934230c2e8,,Aphakia(follow-up),Aphakia(follow-up),Aphakia(follow-up),Question,Coded,,Yes;No,1,290
-63f7b49a-1875-46d2-bf04-51e978c46857,,Clear Posterior(follow-up),Clear(follow-up),Clear(follow-up),Question,Coded,,Yes;No,1,291
-536b0e71-5ee7-464c-976f-852bd0dff1b8,,Rent / ZD(follow-up),Rent / ZD(follow-up),Rent / ZD(follow-up),Question,Coded,,Yes;No,1,292
-cee5d1b9-e6ab-4bcd-b80b-02dfe744474a,,Normal Fundus(follow-up),Normal Fundus(follow-up),Normal Fundus(follow-up),Question,Coded,,Yes;No,1,293
-0aa4eaef-8225-4b31-b6a7-cee6c78e789f,,Pathology Fundus(follow-up),Pathology Fundus(follow-up),Pathology Fundus(follow-up),Question,Coded,,Yes;No,1,294
