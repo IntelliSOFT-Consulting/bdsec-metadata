@@ -1,1 +1,60 @@
-{"formJson":{"id":54,"uuid":"01a5b2c3-a3cb-403f-bbca-db57cfdc0b0b","name":"Registration Details","version":"3","published":true,"auditInfo":{"creator":{"uuid":"A4F30A1B-5EB9-11DF-A648-37A07F9C90FB","display":"daemon","links":[{"rel":"self","uri":"http://openmrs:8080/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB","resourceAlias":"user"}]},"dateCreated":"2025-01-23T11:41:30.000+0000","changedBy":{"uuid":"8c6ecc49-4321-11ef-9840-0242ac120002","display":"superman","links":[{"rel":"self","uri":"http://openmrs:8080/openmrs/ws/rest/v1/user/8c6ecc49-4321-11ef-9840-0242ac120002","resourceAlias":"user"}]},"dateChanged":"2025-01-23T11:41:38.000+0000"},"resources":[{"value":"{\"name\":\"Registration Details\",\"id\":54,\"uuid\":\"01a5b2c3-a3cb-403f-bbca-db57cfdc0b0b\",\"defaultLocale\":\"en\",\"controls\":[{\"type\":\"section\",\"label\":{\"translationKey\":\"SECTION_17\",\"type\":\"label\",\"value\":\"Fee Information\",\"id\":\"17\"},\"properties\":{\"addMore\":false,\"location\":{\"column\":0,\"row\":2}},\"id\":\"17\",\"controls\":[{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"REGISTRATION_FEE_21\",\"id\":\"21\",\"units\":\"\",\"type\":\"label\",\"value\":\"Registration Fee\"},\"properties\":{\"mandatory\":false,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":0},\"abnormal\":false},\"id\":\"21\",\"concept\":{\"name\":\"Registration Fee\",\"uuid\":\"9bb0795c-4ff0-0305-1990-000000000021\",\"datatype\":\"Numeric\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":true}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null},{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"DOCTOR_NAME_22\",\"id\":\"22\",\"units\":\"\",\"type\":\"label\",\"value\":\"Doctor Name\"},\"properties\":{\"mandatory\":false,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":1}},\"id\":\"22\",\"concept\":{\"name\":\"Doctor Name\",\"uuid\":\"9bb0795c-4ff0-0305-1990-000000000022\",\"datatype\":\"Text\",\"conceptClass\":\"Misc\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null}]}],\"events\":{\"onFormSave\":\"\",\"onFormInit\":\"\"},\"translationsUrl\":\"/openmrs/ws/rest/v1/bahmniie/form/translations\",\"referenceVersion\":\"2\",\"referenceFormUuid\":\"5dddd176-2772-45e2-b1a9-c69df13be869\"}","dataType":"org.bahmni.customdatatype.datatype.FileSystemStorageDatatype","uuid":"cdd686b2-04b0-4e00-8dd4-cf856ac18679"}]},"translations":[{"locale":"en","labels":{"SECTION_17":"Fee Information"},"concepts":{"DOCTOR_NAME_22":"Doctor Name","REGISTRATION_FEE_21":"Registration Fee"},"formName":"Registration Details","formUuid":null,"version":"3","referenceVersion":null,"referenceFormUuid":null}]}
+{
+  "formJson": {
+    "id": 19,
+    "uuid": "7f659037-5aa5-44cc-aced-32a4d6ed113e",
+    "name": "Registration Details",
+    "version": "1",
+    "published": true,
+    "auditInfo": {
+      "creator": {
+        "uuid": "A4F30A1B-5EB9-11DF-A648-37A07F9C90FB",
+        "display": "daemon",
+        "links": [
+          {
+            "rel": "self",
+            "uri": "http://localhost/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB",
+            "resourceAlias": "user"
+          }
+        ]
+      },
+      "dateCreated": "2023-07-25T18:48:37.000+0530",
+      "changedBy": {
+        "uuid": "bdea357f-f496-11ed-b179-0242ac150003",
+        "display": "superman",
+        "links": [
+          {
+            "rel": "self",
+            "uri": "http://localhost/openmrs/ws/rest/v1/user/bdea357f-f496-11ed-b179-0242ac150003",
+            "resourceAlias": "user"
+          }
+        ]
+      },
+      "dateChanged": "2023-07-25T18:52:20.000+0530"
+    },
+    "resources": [
+      {
+        "value": "{\"name\": \"Registration Details\", \"id\": 19, \"uuid\": \"7f659037-5aa5-44cc-aced-32a4d6ed113e\", \"defaultLocale\": \"en\", \"controls\": [{\"type\": \"section\", \"label\": {\"translationKey\": \"SECTION_17\", \"type\": \"label\", \"value\": \"Fee Information\", \"id\": \"17\"}, \"properties\": {\"addMore\": false, \"location\": {\"column\": 0, \"row\": 2}}, \"id\": \"17\", \"controls\": [{\"type\": \"obsControl\", \"label\": {\"translationKey\": \"REGISTRATION_FEE_18\", \"id\": \"18\", \"units\": \"\", \"type\": \"label\", \"value\": \"Registration Fee\"}, \"properties\": {\"mandatory\": false, \"notes\": false, \"addMore\": false, \"hideLabel\": false, \"controlEvent\": false, \"location\": {\"column\": 0, \"row\": 0}, \"abnormal\": false}, \"id\": \"18\", \"concept\": {\"name\": \"Registration Fee\", \"uuid\": \"9bb0795c-4ff0-0305-1990-000000000021\", \"datatype\": \"Numeric\", \"conceptClass\": \"Misc\", \"conceptHandler\": null, \"answers\": [], \"properties\": {\"allowDecimal\": true}}, \"hiNormal\": null, \"lowNormal\": null, \"hiAbsolute\": null, \"lowAbsolute\": null}, {\"type\": \"obsControl\", \"label\": {\"translationKey\": \"DOCTOR_NAME_19\", \"id\": \"19\", \"units\": \"\", \"type\": \"label\", \"value\": \"Doctor Name\"}, \"properties\": {\"mandatory\": false, \"notes\": false, \"addMore\": false, \"hideLabel\": false, \"controlEvent\": false, \"location\": {\"column\": 0, \"row\": 1}}, \"id\": \"19\", \"concept\": {\"name\": \"Doctor Name\", \"uuid\": \"9bb0795c-4ff0-0305-1990-000000000022\", \"datatype\": \"Text\", \"conceptClass\": \"Misc\", \"conceptHandler\": null, \"answers\": [], \"properties\": {\"allowDecimal\": null}}, \"units\": null, \"hiNormal\": null, \"lowNormal\": null, \"hiAbsolute\": null, \"lowAbsolute\": null}, {\"type\": \"obsControl\", \"label\": {\"translationKey\": \"CONSULTATION_FEE_20\", \"id\": \"20\", \"units\": \"\", \"type\": \"label\", \"value\": \"Consultation Fee\"}, \"properties\": {\"mandatory\": false, \"notes\": true, \"addMore\": false, \"hideLabel\": false, \"controlEvent\": false, \"location\": {\"column\": 0, \"row\": 2}, \"abnormal\": false}, \"id\": \"20\", \"concept\": {\"name\": \"Consultation Fee\", \"uuid\": \"9bb0795c-4ff0-0305-1990-000000000023\", \"datatype\": \"Numeric\", \"conceptClass\": \"Misc\", \"conceptHandler\": null, \"answers\": [], \"properties\": {\"allowDecimal\": true}}, \"hiNormal\": null, \"lowNormal\": null, \"hiAbsolute\": null, \"lowAbsolute\": null}]}]}",
+        "dataType": "org.bahmni.customdatatype.datatype.FileSystemStorageDatatype",
+        "uuid": "5fe30605-1a50-4087-83e3-b0ab48120277"
+      }
+    ]
+  },
+  "translations": [
+    {
+      "locale": "en",
+      "labels": {
+        "SECTION_17": "Fee Information"
+      },
+      "concepts": {
+        "DOCTOR_NAME_19": "Doctor Name",
+        "CONSULTATION_FEE_20": "Consultation Fee",
+        "REGISTRATION_FEE_18": "Registration Fee"
+      },
+      "formName": "Registration Details",
+      "formUuid": null,
+      "version": "1",
+      "referenceVersion": null,
+      "referenceFormUuid": null
+    }
+  ]
+}
