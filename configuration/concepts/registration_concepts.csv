@@ -23,11 +23,15 @@ e16e35be-0204-41be-95fb-a9ff2ecf3ec9,,Next of Kin Details - Name,Name,,,,,"Quest
 3e02c228-806e-4bfb-b506-ebbdf96188e9,,Next of Kin Details - Father,Father,,,,,Misc,N/A,
 4bbd7fec-8dad-4682-8b53-36193517d000,,Next of Kin Details - Mother,Mother,,,,,Misc,N/A,
 8f9b5d5c-a2f2-4364-b19d-cf426b6fa0ee,,Next of Kin Details - Guardian,Guardian,,,,,Misc,N/A,
+9965454a-88b5-4dd3-ba11-f04f68390cd3,,Next of Kin Details - Sibling,Sibling,,,,,Misc,N/A,
+235a9373-e90d-459b-8f86-6e118a1bed6c,,Next of Kin Details - Other,Other,,,,,Misc,N/A,
 b64ff496-e74f-4204-83af-ca7fbd97d56b,,Next of Kin Details - Relationship,Relationship,,,,,Question,Coded,"
 Next of Kin Details - Spouse;
 Next of Kin Details - Father;
 Next of Kin Details - Mother;
-Next of Kin Details - Guardian;"
+Next of Kin Details - Guardian;
+Next of Kin Details - Sibling;
+Next of Kin Details - Other"
 1713AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Primary School Education,,,,,,Misc,N/A,
 1714AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Secondary School Education,,,,,,Misc,N/A,
 159785AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,College/university/polytechnic,"College, University or Polytechnic",,,,,Misc,N/A,
