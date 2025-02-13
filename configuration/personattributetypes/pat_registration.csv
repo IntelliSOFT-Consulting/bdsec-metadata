@@ -5,6 +5,7 @@ dff5293e-fd95-4d24-9495-1579259d2cc4,,occupation,Occupation,org.openmrs.Concept,
 61bd18e5-4573-4f10-b772-896c65b4b705,,civilstatus,Marital Status,org.openmrs.Concept,18ba0a1a-7aec-45e1-bebe-920726094140,,,,
 96501a27-d00c-4d1c-8b9a-5035474c1edc,,nextofKinName,Name,java.lang.String,,,,,
 16298ec3-31bd-4aed-843b-92d1eeedd3f8,,nextofKinRelationship,Relationship,org.openmrs.Concept,b64ff496-e74f-4204-83af-ca7fbd97d56b,,,,
+37ac1583-23e3-402a-b58a-997bfd70edc9,,otherNextOfKinDetails,Other Next of Kin,java.lang.String,,,,,
 "7bdfe5bb-89b8-4390-9b70-98301d14429f
 ",,highestEducationlevel,Highest education level,org.openmrs.Concept,88bd4227-f95c-47fa-88ab-e99b7a5c77ba,,,,
 6692ec74-07de-4948-a27f-b42da8649469,,typeofPatient,Patient Location,org.openmrs.Concept,d22d3db8-8232-45ca-a109-703a9f02ca70,,,,
