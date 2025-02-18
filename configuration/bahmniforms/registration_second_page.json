@@ -3,7 +3,7 @@
     "id": 43,
     "uuid": "be7ac8ab-c6f2-4994-bb88-9abbf4f7c21e",
     "name": "Registration Details",
-    "version": "1",
+    "version": "2",
     "published": true,
     "auditInfo": {
       "creator": {
@@ -12,7 +12,7 @@
         "links": [
           {
             "rel": "self",
-            "uri": "http://localhost/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB",
+            "uri": "http://102.133.147.40/openmrs/ws/rest/v1/user/A4F30A1B-5EB9-11DF-A648-37A07F9C90FB",
             "resourceAlias": "user"
           }
         ]
@@ -61,7 +61,7 @@
       },
       "formName": "Registration Details",
       "formUuid": null,
-      "version": "1",
+      "version": "2",
       "referenceVersion": null,
       "referenceFormUuid": null
     }
