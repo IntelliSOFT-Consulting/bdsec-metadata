@@ -1,4 +1,4 @@
-Uuid,Answers,Members,Fully specified name:en,Short name:en,Data class,Data type,_version:1,_order:900
+Uuid,Answers,Members,Fully specified name:en,Short name:en,Data class,Data type,_version:1,_order:4000
 445208bf-d940-4475-9363-1db3afb8eecc,,Diabetic retina laser,OPD Retina procedure,,ConvSet,N/A,,
 89e4784d-bc70-47ee-9847-92d4df06ac24,,Intravitreal injection -Avastin,Retinal Minor R procedure,,ConvSet,"N/A
 ",,
@@ -60,9 +60,8 @@ Incision of lacrimal duct ;
 Tarsorrhaphy ;
 Tarsotomy-Bilateral ;
 Tarsotomy-unilateral ;
-Irrigation &Probing ( Bilateral) ;
-Irrigation &Probing (unilateral) ;
-Eyelid repair -simple ;
+Irrigation and Probing, Bilateral,
+Irrigation and Probing, unilateral, Eyelid repair -simple ;
 Complicated lid repair ;
 ocular stich removal with Operating microscope ;
 Ocular stichwith removal with SLE ;
