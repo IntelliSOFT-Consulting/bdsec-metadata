@@ -298,7 +298,6 @@ WHERE name IN (
     'Obstetrics and Gynaecology',
     'Orthopaedic Examination',
     'Referral letter',
-    'Registration Details',
     'Second Vitals',
     'Under Treatment and Fitness Certificate',
     'Vitals',
