@@ -12,3 +12,8 @@ b5da9afd-b29a-4cbf-91c9-ccf2aa5f799e,,Emergency,,Bahmni Hospital,,Login Location
 df352801-7c6c-4dd5-bbef-0c01a216d453,,Pediatric Ward Room-1,,Pediatric Ward,,Admission Location,,,,,,,,,,,
 44cc2e40-ddce-415b-b5fc-2d99372ab117,,General OT,,Bahmni Hospital,,Operation Theater,,,,,,,,,,,
 9a1e5cd6-8e2e-41c6-a923-044cc55d7613,,Orthopaedic OT,,Bahmni Hospital,,Operation Theater,,,,,,,,,,,
+e2f02a20-0223-425d-9740-335bc44076b9,,Counselling,,Bahmni Hospital,,Login Location; Visit Location,,,,,,,,,,,
+e694a5c9-b803-44f2-a0c3-eaf3f9979bfa,,Operating Room (OR),,Bahmni Hospital,,Login Location; Operation Theatre; VisitLocation,,,,,,,,,,,
+b4c6c73a-260f-4203-b0c6-e1211e0cad23,,Minor Procedure Room,,Bahmni Hospital,,Login Location; Visit Location,,,,,,,,,,,
+1886d79a-21f2-453a-8f41-9a975070dcde,,Inpatient,,Bahmni Hospital,,Login Location; Visit Location,,,,,,,,,,,
+9b09b684-9dab-45f0-9535-c79fd66550be,,Liaison Office,,Bahmni Hospital,,Login Location; Visit Location,,,,,,,,,,,

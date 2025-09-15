@@ -277,6 +277,36 @@ DELETE FROM concept_attribute WHERE concept_attribute_id NOT IN (
     ) AS subquery
 );
 
+-- Removed default Bahmni forms
+
+UPDATE form
+SET retired = 1,
+    retired_by = 1,           -- adjust to correct user_id from `users` table
+    date_retired = NOW(),
+    retired_reason = 'not used'
+WHERE name IN (
+    'Admission Letter',
+    'Death Note',
+    'Diabetes Progress',
+    'Diabetes Intake',
+    'Follow Up',
+    'History and Examination',
+    'Hypertension Intake',
+    'Hypertension Progress',
+    'Immunization Incident Record',
+    'Malaria',
+    'Obstetrics and Gynaecology',
+    'Orthopaedic Examination',
+    'Referral letter',
+    'Registration Details',
+    'Second Vitals',
+    'Under Treatment and Fitness Certificate',
+    'Vitals',
+    'Theatre Checklist',
+    'Vitals_Form2',
+    'Worth 4 Dot Test'
+);
+
 
 
 
