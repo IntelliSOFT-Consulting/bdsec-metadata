@@ -31,9 +31,8 @@ Obese;"
 5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Height (cm),Height,,,,Question,Numeric,
 ae9220b1-5f7d-4fbd-9c2a-0df38294f052,,Fully immunized,Immunization status of the child,,,,Misc,N/A,
 11041572-f840-4290-b055-15a2829b188f,,Not fully immunized,The child is fully immunized,,,,Misc,N/A,
-9e1c4897-8ac0-486f-8daa-bbc22e0d4f76,,I do not know,I do not know,,,,Misc,N/A,
 164464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Immunization Status,The child is not fully immunized,,,,Question,Coded,"Fully immunized;
-Not fully immunized; I do not know;"
+Not fully immunized"
 3a6848ad-be50-4518-8814-d23e3c2a0955,,SLIT LAMP EXAMINATION,,,,,Misc,N/A,
 6fe5e473-99b4-4c4d-8113-1b5dc253e6df,,"Lids, Left Eye",,The status of the lids,,,Question,Coded,Normal; Abnormal
 2e20e926-4b79-464f-848d-4272cb13ad14,,"Lids, Right Eye",,The status of the lids,,,Question,Coded,Normal; Abnormal
