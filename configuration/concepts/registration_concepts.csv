@@ -40,5 +40,14 @@ Secondary School Education;
 College/university/polytechnic;None"
 b7275366-750c-4ae6-b450-b89455acb5c4,,"Facility, Patient",Facility,,,,,Misc,N/A,
 50632c60-8183-4f6e-b36f-c8f6994cc627,,"Outreach, Patient",Outreach,,,,,Misc,N/A,
+c05c5a7b-e51f-4efb-a7a2-4d5853315881,,Enhanced Referral,,,,,,Misc,N/A,
+c03effb5-fcad-4c86-a751-5aa38db4dfb3,,Vision Centre,,,,,,Misc,N/A,
 d22d3db8-8232-45ca-a109-703a9f02ca70,,Patient Type,Patient Location,,,,,Question,Coded,"Facility, Patient;
-Outreach, Patient"
+Outreach, Patient; Enhanced Referral;
+Vision Centre"
+4e8c6da5-58b2-4b13-aabf-069f19522206,,OPD 1 Queue,OPD 1,,,,,Misc,N/A,
+bbe76622-cbdc-4741-916a-1e8f2b0b62ff,,OPD 2 Queue,OPD 2,,,,,Misc,N/A,
+793112cc-cc95-4615-a186-260bd522820c,,Emmergency Queue,Emmergency,,,,,Misc,N/A,
+e7db44f9-4f07-4b67-9d48-73af5b8e59af,,Patient Queue,Patient Queue,,,,,Question,Coded,"OPD 1 Queue;
+OPD 2 Queue;
+Emmergency Queue;"
