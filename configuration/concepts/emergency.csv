@@ -17,6 +17,10 @@ cf10b518-1f51-42a3-bdf3-55696e5869e7,,"Left eye vision with glasses, Emergency",
 78462d96-0085-4ac7-9fca-747fc814b215,,"Cardiac, Systematic Illness",Cardiac,Whether the patient has any cardiac illness,,,Question,Boolean,
 9a8c26cd-964b-47ac-b306-f2c7b292d5ec,,"Renal diseases, Systematic Illness",Renal diseases,Whether the patient has renal diseases,,,Question,Boolean,
 b142430b-dfa9-4318-888e-2edd211d4cd4,,"Asthma, Systematic Illness",Asthma,Whether the patient has asthma,,,Question,Boolean,
+88fef376-5ae8-4e9b-9d7e-a3b3cf499005,,"TB, Systematic Illness",TB,Whether the patient has TB,,,Question,Boolean,
+6df91642-2411-42b2-8260-45aed7a8a556,,"HIV, Systematic Illness",HIV,Whether the patient has HIV,,,Question,Boolean,
+c18356a2-434d-4ead-8e11-ab9796d3634a,,"Toxoplasmosis, Systematic Illness",Toxoplasmosis,Whether the patient has toxoplasmosis,,,Question,Boolean,
+681a6ae7-e10a-47da-b757-dd48dbb8d637,,"Syphillis, Systematic Illness",Syphillis,Whether the patient has syphillis,,,Question,Boolean,
 ccb098ca-4534-4b23-b5bf-4edc39c33c0d,,"Allergies, Systematic Illness",Allergies,Whether the patient has allergies,,,Question,Boolean,
 "
 55c66d4f-e3dd-4833-9e17-92e84d83465f",,"Others, systematic illness",Others,Whether the patient has any other systemic illness,,,Question,Boolean,
@@ -31,8 +35,10 @@ Obese;"
 5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Height (cm),Height,,,,Question,Numeric,
 ae9220b1-5f7d-4fbd-9c2a-0df38294f052,,Fully immunized,Immunization status of the child,,,,Misc,N/A,
 11041572-f840-4290-b055-15a2829b188f,,Not fully immunized,The child is fully immunized,,,,Misc,N/A,
+9e1c4897-8ac0-486f-8daa-bbc22e0d4f76,,I do not know,I do not know,,,,Misc,N/A,
 164464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Immunization Status,The child is not fully immunized,,,,Question,Coded,"Fully immunized;
-Not fully immunized"
+Not fully immunized;
+I do not know;"
 3a6848ad-be50-4518-8814-d23e3c2a0955,,SLIT LAMP EXAMINATION,,,,,Misc,N/A,
 6fe5e473-99b4-4c4d-8113-1b5dc253e6df,,"Lids, Left Eye",,The status of the lids,,,Question,Coded,Normal; Abnormal
 2e20e926-4b79-464f-848d-4272cb13ad14,,"Lids, Right Eye",,The status of the lids,,,Question,Coded,Normal; Abnormal
