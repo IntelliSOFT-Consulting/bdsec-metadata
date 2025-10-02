@@ -6,12 +6,16 @@ d898f6f4-6f47-4fd0-bff3-94376d476db9,,Electronic,,,,,,Misc,N/A,
 c1e221e8-d05e-4cf0-8034-e596f2709fe9,,Free,,,,,,Misc,N/A,
 1998cde3-3d7d-4682-bf8b-2243cd2f6265,,Subsidized,,,,,,Misc,N/A,
 497706a9-18ad-4003-91c4-fcfd1761f4b2,,Full-paying,,,,,,Misc,N/A,
-adb10fc0-794f-4443-89ff-c77aec731cd8,,Payment Method,,,,,,Question,Coded,"
+2e4c5135-280a-4b1f-a171-2919cc1c4090,,Paying,,,,,,Misc,N/A,
+a0bf39ed-f42a-4d97-9ccc-e4d64830480b,,Mode of Payment,,,,,,Question,Coded,"
 Cash;
 Credit;
 Insurance;
 Electronic;
-Subsidized;Free;"
+Subsidized;"
+adb10fc0-794f-4443-89ff-c77aec731cd8,,Payment Method,,,,,,Question,Coded,"
+Paying;
+Free;"
 05b268b7-a41b-4c06-8091-c798b43e27d5,,25%,25%,,,,,Misc,N/A,
 073de8bf-8472-4453-bcfb-9d46db2d056b,,50%,50%,,,,,Misc,N/A,
 bb93dff7-463e-4157-b04c-6df5326c3a14,,75%,75%,,,,,Misc,N/A,
