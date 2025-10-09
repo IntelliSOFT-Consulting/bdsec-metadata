@@ -19,6 +19,7 @@ Free;"
 05b268b7-a41b-4c06-8091-c798b43e27d0,,25 Percent,25,,,,,Misc,N/A,
 073de8bf-8472-4453-bcfb-9d46db2d056f,,50 Percent,50,,,,,Misc,N/A,
 bb93dff7-463e-4157-b04c-6df5326c3a19,,75 Percent,75,,,,,Misc,N/A,
+80201914-a095-42fd-9fd9-b68e1eea3389,,Enter Percentage Subsidized,Percentage Subsidized (%),,,,,Question,Numeric,
 d75f4276-a024-4e06-aa95-6bc9c2b0e7b2,,Percentage Subsidized,Percentage Subsidized (%),,,,,Question,Coded,"25 Percent;
 50 Percent;
 75 Percent;"
