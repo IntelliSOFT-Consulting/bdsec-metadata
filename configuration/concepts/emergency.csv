@@ -1,15 +1,26 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,_version:1,_order:25,Data class,Data type,Answers
 32d51617-b9a0-4e01-b326-17b6c4faa8dd,,Visual Acuity,,,,,Misc,N/A,
-70a51a4a-d87d-4072-879c-bc1de322c95a,,"Right eye Vision without Glasses, Emergency",,Patient's  right eye visual acuity without glasses ,,,Question,Text,
-f9d1b2dd-cc69-4e4b-b21c-a37f321ba763,,"Left eye Vision without Glasses, Emergency",,Patient's  left eye visual acuity without glasses ,,,Question,Text,
- 8e424f48-f824-44e5-afa8-1c13ebd463f4,,"Right eye vision with glasses, Emergency",,Patient's  right eye visual acuity with glasses ,,,Question,Text,
-cf10b518-1f51-42a3-bdf3-55696e5869e7,,"Left eye vision with glasses, Emergency",,Patient's  left eye visual acuity without glasses ,,,Question,Text,
+cc079ab5-47b7-4d30-b2cb-5ea70fdcc2a8,,NLP,,,,,Misc,N/A,
+fa18b19a-6be3-464f-958e-0a041c5da17a,,LP+,,,,,Misc,N/A,
+879449d4-6e7a-11ef-b97a-325096b39f47,,6/6,,,,,Misc,N/A,
+87944bd2-6e7a-11ef-9b64-325096b39f47,,6/9,,,,,Misc,N/A,
+87944c4a-6e7a-11ef-bf26-325096b39f47,,6/12,,,,,Misc,N/A,
+87944ca4-6e7a-11ef-8d13-325096b39f47,,6/18,,,,,Misc,N/A,
+87944cea-6e7a-11ef-8d0c-325096b39f47,,6/24,,,,,Misc,N/A,
+87944d3a-6e7a-11ef-871d-325096b39f47,,6/36,,,,,Misc,N/A,
+87944d80-6e7a-11ef-8f9d-325096b39f47,,6/60,,,,,Misc,N/A,
+87944dc6-6e7a-11ef-8598-325096b39f47,,3/60,,,,,Misc,N/A,
+87944e0c-6e7a-11ef-8923-325096b39f47,,1/60,,,,,Misc,N/A,
+70a51a4a-d87d-4072-879c-bc1de322c95a,,"Right eye Vision without Glasses, Emergency",,Patient's  right eye visual acuity without glasses ,,,Question,Coded,6/6;6/9;6/12;6/18;6/24;6/36;6/60;3/60;1/60;NLP;LP+
+f9d1b2dd-cc69-4e4b-b21c-a37f321ba763,,"Left eye Vision without Glasses, Emergency",,Patient's  left eye visual acuity without glasses ,,,Question,Coded,6/6;6/9;6/12;6/18;6/24;6/36;6/60;3/60;1/60;NLP;LP+
+ 8e424f48-f824-44e5-afa8-1c13ebd463f4,,"Right eye vision with glasses, Emergency",,Patient's  right eye visual acuity with glasses ,,,Question,Coded,6/6;6/9;6/12;6/18;6/24;6/36;6/60;3/60;1/60;NLP;LP+
+cf10b518-1f51-42a3-bdf3-55696e5869e7,,"Left eye vision with glasses, Emergency",,Patient's  left eye visual acuity without glasses ,,,Question,Coded,6/6;6/9;6/12;6/18;6/24;6/36;6/60;3/60;1/60;NLP;LP+
 830472bc-f319-4ea8-b3a3-4e11390cc96c,,INTRAOCULAR PRESSURE,,,,,Misc,N/A,
 96965d5e-6057-11ef-9c76-325096b39f47,,"Icare tonometry, Right Eye, Emergency",,IOP using Icare tonometry,,,Question,Numeric,
 96965f5c-6057-11ef-9989-325096b39f47,,"Icare tonometry, Left Eye, Emergency",,IOP using Icare tonometry,,,Question,Numeric,
 96965fca-6057-11ef-980f-325096b39f47,,"Applanation tonometry, Right Eye, Emergency",,IOP using applanation tonometry,,,Question,Numeric,
 9696601a-6057-11ef-a40b-325096b39f47,,"Applanation tonometry, Left Eye, Emergency",,IOP using applanation tonometry,,,Question,Numeric,
-96966060-6057-11ef-807e-325096b39f47,,"Complaints, Emergency",,,,,Misc,N/A,
+96966060-6057-11ef-807e-325096b39f47,,"Complaints, Emergency",,,,,Question,Coded,Itching sensation;Burning sensation;Watery eye;Trauma (complaint);Headache;Photophobia;Blurred vision;Visual reduction;Difficult of reading;Crossed eye;Painful eye;Swollen eye lid;Rash over eye lid;Blisters over eye lid;Protrusion of eye ball;Nil;Other
 9d400262-9560-4bdb-9e12-1ca3f6547d1c,,History,,History of presenting illness,,,Question,Text,
 9da7471e-9a9e-466a-ba8e-adc502680189,,Systemic Illnesses,,Whether the patient has any systemic illnesses,,,Question,Coded,
 5eced3d8-2cb8-44a6-baef-90ba6fb7c160,,"Diabetes, Systematic Illness",Diabetes,Whether the patient has  diabetes,,,Question,Boolean,
@@ -80,3 +91,16 @@ b5e63e08-8806-4481-9909-dc7e4b57b68d,,"Blood Vessels, Fundus Exam. Right Eye",Bl
 611acabe-5ae1-11ef-919c-325096b39f47,,Immediate consultation to ophthalmologist,Immediate consultation to ophthalmologist,Patient was queued for consultation with ophthalmologist,,,Misc,N/A,
 611acb04-5ae1-11ef-8fab-325096b39f47,,"Treatment, Optometrist, Left Eye",Left Eye,,,,Question,Coded,Advise only;Treated with spectacles;Medication ordered;Immediate consultation to ophthalmologist
 f9437ae1-10dd-4236-902c-6c62b3bb876e,,"Treatment, Optometrist, Right Eye",Right Eye,,,,Question,Coded,Advise only;Treated with spectacles;Medication ordered;Immediate consultation to ophthalmologist
+7ae9282d-188d-43eb-92a0-518d1b051a34,,Itching sensation,Itching sensation,Itching sensation,,,Misc,N/A,
+0d481144-8db0-4755-9d42-fbfb7569b938,,Watery eye,Watery eye,Watery eye,,,Misc,N/A,
+90f10cd9-f6ca-42d5-83cb-2489caa6c012,,Trauma (complaint),Trauma,Trauma,,,Misc,N/A,
+8e6dd7dc-cd18-440b-96c4-2a00b8b059da,,Photophobia,Photophobia,Photophobia,,,Misc,N/A,
+e707e3fc-ca5e-4034-9e76-7b5e2628e62e,,Visual reduction,Visual reduction,Visual reduction,,,Misc,N/A,
+cd8ba927-8752-4bfc-b6dd-ed5a86e8e3dd,,Difficult of reading,Difficult of reading,Difficult of reading,,,Misc,N/A,
+bbbb0dbd-36f6-4453-b0e9-8db9ab983b7f,,Crossed eye,Crossed eye,Crossed eye,,,Misc,N/A,
+86a85b69-f42b-495e-8537-9ac39e9a64f3,,Painful eye,Painful eye,Painful eye,,,Misc,N/A,
+fd95ce33-5e2a-4ae1-b9cc-54fdb24ae42f,,Swollen eye lid,Swollen eye lid,Swollen eye lid,,,Misc,N/A,
+092e1519-4293-4b49-abb6-91297c44b294,,Rash over eye lid,Rash over eye lid,Rash over eye lid,,,Misc,N/A,
+c12d7fdb-aa6e-457f-8d35-6e9a24747b04,,Blisters over eye lid,Blisters over eye lid,Blisters over eye lid,,,Misc,N/A,
+516cfc3b-139a-4fb0-bd31-6afd4885a186,,Protrusion of eye ball,Protrusion of eye ball,Protrusion of eye ball,,,Misc,N/A,
+cab3132f-65e3-45ad-ac6e-a9e65efdc9be,,Other,Other,Other,,,Misc,N/A,
