@@ -15,3 +15,5 @@ f13814a4-5fae-11ef-be9b-325096b39f47,,Type of Surgery,Surgery Type,Recommended s
 86357AAAAAAAAAAAFAMAAAAAAAAAAAAAAAAA,,Intracameral,Intracameral,,Misc,N/A,,,
 d5d3db65-5e07-11ef-8f7c-0242ac120002,,Topical,Topical,,Misc,N/A,,,
 86352AAAAAAAAAAAFAMAAAAAAAAAAAAAAAAA,,Type of Anaesthesia,Anaesthesia Type,Recommended anaesthesia,Question,Coded,General Anaesthesia;Retrobulbar;Peribulbar;Subtenons;Intracameral;Topical,,
+5cd949d0-6c7a-42e0-bf81-652ce3840969,,Checklist for all surgeries,For All Surgeries,For all surgeries,Question,Coded,Procedure explained;Complication explained;Infection risk Explained;Guarded out come explained -if any;Comorbidity counselling done;Expected hospital days,,
+5069d98c-f8f3-402e-87df-6c52c280e863,,Checklist for cataract surgery,Checklist for cataract energy,Checklist for cataract energy,Question,Coded,Procedure explained;Complication explained;Infection risk Explained;Guarded out come explained -if any;Comorbidity counselling done;Expected hospital days;Possibility of Pco after surgery explained;IOL type explained;Cylinder power explained;NV power explained;Suture explained,,
