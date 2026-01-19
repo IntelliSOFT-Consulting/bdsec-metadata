@@ -1,0 +1,57 @@
+{
+    "formJson": {
+        "id": 58,
+        "uuid": "3ac20037-d2eb-40a4-8147-ed55cbac847b",
+        "name": "Cataract Surgery Progress Sheet",
+        "version": "1",
+        "published": true,
+        "auditInfo": {
+            "creator": {
+                "uuid": "d7a669e7-5e07-11ef-8f7c-0242ac120002",
+                "display": "superman",
+                "links": [
+                    {
+                        "rel": "self",
+                        "uri": "http://localhost/openmrs/ws/rest/v1/user/d7a669e7-5e07-11ef-8f7c-0242ac120002",
+                        "resourceAlias": "user"
+                    }
+                ]
+            },
+            "dateCreated": "2026-01-19T10:05:32.000+0000",
+            "changedBy": {
+                "uuid": "d7a669e7-5e07-11ef-8f7c-0242ac120002",
+                "display": "superman",
+                "links": [
+                    {
+                        "rel": "self",
+                        "uri": "http://localhost/openmrs/ws/rest/v1/user/d7a669e7-5e07-11ef-8f7c-0242ac120002",
+                        "resourceAlias": "user"
+                    }
+                ]
+            },
+            "dateChanged": "2026-01-19T10:11:12.000+0000"
+        },
+        "resources": [
+            {
+                "value": "{\"name\":\"Cataract Surgery Progress Sheet\",\"id\":58,\"uuid\":\"3ac20037-d2eb-40a4-8147-ed55cbac847b\",\"defaultLocale\":\"en\",\"controls\":[{\"type\":\"obsControl\",\"label\":{\"translationKey\":\"PROGRESS_(CATARACT_SURGERY)_2\",\"id\":\"2\",\"units\":\"\",\"type\":\"label\",\"value\":\"Progress\"},\"properties\":{\"mandatory\":false,\"notes\":false,\"addMore\":false,\"hideLabel\":false,\"controlEvent\":false,\"location\":{\"column\":0,\"row\":0}},\"id\":\"2\",\"concept\":{\"name\":\"Progress (Cataract Surgery)\",\"uuid\":\"aebb93af-b24d-42a9-a801-74d05500cb81\",\"description\":{\"value\":\"Progress\",\"translationKey\":\"PROGRESS_(CATARACT_SURGERY)_2_DESC\"},\"datatype\":\"Text\",\"conceptClass\":\"Question\",\"conceptHandler\":null,\"answers\":[],\"properties\":{\"allowDecimal\":null}},\"units\":null,\"hiNormal\":null,\"lowNormal\":null,\"hiAbsolute\":null,\"lowAbsolute\":null}],\"events\":{\"onFormSave\":\"\",\"onFormInit\":\"\"},\"translationsUrl\":\"/openmrs/ws/rest/v1/bahmniie/form/translations\",\"referenceVersion\":0,\"referenceFormUuid\":\"3ac20037-d2eb-40a4-8147-ed55cbac847b\"}",
+                "dataType": "org.bahmni.customdatatype.datatype.FileSystemStorageDatatype",
+                "uuid": "f491617e-e443-40a7-828d-164cc488160d"
+            }
+        ]
+    },
+    "translations": [
+        {
+            "locale": "en",
+            "labels": {},
+            "concepts": {
+                "PROGRESS_(CATARACT_SURGERY)_2": "Progress",
+                "PROGRESS_(CATARACT_SURGERY)_2_DESC": "Progress"
+            },
+            "formName": "Cataract Surgery Progress Sheet",
+            "formUuid": null,
+            "version": "1",
+            "referenceVersion": null,
+            "referenceFormUuid": null
+        }
+    ]
+}
