@@ -328,3 +328,6 @@ e061f00f-c80e-4c4a-a11a-bb99c1a76ca5,,Near Vision Axis Right Eye,Near Vision Axi
 aff78045-440e-4110-82fc-58a8d2d30a8d,,Comfortable with Prescription Glasses,Comfortable with Prescription Glasses,Comfortable with Prescription Glasses,Question,Boolean,,,,,
 a4023a9f-61a2-4acd-8435-798ff856bec6,,Wants Spectacles,Wants Spectacles,Wants Spectacles,Question,Boolean,,,,,
 90bdb8cd-45b4-48aa-b922-5c6ed92bb7ff,,Advise (Refraction Record),Advise (Refraction Record),Advise (Refraction Record),Question,Text,,,,,
+4c498b9c-bb04-41da-aa34-5a6a231791f8,,"Eye, Surgery Record","Eye, Surgery Record","Eye, Surgery Record",Question,Coded,,Right eye;Left eye,,,
+e85f3f30-038b-48a2-891c-90c159b6121a,,Blood Pressure Diastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,
+6609145f-034a-48da-a2de-9bd628853ab2,,Blood Pressure Systolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,
