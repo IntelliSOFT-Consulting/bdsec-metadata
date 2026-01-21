@@ -1,0 +1,5 @@
+Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,_version:1,_order:100
+8544aad0-2f4f-49d6-aeca-84c1c08f49aa,,Counselling Queue,,,Misc,N/A,,,
+a04b85fc-e964-4148-be88-6d62640311f2,,Opthalmology Queue,,,Misc,N/A,,,
+7789da91-ff7b-48f6-adf2-d3e433b523a1,,Patient Queue Assignment,,,Question,Coded,"Counselling Queue;
+Opthalmology Queue",,
