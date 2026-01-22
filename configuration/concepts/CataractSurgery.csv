@@ -329,5 +329,19 @@ aff78045-440e-4110-82fc-58a8d2d30a8d,,Comfortable with Prescription Glasses,Comf
 a4023a9f-61a2-4acd-8435-798ff856bec6,,Wants Spectacles,Wants Spectacles,Wants Spectacles,Question,Boolean,,,,,
 90bdb8cd-45b4-48aa-b922-5c6ed92bb7ff,,Advise (Refraction Record),Advise (Refraction Record),Advise (Refraction Record),Question,Text,,,,,
 4c498b9c-bb04-41da-aa34-5a6a231791f8,,"Eye, Surgery Record","Eye, Surgery Record","Eye, Surgery Record",Question,Coded,,Right eye;Left eye,,,
-e85f3f30-038b-48a2-891c-90c159b6121a,,Blood Pressure Diastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,
-6609145f-034a-48da-a2de-9bd628853ab2,,Blood Pressure Systolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,
+e85f3f30-038b-48a2-891c-90c159b6121a,,Blood Pressure Diastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,false
+6609145f-034a-48da-a2de-9bd628853ab2,,Blood Pressure Systolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,false
+658ada66-da65-43ec-b771-b57d51ffd9fb,,Time Recorded,Time Recorded,Time Recorded,Question,Datetime,,,,,
+450d8e19-070c-4e4e-b610-0cf02715957e,,Time of Clinic Intake,Time of Clinic Intake,Time of Clinic Intake,Question,Datetime,,,,,
+f1f4f068-fb0d-4730-8b5f-75f3caf26be2,,Time of Receiving patient in ward,Time of Receiving patient in ward,Time of Receiving patient in ward,Question,Datetime,,,,,
+4e148890-edc1-4174-aa05-c9c1dae309e8,,Time of verification of patient details,Time of verification of patient details,Time of verification of patient details,Question,Datetime,,,,,
+8d6c1c8a-e155-4999-8ec2-b90a1275952e,,Time of eye cleaned,Time of eye cleaned,Time of eye cleaned,Question,Datetime,,,,,
+0444441e-7241-489b-87c4-b719872fb86b,,Time of verified consent form,Time of verified consent form,Time of verified consent form,Question,Datetime,,,,,
+d3bcea04-751b-4be7-8cf3-4d2c2eeab462,,Time of preoperative instruction,Time of preoperative instruction,Time of preoperative instruction,Question,Datetime,,,,,
+155c4073-6b40-421b-84c9-0babbca549cb,,Time Anesthesia Given,Time Anesthesia Given,Time Anesthesia Given,Question,Datetime,,,,,
+083e88e0-15b6-429d-83f8-aecf880312be,,Time Repeated by,Time Repeated by,Time Repeated by,Question,Datetime,,,,,
+cfb0e0e4-9e5e-4c97-acd7-891491220edd,,Blood PressureDiastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,false
+1b186058-b6e9-4adc-bb42-5dd007f0a637,,Blood PressureSystolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,false
+21f43ad5-4ce9-46a9-b2dc-9bc4ab5dc4f5,,Start Time,Start Time,Start Time,Question,Datetime,,,,,
+87a80d74-b567-40da-ac11-ba310c7668c8,,Finish Time,Finish Time,Finish Time,Question,Datetime,,,,,
+53dcb3eb-55f7-4c50-89c4-f46f82717335,,Time of Phaco,Time of Phaco,Time of Phaco,Question,Datetime,,,,,
