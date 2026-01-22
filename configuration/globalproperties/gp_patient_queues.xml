@@ -120,5 +120,55 @@
         where v.date_stopped is null AND v.voided = 0 
         )tMOPDVisits where visitTypeName = 'Pharmacy'</value>
     </globalProperty>
+ <globalProperty>
+    <property>emrapi.sqlSearch.counselling</property>
+      <value>select name, identifier,uuid, activeVisitUuid, hasBeenAdmitted   from (
+       select distinct concat(pn.given_name,' ', ifnull(pn.family_name,'')) as name, pi.identifier as identifier, concat("",p.uuid) as uuid,
+          concat("",v.uuid) as activeVisitUuid, IF(va.value_reference = "Admitted", "true", "false") as hasBeenAdmitted, vt.visit_type_id as 'visitType',
+          vt.name as 'visitTypeName'
+        from visit v
+        join person_name pn on v.patient_id = pn.person_id and pn.voided = 0
+        join patient_identifier pi on v.patient_id = pi.patient_id
+        join patient_identifier_type pit on pi.identifier_type = pit.patient_identifier_type_id
+        join global_property gp on gp.property="bahmni.primaryIdentifierType" and gp.property_value=pit.uuid
+        join person p on p.person_id = v.patient_id
+		join location l on l.uuid = ${visit_location_uuid} and v.location_id = l.location_id
+		join obs o on p.person_id = o.person_id and o.concept_id = 
+        ( select concept_id from concept_name where name = 'Patient Queue Assignment' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+        o.value_coded = 
+        (select concept_id from concept_name where name = 'Counselling Queue' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+		and o.voided = 0
+        join visit_type vt on v.visit_type_id = vt.visit_type_id
+        left outer join visit_attribute va on va.visit_id = v.visit_id and va.attribute_type_id = (
+          select visit_attribute_type_id from visit_attribute_type where name="Admission Status"
+        ) and va.voided = 0
+        where v.date_stopped is null AND v.voided = 0
+        )tCounsellingQueue</value>
+    </globalProperty>
+ <globalProperty>
+    <property>emrapi.sqlSearch.ophthalmology</property>
+      <value>select name, identifier,uuid, activeVisitUuid, hasBeenAdmitted   from (
+       select distinct concat(pn.given_name,' ', ifnull(pn.family_name,'')) as name, pi.identifier as identifier, concat("",p.uuid) as uuid,
+          concat("",v.uuid) as activeVisitUuid, IF(va.value_reference = "Admitted", "true", "false") as hasBeenAdmitted, vt.visit_type_id as 'visitType',
+          vt.name as 'visitTypeName'
+        from visit v
+        join person_name pn on v.patient_id = pn.person_id and pn.voided = 0
+        join patient_identifier pi on v.patient_id = pi.patient_id
+        join patient_identifier_type pit on pi.identifier_type = pit.patient_identifier_type_id
+        join global_property gp on gp.property="bahmni.primaryIdentifierType" and gp.property_value=pit.uuid
+        join person p on p.person_id = v.patient_id
+		join location l on l.uuid = ${visit_location_uuid} and v.location_id = l.location_id
+		join obs o on p.person_id = o.person_id and o.concept_id = 
+        ( select concept_id from concept_name where name = 'Patient Queue Assignment' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and 
+        o.value_coded = 
+        (select concept_id from concept_name where name = 'Opthalmology Queue' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0)
+		and o.voided = 0
+        join visit_type vt on v.visit_type_id = vt.visit_type_id
+        left outer join visit_attribute va on va.visit_id = v.visit_id and va.attribute_type_id = (
+          select visit_attribute_type_id from visit_attribute_type where name="Admission Status"
+        ) and va.voided = 0
+        where v.date_stopped is null AND v.voided = 0
+        )tOphthalmologyQueue</value>
+    </globalProperty>
   </globalProperties>
 </config>
