@@ -1,0 +1,7 @@
+Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Complex data handler,Answers,_version:1,_order:23
+d93311df-b5f0-4486-a27f-1a6ae4a03f95,,Minor Operation Procedure Type,Procedure Type,Procedure Type,Question,Coded,,"Dermoid cyst removal;Electrolysis of trichiasis;Intravitreal injection -Avastin;Intra vitreal antibiotic injections;Conjunctival tear repair;Conjuctival cyst removal;Conjunctival mass excision;Epilation of trichiasis-elcroepilation;Evisceration;Lateral canthotomy;Incision of chalazion;Molluscum excision;Incision of eyelid Abscess;Incision of hordeolum;Incision of lacrimal duct;Tarsorrhaphy;Tarsotomy-Bilateral;Tarsotomy-unilateral;Irrigation and Probing, Bilateral;Irrigation and Probing, unilateral;ocular stich removal with Operating microscope;Retrobulbar injection -CPZ /Alcohol;Subconjunctival injections;Supratarsal injection",,
+ba9797ba-076c-4233-a1d8-622a4e169b16,,Minor Operation Procedure Note,Minor Procedure Note,Minor Procedure Note,Question,Text,,,,
+192733ab-7639-4e4b-b3fe-c8e9094299de,,Minor Operation Complications,Minor Operation Complications,Minor Operation Complications,Question,Text,,,,
+dfbcbddf-56a3-49f4-a017-3cc6e6a642b2,,Minor Operation Specimen,Minor Operation Specimen,Minor Operation Specimen,Question,Text,,,,
+53c6045a-7e0c-43b2-801c-6c65639f1417,,Date of Minor Operation,Date of Minor Operation,Date of Minor Operation,Question,Date,,,,
+e86cd00c-b364-409f-a656-d5bc88194bba,,Name of Professional,Name of Professional,Name of Professional,Question,Text,,,,
