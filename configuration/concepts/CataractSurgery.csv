@@ -1,10 +1,10 @@
-Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Complex data handler,Answers,_version:1,_order:23,Allow decimals
+Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Complex data handler,Answers,_version:1,_order:23,Allow decimals,Normal high,Normal low
 f19b264b-f3bd-4d51-a6e0-178f4bdd664c,,Receiving the patient in ward,Receiving the patient in ward,Receiving the patient in ward,Question,Coded,,Yes;No,,,
 febdca98-6781-46d9-844d-1083abcc6132,,Verified patient details and wrist band,Verified patient details and wrist band,Verified patient details and wrist band,Question,Coded,,Yes;No,,,
 74f4dc7f-7441-49f2-8ca7-931d98d9063e,,Eye cleaned with Iodine,Eye cleaned with Iodine,Eye cleaned with Iodine,Question,Coded,,Yes;No,,,
 3f7d8a73-cd2a-44c8-9f0d-be436d45e79f,,Verified consent form,Verified consent form,Verified consent form,Question,Coded,,Yes;No,,,
 5baa7935-9bab-40b0-8edf-c031503811ab,,Preoperative instruction given,Preoperative instruction given,Preoperative instruction given,Question,Coded,,Yes;No,,,
-d6bb1269-1dce-414d-8180-c84b83bf5e66,,Pulse Rate,Pulse Rate,Pulse Rate,Question,Numeric,,,,,
+d6bb1269-1dce-414d-8180-c84b83bf5e66,,Pulse Rate,Pulse Rate,Pulse Rate,Question,Numeric,,,,,,220,20
 8cff7e7a-f4f4-4572-be76-e89c0fb7e6cb,,"IOP, Duct results attached","IOP, Duct results attached","IOP, Duct results attached",Question,Coded,,Yes;No,,,
 763bc614-87f5-44cc-a14a-5ddc8713de54,,A-scan report attached,A-scan report attached,A-scan report attached,Question,Coded,,Yes;No,,,
 53b03c5c-49ec-4636-8531-041cd4730c2f,,Culture sensitivity report attached (If required),Culture sensitivity report attached (If required),Culture sensitivity report attached (If required),Question,Coded,,Yes;No,,,
@@ -19,14 +19,14 @@ aad352f1-a735-43ae-b1a1-3ff29c932854,,Drug,Drug,Drug,Question,Text,,,,,
 977bb170-1c62-492d-9533-30d6e3db18ca,,Route,Route,Route,Question,Text,,,,,
 0b96314c-0c2e-4a19-bca9-954517582f0b,,Time,Time,Time,Question,Text,,,,,
 49e72e71-ce0f-49c1-9b16-7b1012e38744,,Verified/applied by,Verified/applied by,Verified/applied by,Question,Text,,,,,
-3fdace61-e747-420d-a6b8-8d7991e8fa87,,RBS - 11.5mmol/L,RBS - 11.5mmol/L,RBS - 11.5mmol/L,Question,Numeric,,,,,Yes
+3fdace61-e747-420d-a6b8-8d7991e8fa87,,RBS - 11.5mmol/L,RBS - 11.5mmol/L,RBS - 11.5mmol/L,Question,Numeric,,,,,Yes,33.3,1.1
 db4598fb-6efe-4583-8d72-7eba65dcaf16,,RBS - 11.5mmol/L Date,RBS - 11.5mmol/L Date,RBS - 11.5mmol/L Date,Question,Date,,,,,
 24905ef1-71cd-4e42-bdfb-65c6dcbcd107,,RBS - 11.5mmol/L Time,RBS - 11.5mmol/L Time,RBS - 11.5mmol/L Time,Question,Text,,,,,
 ab0254dd-0b41-4627-b1b7-f8dafe80e2d4,,Nurse signature,Nurse signature,Nurse signature,Image,Complex,ImageUrlHandler,,,,
-558ec25c-acbd-419a-ac94-fc6cd7bdd3fc,,FBS,FBS,FBS,Question,Numeric,,,,,Yes
+558ec25c-acbd-419a-ac94-fc6cd7bdd3fc,,FBS,FBS,FBS,Question,Numeric,,,,,Yes,33.3,1.1
 1930026e-2563-4c9d-82f1-6eba4a4ca081,,FBS Date,FBS Date,FBS Date,Question,Date,,,,,
 3efe544a-2eef-4432-a1aa-017b05b7e017,,FBS Time,FBS Time,FBS Time,Question,Text,,,,,
-3816b393-b7af-4a5d-8cc5-5959129b485b,,PPBS,PPBS,PPBS,Question,Numeric,,,,,Yes
+3816b393-b7af-4a5d-8cc5-5959129b485b,,PPBS,PPBS,PPBS,Question,Numeric,,,,,Yes,33.3,1.1
 a6671dfe-9082-4207-8aa6-5759c40c65b1,,PPBS Date,PPBS Date,PPBS Date,Question,Date,,,,,
 c98f018b-b9ea-407a-9856-4b05f04c86d0,,PPBS Time,PPBS Time,PPBS Time,Question,Text,,,,,
 2c176a10-4a38-460e-854c-bf82f3e11d99,,Verify lens sticker with the IP record,Verify lens sticker with the IP record,Verify lens sticker with the IP record,Question,Coded,,Yes;No,,,
@@ -340,8 +340,8 @@ f1f4f068-fb0d-4730-8b5f-75f3caf26be2,,Time of Receiving patient in ward,Time of 
 d3bcea04-751b-4be7-8cf3-4d2c2eeab462,,Time of preoperative instruction,Time of preoperative instruction,Time of preoperative instruction,Question,Datetime,,,,,
 155c4073-6b40-421b-84c9-0babbca549cb,,Time Anesthesia Given,Time Anesthesia Given,Time Anesthesia Given,Question,Datetime,,,,,
 083e88e0-15b6-429d-83f8-aecf880312be,,Time Repeated by,Time Repeated by,Time Repeated by,Question,Datetime,,,,,
-cfb0e0e4-9e5e-4c97-acd7-891491220edd,,Blood PressureDiastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,false
-1b186058-b6e9-4adc-bb42-5dd007f0a637,,Blood PressureSystolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,false
+cfb0e0e4-9e5e-4c97-acd7-891491220edd,,Blood PressureDiastolic,Blood Pressure Diastolic,Blood Pressure Diastolic,Question,Numeric,,,,,false,160,30
+1b186058-b6e9-4adc-bb42-5dd007f0a637,,Blood PressureSystolic,Blood Pressure Systolic,Blood Pressure Systolic,Question,Numeric,,,,,false,260,50
 21f43ad5-4ce9-46a9-b2dc-9bc4ab5dc4f5,,Start Time,Start Time,Start Time,Question,Datetime,,,,,
 87a80d74-b567-40da-ac11-ba310c7668c8,,Finish Time,Finish Time,Finish Time,Question,Datetime,,,,,
 53dcb3eb-55f7-4c50-89c4-f46f82717335,,Time of Phaco,Time of Phaco,Time of Phaco,Question,Datetime,,,,,
