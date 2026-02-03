@@ -5,3 +5,8 @@ ba9797ba-076c-4233-a1d8-622a4e169b16,,Minor Operation Procedure Note,Minor Proce
 dfbcbddf-56a3-49f4-a017-3cc6e6a642b2,,Minor Operation Specimen,Minor Operation Specimen,Minor Operation Specimen,Question,Text,,,,
 53c6045a-7e0c-43b2-801c-6c65639f1417,,Date of Minor Operation,Date of Minor Operation,Date of Minor Operation,Question,Date,,,,
 e86cd00c-b364-409f-a656-d5bc88194bba,,Name of Professional,Name of Professional,Name of Professional,Question,Text,,,,
+3de3d4ea-adf9-48c0-ba16-7f98b0e9c772,,Laser Procedure Type,Laser Procedure Type,Laser Procedure Type,Question,Coded,,"Diabetic retina laser;YAG PI laser;Yag pco Rx;Laser Trabeculoplasty",,
+8ff49b54-c31b-4dda-a331-740230c70949,,Laser Procedure Note,Laser Procedure Note,Laser Procedure Note,Question,Text,,,,
+369cb705-161c-4632-94d7-885961953b9f,,Laser Procedure Complications,Laser Procedure Complications,Laser Procedure Complications,Question,Text,,,,
+02b5e58c-adf1-4f91-a2d8-676ceea88ea0,,Laser Procedure Specimen,Laser Procedure Specimen,Laser Procedure Specimen,Question,Text,,,,
+a4fad549-1bf9-4cc5-a85f-75aa279f6e75,,Date of Laser Procedure,Date of Laser Procedure,Date of Laser Procedure,Question,Date,,,,
