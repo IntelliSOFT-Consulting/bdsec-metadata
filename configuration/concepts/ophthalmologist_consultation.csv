@@ -1,5 +1,4 @@
 Uuid,Void/Retire,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,_version:1,_order:24
-0e1e97ab-41fe-4af6-954d-b43c4fc617dd,,"Complaints, History",Complaints,Patient's presenting complaints,Question,Coded,Itching sensation;Burning sensation;Watery eye;Trauma (complaint);Headache;Photophobia;Blurred vision;Visual reduction;Difficult of reading;Crossed eye;Painful eye;Swollen eye lid;Rash over eye lid;Blisters over eye lid;Protrusion of eye ball;Nil;Other,,
 ee0e58e6-c416-430e-ad7d-9e35b5005852,,"History, History",History,History of presenting illness,Question,Text,,,
 ecfb049d-ad4f-413f-a86a-f17e21f4ccb4,,"History,Ophthalmology",History,,Misc,N/A,,,
 8dad4d67-9924-4852-93f3-79cb97ab957d,,"Diabetes, Systemic Examination ",Diabetes,Whether the patient has diabetes,Question,Boolean,,,
