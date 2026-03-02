@@ -6,7 +6,6 @@ febdca98-6781-46d9-844d-1083abcc6132,,Verified patient details and wrist band,Ve
 5baa7935-9bab-40b0-8edf-c031503811ab,,Preoperative instruction given,Preoperative instruction given,Preoperative instruction given,Question,Coded,,Yes;No,,,
 d6bb1269-1dce-414d-8180-c84b83bf5e66,,Pulse Rate,Pulse Rate,Pulse Rate,Question,Numeric,,,,,,220,20
 8cff7e7a-f4f4-4572-be76-e89c0fb7e6cb,,"IOP, Duct results attached","IOP, Duct results attached","IOP, Duct results attached",Question,Coded,,Yes;No,,,
-763bc614-87f5-44cc-a14a-5ddc8713de54,,A-scan report attached,A-scan report attached,A-scan report attached,Question,Coded,,Yes;No,,,
 53b03c5c-49ec-4636-8531-041cd4730c2f,,Culture sensitivity report attached (If required),Culture sensitivity report attached (If required),Culture sensitivity report attached (If required),Question,Coded,,Yes;No,,,
 5934c25c-007e-474e-a9f8-b11df72face4,,"Check stickers (Lens, Eye to be operated, systemic, monitoring, SMO)","Check stickers (Lens, Eye to be operated, systemic, monitoring, SMO)","Check stickers (Lens, Eye to be operated, systemic, monitoring, SMO)",Question,Coded,,Yes;No,,,
 1797af85-bfa4-46d0-80b6-2fa017a2498f,,Physician fitness,Physician fitness,Physician fitness,Question,Coded,,Yes;No,,,
@@ -17,7 +16,6 @@ aad352f1-a735-43ae-b1a1-3ff29c932854,,Drug,Drug,Drug,Question,Text,,,,,
 175534da-c9d2-46a7-9162-380c6c0c02c4,,Systemic Disease(Pre-operative),Systemic Disease,Systemic Disease,Question,Text,,,,,
 85a6dc75-7913-4860-b20f-ee7c0d13124e,,Frequency,Frequency,Frequency,Question,Text,,,,,
 977bb170-1c62-492d-9533-30d6e3db18ca,,Route,Route,Route,Question,Text,,,,,
-0b96314c-0c2e-4a19-bca9-954517582f0b,,Time,Time,Time,Question,Text,,,,,
 49e72e71-ce0f-49c1-9b16-7b1012e38744,,Verified/applied by,Verified/applied by,Verified/applied by,Question,Text,,,,,
 3fdace61-e747-420d-a6b8-8d7991e8fa87,,RBS - 11.5mmol/L,RBS - 11.5mmol/L,RBS - 11.5mmol/L,Question,Numeric,,,,,Yes,33.3,1.1
 db4598fb-6efe-4583-8d72-7eba65dcaf16,,RBS - 11.5mmol/L Date,RBS - 11.5mmol/L Date,RBS - 11.5mmol/L Date,Question,Date,,,,,
