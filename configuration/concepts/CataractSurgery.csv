@@ -332,7 +332,6 @@ e85f3f30-038b-48a2-891c-90c159b6121a,,Blood Pressure Diastolic,Blood Pressure Di
 658ada66-da65-43ec-b771-b57d51ffd9fb,,Time Recorded,Time Recorded,Time Recorded,Question,Datetime,,,,,
 450d8e19-070c-4e4e-b610-0cf02715957e,,Time of Clinic Intake,Time of Clinic Intake,Time of Clinic Intake,Question,Datetime,,,,,
 f1f4f068-fb0d-4730-8b5f-75f3caf26be2,,Time of Receiving patient in ward,Time of Receiving patient in ward,Time of Receiving patient in ward,Question,Datetime,,,,,
-4e148890-edc1-4174-aa05-c9c1dae309e8,,Time of verification of patient details,Time of verification of patient details,Time of verification of patient details,Question,Datetime,,,,,
 8d6c1c8a-e155-4999-8ec2-b90a1275952e,,Time of eye cleaned,Time of eye cleaned,Time of eye cleaned,Question,Datetime,,,,,
 0444441e-7241-489b-87c4-b719872fb86b,,Time of verified consent form,Time of verified consent form,Time of verified consent form,Question,Datetime,,,,,
 d3bcea04-751b-4be7-8cf3-4d2c2eeab462,,Time of preoperative instruction,Time of preoperative instruction,Time of preoperative instruction,Question,Datetime,,,,,

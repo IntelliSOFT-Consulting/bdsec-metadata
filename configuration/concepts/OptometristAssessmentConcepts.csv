@@ -68,7 +68,6 @@ a2baca63-a259-4950-b917-7e025b70a392,,Nutritional Assessment,Nutritional Assessm
 5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Height (cm),Height,,Question,Numeric,,,,,
 ae9220b1-5f7d-4fbd-9c2a-0df38294f052,,Fully immunized,Immunization status of the child,,Misc,N/A,,,,,
 11041572-f840-4290-b055-15a2829b188f,,Not fully immunized,The child is fully immunized,,Misc,N/A,,,,,
-164464AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,,Immunization Status,The child is not fully immunized,,Question,Coded,Fully immunized;Not fully immunized,,,,
 e79f9fca-b214-4d9d-8d4d-82619f7b1cd4,,"Optometrist Assessment, Complaints",Complaints,,Misc,N/A,,,,,
 e6172951-1412-463b-993d-97fc5966aa90,,Normal skin,Normal skin,Normal skin,Misc,N/A,,,,,
 c47b3421-fc0f-4061-a0dd-380f993b3e24,,Well directed cilia,Well directed cilia,Well directed cilia,Misc,N/A,,,,,
