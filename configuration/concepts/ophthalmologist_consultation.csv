@@ -648,8 +648,6 @@ f6bdf231-8f93-4f8e-98e0-e02df7bd911a,,Surgery - Cataract,Surgery - Cataract,Surg
 be203be8-f8a5-4f8b-af97-cdfbdcadd7a5,,"Surgery, Treatment plan Right Eye",Surgery,Patient scheduled for a surgery procedure,Question,Coded,Surgery - Cataract;Surgery - Glaucoma;Surgery - Retina;Surgery - Oculoplastic,,
 4cab55b9-c33f-4580-b5cd-fd9038abadc0,,"Surgery, Treatment plan Left Eye",Surgery,Patient scheduled for a surgery procedure,Question,Coded,Surgery - Cataract;Surgery - Glaucoma;Surgery - Retina;Surgery - Oculoplastic,,
 9618435c-67b3-11ef-b6b4-325096b39f47,,"Medication, Treatment plan (answer)",Treatment plan,Treatment plan for the patient,Misc,N/A,,,
-aed7c7af-458f-4bdd-8cc7-2b7a838af847,,"Treatment Plan, Investigations Right Eye",,,Misc,Coded,None;Advice;Medication;Lazer T;Minor Surgical Procedure,,
-181a6214-cebb-46d6-860a-af1d9163007c,,"Treatment Plan, Investigations Left Eye",,,Misc,Coded,None;Advice;Medication;Lazer T;Minor Surgical Procedure,,
 47b41c0c-3103-4d00-a603-c1f03500a8be,,Investigations,,,Misc,N/A,,,
 7ae9282d-188d-43eb-92a0-518d1b051a34,,Itching sensation,Itching sensation,Itching sensation,Misc,N/A,,,
 0d481144-8db0-4755-9d42-fbfb7569b938,,Watery eye,Watery eye,Watery eye,Misc,N/A,,,
