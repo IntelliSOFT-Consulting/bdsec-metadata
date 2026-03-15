@@ -49,15 +49,34 @@ Vision Centre"
 43c05cbf-a6cf-47a9-b5df-53d09d493015,,Pharmacy Queue,Pharmacy,,,,,Misc,N/A,
 52ef06c5-f020-4d3f-9e08-24e071c20acb,,Optical Queue,Optical,,,,,Misc,N/A,
 e44f16be-1613-4c66-82b1-fca3ca6e80d7,,Counselling Patient Queue,Counselling,,,,,Misc,N/A,
+4bb025d0-6545-465b-87d7-584705789d06,,Major OR Queue,Major OR,,,,,Misc,N/A,
 82ee22c0-e2e1-478b-877c-6b8b12024d6d,,Minor OR Queue,Minor OR,,,,,Misc,N/A,
 4e8c6da5-58b2-4b13-aabf-069f19522206,,OPD 1 Queue,OPD 1,,,,,Misc,N/A,
 bbe76622-cbdc-4741-916a-1e8f2b0b62ff,,OPD 2 Queue,OPD 2,,,,,Misc,N/A,
 793112cc-cc95-4615-a186-260bd522820f,,Emergency Queue,Emergency,,,,,Misc,N/A,
+b7e79d7a-1f1d-4374-8084-2e9447350999,,Ophthalmologist Queue,Ophthalmologist,,,,,Misc,N/A,
+96e45c47-46f1-402b-a9d2-31bed67adca1,,"Medical Board Queue
+",Medical Board,,,,,Misc,N/A,
+5f83a97c-1fef-40ef-a80e-3aae1229c2bc,,Diagnostic Queue,Diagnostic,,,,,Misc,N/A,
+b4af442a-c52b-418e-a003-a1df21464b60,,IPD Queue,IPD,,,,,Misc,N/A,
+adc70caa-a19c-462f-8305-5710a00b28e9,,"Follow-up Queue
+",Follow-up,,,,,Misc,N/A,
+c359ee12-9725-42d0-a276-21827db62a11,,"Liasion office Queue
+",Liasion office,,,,,Misc,N/A,
+bb2211a5-137d-4612-a2ca-a906ad25ecef,,Discharge Queue,Discharge,,,,,Misc,N/A,
 e7db44f9-4f07-4b67-9d48-73af5b8e59af,,Patient Queue,Patient Queue,,,,,Question,Coded,"Laboratory Queue;
 Pharmacy Queue;
 Optical Queue;
 Counselling Patient Queue;
+Major OR Queue;
 Minor OR Queue;
-Emergency Queue;
 OPD 1 Queue;
-OPD 2 Queue;"
+OPD 2 Queue;
+Emergency Queue;
+Ophthalmologist Queue;
+Medical Board Queue;
+Diagnostic Queue;
+IPD Queue;
+Follow-up Queue;
+Liasion office Queue;
+Discharge Queue;"
