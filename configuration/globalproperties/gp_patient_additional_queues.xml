@@ -1,7 +1,7 @@
 <config>
   <globalProperties>
     <globalProperty>
-      <property>emrapi.sqlSearch.opdone</property>
+      <property>emrapi.sqlSearch.majoror</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -31,14 +31,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='OPD 1 Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Major OR Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tOpd1Queue
+        ) tMajorOrQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.opdtwo</property>
+      <property>emrapi.sqlSearch.medicalboard</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -68,14 +68,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='OPD 2 Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Medical Board Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tOpd2Queue
+        ) tMedBoardQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.labVisit</property>
+      <property>emrapi.sqlSearch.diagnostic</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -105,14 +105,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Laboratory Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Diagnostic Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tLabQueue
+        ) tDiagQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.pharmacy</property>
+      <property>emrapi.sqlSearch.ipd</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -142,14 +142,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Pharmacy Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='IPD Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tPharmacyQueue
+        ) tIpdQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.opticalShop</property>
+      <property>emrapi.sqlSearch.followup</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -179,14 +179,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Optical Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Follow-up Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tOpticalQueue
+        ) tFollowUpQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.counselling</property>
+      <property>emrapi.sqlSearch.liaison</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -216,14 +216,14 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Counselling Patient Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Liasion office Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tCounsellingQueue
+        ) tLiaisonQueue
       </value>
     </globalProperty>
 
     <globalProperty>
-      <property>emrapi.sqlSearch.emergency</property>
+      <property>emrapi.sqlSearch.discharge</property>
       <value>
         select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
         from (
@@ -253,83 +253,9 @@
               group by person_id
           ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
           join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Emergency Queue' and cnv.voided=0
+          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Discharge Queue' and cnv.voided=0
           where v.date_stopped is null and v.voided=0
-        ) tEmergencyQueue
-      </value>
-    </globalProperty>
-
-    <globalProperty>
-      <property>emrapi.sqlSearch.minoror</property>
-      <value>
-        select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
-        from (
-          select distinct
-            concat(pn.given_name,' ',ifnull(pn.family_name,'')) as name,
-            pi.identifier as identifier,
-            concat('',p.uuid) as uuid,
-            concat('',v.uuid) as activeVisitUuid,
-            IF(va.value_reference='Admitted','true','false') as hasBeenAdmitted,
-            vt.visit_type_id as visitType,
-            vt.name as visitTypeName
-          from visit v
-          join person_name pn on v.patient_id=pn.person_id and pn.voided=0
-          join patient_identifier pi on v.patient_id=pi.patient_id
-          join patient_identifier_type pit on pi.identifier_type=pit.patient_identifier_type_id
-          join global_property gp on gp.property='bahmni.primaryIdentifierType' and gp.property_value=pit.uuid
-          join person p on p.person_id=v.patient_id
-          join location l on l.uuid=${visit_location_uuid} and v.location_id=l.location_id
-          join visit_type vt on v.visit_type_id=vt.visit_type_id
-          left join visit_attribute va on va.visit_id=v.visit_id and va.attribute_type_id=(select visit_attribute_type_id from visit_attribute_type where name='Admission Status') and va.voided=0
-          join obs o on o.person_id=v.patient_id and o.voided=0
-          join (
-              select person_id, max(obs_datetime) as max_obs_datetime
-              from obs o_inner
-              join concept_name cn_inner on o_inner.concept_id = cn_inner.concept_id
-              where cn_inner.name = 'Patient Queue' and o_inner.voided = 0
-              group by person_id
-          ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
-          join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Minor OR Queue' and cnv.voided=0
-          where v.date_stopped is null and v.voided=0
-        ) tMinorOrQueue
-      </value>
-    </globalProperty>
-
-    <globalProperty>
-      <property>emrapi.sqlSearch.ophthalmology</property>
-      <value>
-        select name, identifier, uuid, activeVisitUuid, hasBeenAdmitted
-        from (
-          select distinct
-            concat(pn.given_name,' ',ifnull(pn.family_name,'')) as name,
-            pi.identifier as identifier,
-            concat('',p.uuid) as uuid,
-            concat('',v.uuid) as activeVisitUuid,
-            IF(va.value_reference='Admitted','true','false') as hasBeenAdmitted,
-            vt.visit_type_id as visitType,
-            vt.name as visitTypeName
-          from visit v
-          join person_name pn on v.patient_id=pn.person_id and pn.voided=0
-          join patient_identifier pi on v.patient_id=pi.patient_id
-          join patient_identifier_type pit on pi.identifier_type=pit.patient_identifier_type_id
-          join global_property gp on gp.property='bahmni.primaryIdentifierType' and gp.property_value=pit.uuid
-          join person p on p.person_id=v.patient_id
-          join location l on l.uuid=${visit_location_uuid} and v.location_id=l.location_id
-          join visit_type vt on v.visit_type_id=vt.visit_type_id
-          left join visit_attribute va on va.visit_id=v.visit_id and va.attribute_type_id=(select visit_attribute_type_id from visit_attribute_type where name='Admission Status') and va.voided=0
-          join obs o on o.person_id=v.patient_id and o.voided=0
-          join (
-              select person_id, max(obs_datetime) as max_obs_datetime
-              from obs o_inner
-              join concept_name cn_inner on o_inner.concept_id = cn_inner.concept_id
-              where cn_inner.name = 'Patient Queue' and o_inner.voided = 0
-              group by person_id
-          ) latest_obs on o.person_id = latest_obs.person_id and o.obs_datetime = latest_obs.max_obs_datetime
-          join concept_name cnq on cnq.concept_id=o.concept_id and cnq.name='Patient Queue' and cnq.voided=0
-          join concept_name cnv on cnv.concept_id=o.value_coded and cnv.name='Ophthalmologist Queue' and cnv.voided=0
-          where v.date_stopped is null and v.voided=0
-        ) tOphthQueue
+        ) tDischargeQueue
       </value>
     </globalProperty>
   </globalProperties>
