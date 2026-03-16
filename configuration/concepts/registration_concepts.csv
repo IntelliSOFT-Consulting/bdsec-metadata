@@ -64,6 +64,7 @@ adc70caa-a19c-462f-8305-5710a00b28e9,,"Follow-up Queue
 c359ee12-9725-42d0-a276-21827db62a11,,"Liasion office Queue
 ",Liasion office,,,,,Misc,N/A,
 bb2211a5-137d-4612-a2ca-a906ad25ecef,,Discharge Queue,Discharge,,,,,Misc,N/A,
+b2cefe21-e12c-4925-9aa3-b05f8d2e9aa9,,Cataract Queue,Cataract,,,,,Misc,N/A,
 e7db44f9-4f07-4b67-9d48-73af5b8e59af,,Patient Queue,Patient Queue,,,,,Question,Coded,"Laboratory Queue;
 Pharmacy Queue;
 Optical Queue;
@@ -78,5 +79,5 @@ Medical Board Queue;
 Diagnostic Queue;
 IPD Queue;
 Follow-up Queue;
-Liasion office Queue;
+Liasion office Queue; Cataract Queue;
 Discharge Queue;"
