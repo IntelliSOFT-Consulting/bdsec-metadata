@@ -1,7 +1,5 @@
 Uuid,Void/Retire,Mappings|SAME-AS,Fully specified name:en,Short name:en,Description:en,Data class,Data type,Answers,Members,_version:1,_order:3000
-1914d9b8-90b6-4087-a41b-83ba1e78e3de,,SNOMED-CT:119323008,Pus Specimen,Pus,,Specimen,N/A,,,,
 0166bbd5-8609-4c78-b830-53512a4cbbd3,,SNOMED-CT:119297000,Blood Specimen,Blood,,Specimen,N/A,,,,
-18915345-66d1-402a-b765-24f80a3a4d36,,SNOMED-CT:119373006,Amniotic Fluid Specimen,Amniotic Fluid,,Specimen,N/A,,,,
 1d372353-ff56-49d4-97dd-5274fd460156,,SNOMED-CT:119376003,Tissue Specimen,Tissue,,Specimen,N/A,,,,
 43d31d4d-01a0-47b1-854f-545d57a0c78f,,SNOMED-CT:119325001,Skin Specimen,Skin,,Specimen,N/A,,,,
 4a716a48-08db-4ecb-b1ae-5b528f369d88,,,Urethral fluid,Urethral fluid,,Specimen,N/A,,,,
