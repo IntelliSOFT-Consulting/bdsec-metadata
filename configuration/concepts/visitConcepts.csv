@@ -7,12 +7,9 @@ c1e221e8-d05e-4cf0-8034-e596f2709fe9,,Free,,,,,,Misc,N/A,
 1998cde3-3d7d-4682-bf8b-2243cd2f6265,,Subsidized,,,,,,Misc,N/A,
 497706a9-18ad-4003-91c4-fcfd1761f4b2,,Full-paying,,,,,,Misc,N/A,
 2e4c5135-280a-4b1f-a171-2919cc1c4090,,Paying,,,,,,Misc,N/A,
-a0bf39ed-f42a-4d97-9ccc-e4d64830480b,,Mode of Payment,Mode of Payment,,,,,Question,Coded,"
-Cash;
-Credit;
-Insurance;
-Electronic;
-Subsidized;"
+c57bb944-3ac5-4871-85d9-0a537632c479,,CBHI,,,,,,Misc,N/A,
+a0bf39ed-f42a-4d97-9ccc-e4d64830480b,,Mode of Payment,Mode of Payment,,,,,Question,Coded,"2930dbfd-6902-447b-adf4-f03e79605977;
+fc894152-07be-4e77-9dac-2a164e400a13; c57bb944-3ac5-4871-85d9-0a537632c479"
 adb10fc0-794f-4443-89ff-c77aec731cd8,,Payment Method,,,,,,Question,Coded,"
 Paying;
 Free;"
