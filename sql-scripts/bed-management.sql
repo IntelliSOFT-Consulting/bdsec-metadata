@@ -37,7 +37,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (4,'IPD-0003', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1),
             (5,'IPD-0005', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (1,@location_id, 1, 1, 1),
             (2,@location_id, 1, 2, 2),
             (3,@location_id, 1, 3, 3),
@@ -61,7 +61,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (9,'IPD-0009', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1),
             (10,'IPD-0010', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (6,@location_id, 1, 1, 6),
             (7,@location_id, 1, 2, 7),
             (8,@location_id, 1, 3, 8),
@@ -84,7 +84,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (14,'IPD-0014', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1),
             (15,'IPD-0015', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (11,@location_id, 1, 1, 11),
             (12,@location_id, 1, 2, 12),
             (13,@location_id, 1, 3, 13),
@@ -107,7 +107,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (19,'IPD-0019', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1),
             (20,'IPD-0020', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (16,@location_id, 1, 1, 16),
             (17,@location_id, 1, 2, 17),
             (18,@location_id, 1, 3, 18),
@@ -130,7 +130,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (24,'IPD-0024', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1),
             (25,'IPD-0025', 'AVAILABLE', @ipd_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (21,@location_id, 1, 1, 21),
             (22,@location_id, 1, 2, 22),
             (23,@location_id, 1, 3, 23),
@@ -157,7 +157,7 @@ INSERT IGNORE INTO location_tag_map (location_id, location_tag_id) VALUES (@loca
 INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, date_created, creator)
     VALUES  (26,'VIP-0001', 'AVAILABLE',@vip_bed_type_id , UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (26,@location_id, 1, 1, 26);
 
 -- VIP WARD II
@@ -171,7 +171,7 @@ INSERT IGNORE INTO location_tag_map (location_id, location_tag_id) VALUES (@loca
 INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, date_created, creator)
     VALUES  (27,'VIP-0002', 'AVAILABLE',@vip_bed_type_id , UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (27,@location_id, 1, 1, 27);
 
 -- VIP WARD III
@@ -185,7 +185,7 @@ INSERT IGNORE INTO location_tag_map (location_id, location_tag_id) VALUES (@loca
 INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, date_created, creator)
     VALUES  (28,'VIP-0003', 'AVAILABLE',@vip_bed_type_id , UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (28,@location_id, 1, 1, 28);
 
 -- VIP WARD IV
@@ -199,7 +199,7 @@ INSERT IGNORE INTO location_tag_map (location_id, location_tag_id) VALUES (@loca
 INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, date_created, creator)
     VALUES  (29,'VIP-0004', 'AVAILABLE',@vip_bed_type_id , UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (29,@location_id, 1, 1, 29);
 
 
@@ -226,7 +226,7 @@ INSERT IGNORE INTO bed (bed_id, bed_number, status, bed_type_id, uuid, voided, d
             (34,'REC-0005', 'AVAILABLE',@recovery_bed_type_id, UUID(), false, NOW(), 1),
             (35,'REC-0006', 'AVAILABLE',@recovery_bed_type_id, UUID(), false, NOW(), 1);
 -- arrange beds
-INSERT IGNORE bed_location_map(bed_location_map_id, location_id, bed_row_number, bed_column_number, bed_id)
+INSERT IGNORE bed_location_map(bed_location_map_id, location_id, `row_number`, `column_number`, bed_id)
     VALUES  (30,@location_id, 1, 1, 30),
             (31,@location_id, 1, 2, 31),
             (32,@location_id, 1, 3, 32),

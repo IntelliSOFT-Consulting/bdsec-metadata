@@ -14,13 +14,18 @@ This document covers both directions of the billing integration:
 ```
 Save button (Bahmni registration page 2)
   └─▶ visitController.js  submit() → save() → submitFeeToOdoo()
-        └─▶ POST /openmrs/ws/rest/v1/odooconnector/consultation-fee
-              └─▶ ConsultationFeeController  (validate fields)
-                    └─▶ ConsultationFeeOdooService
-                          ├─▶ POST https://bdsec.grace-erp-consultancy.com/web/session/authenticate
-                          │         (JSON-RPC auth → get session_id from Set-Cookie header)
-                          └─▶ POST https://bdsec.grace-erp-consultancy.com/api/bdsec/sales
-                                    (consultation sale order payload + Cookie: session_id)
+        └─▶ popup: "Synchronizing Patient with Billing System..." (attemptSync)
+              └─▶ POST /openmrs/ws/rest/v1/odooconnector/consultation-fee
+                    └─▶ ConsultationFeeController  (validate fields)
+                          └─▶ ConsultationFeeOdooService  (up to maxRetries+1 attempts, backoff between)
+                                ├─▶ POST .../web/session/authenticate  (JSON-RPC → session_id from Set-Cookie)
+                                └─▶ POST .../api/bdsec/sales  (sale order payload + Cookie: session_id)
+        ┌────────────────────────────────────────────────────────────────────────────┐
+        │ success            → popup: "Consultation Order Sent to Billing"            │
+        │ errorType=patient_sync_failed → popup: "Patient Sync Failed" + Retry/OK      │
+        │ errorType=order_failed        → popup: "Consultation Order Failed" + Retry/OK│
+        └────────────────────────────────────────────────────────────────────────────┘
+              Retry → attemptSync() again (no re-save of the encounter)
 ```
 
 ---
@@ -84,6 +89,10 @@ Set these in **Administration → Manage Global Properties** (or via SQL provisi
 | `odooconnector.odooPassword` | `Admin123` | Service-account password |
 | `odooconnector.consultation.odooPath` | `/api/bdsec/sales` | Sales endpoint path |
 | `odooconnector.consultation.shopId` | `1` | Odoo POS shop ID for consultations |
+| `odooconnector.consultation.connectTimeoutSeconds` | `15` | Max seconds to wait for the TCP/TLS connection to Odoo to establish |
+| `odooconnector.consultation.readTimeoutSeconds` | `30` | Max seconds to wait for Odoo's response once a request has been sent |
+| `odooconnector.consultation.maxRetries` | `2` | Automatic retries (in addition to the first attempt) on connection-level failures only |
+| `odooconnector.consultation.retryBackoffMillis` | `1500` | Base backoff delay (ms) before each retry, multiplied by the attempt number |
 
 To change the Odoo server URL without touching code:
 
@@ -202,6 +211,11 @@ Field names must match exactly (Odoo is case-sensitive):
 
 ## 5. Expected Responses
 
+Every response now includes `patientSynced` (boolean). Failure responses additionally include
+`errorType`, set to either `"patient_sync_failed"` or `"order_failed"` — see
+§10 Patient-Sync vs. Order Classification for exactly
+how that's decided. The encounter save itself is **never blocked** by any of these outcomes.
+
 ### Success
 
 ```json
@@ -220,22 +234,67 @@ Field names must match exactly (Odoo is case-sensitive):
   "is_cbhi_patient": true,
   "is_insurance_customer": false,
   "state": "draft",
-  "warnings": []
+  "warnings": [],
+  "patientSynced": true
 }
 ```
 
-### Odoo unreachable (encounter still saved — non-fatal)
+### Patient sync failed — Odoo unreachable after retries (live-tested 2026-06-17)
+
+Encounter is still saved — non-fatal. `odooconnector.odooUrl` was pointed at an unreachable host;
+3 attempts (1 initial + 2 retries, 1.5s then 3s backoff) were made before giving up:
 
 ```json
 {
-  "status": "consultation_logged",
-  "error": "Failed to connect to https://bdsec.grace-erp-consultancy.com: Connection timed out",
+  "status": "error",
+  "errorType": "patient_sync_failed",
+  "patientSynced": false,
+  "message": "Unable to reach the billing system (Odoo) to synchronize the patient record after 3 attempt(s): unreachable.invalid.test-domain-bahmni-2",
+  "patientUuid": "5d2216ac-00a7-460e-9bd6-a3f0ea97fbc4",
+  "VisitUuid": "bf625a64-7a01-4e64-bda1-1e299a345a9e"
+}
+```
+
+### Order failed — Odoo rejected the sale order (live-tested 2026-06-17)
+
+Triggered with `Payment_type: "free"` (an invalid Odoo selection value — see §3 table). Odoo's
+`/api/bdsec/sales` returns `{status, error, details}` with **no patient fields at all** even though
+the patient may already exist as an Odoo customer — so this is classified as `order_failed`, not
+`patient_sync_failed`, and Odoo's own error text is surfaced verbatim:
+
+```json
+{
+  "odooResponseCode": 500,
+  "status": "error",
+  "error": "Failed to create sale order.",
+  "details": "Wrong value for sale.order.payment_type: 'free'",
+  "patientSynced": false,
+  "errorType": "order_failed",
+  "message": "Failed to create sale order. Wrong value for sale.order.payment_type: 'free'",
+  "patientUuid": "79de723b-50e3-4e90-9e91-adf8bae73a26",
+  "VisitUuid": "292e8fb2-5e02-4776-bff4-63799870e8ae"
+}
+```
+
+### Order failed — patient synced, sale order missing from response
+
+```json
+{
+  "status": "error",
+  "errorType": "order_failed",
+  "patientSynced": true,
+  "patient_id": 36,
+  "patient_name": "Abebe Alemu Ale",
+  "message": "Patient synchronized, but the consultation order could not be created.",
   "patientUuid": "3b6a5e2a-1234-4b9c-a832-000000000001",
   "VisitUuid": "9f3d0c11-abcd-4321-bcde-000000000002"
 }
 ```
 
 ### Validation failure — missing required field
+
+Unreachable from the real UI (the frontend already guards on `patientUuid`/`visitUuid` before
+calling this endpoint); kept for completeness when testing the controller directly:
 
 ```json
 {
@@ -327,6 +386,50 @@ curl -v \
 # Expected: {"status":"success","sale_order_id":...,"sale_order_name":"S000..."}
 ```
 
+### Step 6: Simulate patient-sync failure (Odoo unreachable) and verify retry
+
+```bash
+# 1. Point odooUrl at an unreachable host via the systemsetting REST resource
+#    (a raw SQL UPDATE will NOT work — OpenMRS caches global properties in memory
+#    and only reloads them when set through AdministrationService/REST)
+GP_UUID=$(curl -sk -b /tmp/omrs.txt \
+  "https://localhost/openmrs/ws/rest/v1/systemsetting?q=odooconnector.odooUrl" \
+  | python3 -c "import sys,json; print(json.load(sys.stdin)['results'][0]['uuid'])")
+
+curl -sk -b /tmp/omrs.txt -X POST "https://localhost/openmrs/ws/rest/v1/systemsetting/${GP_UUID}" \
+  -H "Content-Type: application/json" \
+  -d '{"value":"https://unreachable.invalid.test-domain"}'
+
+# 2. Post a consultation payload — expect ~9s elapsed (3 attempts: 0s, +1.5s, +3s backoff)
+curl -v -b /tmp/omrs.txt \
+  -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/consultation-fee" \
+  -H "Content-Type: application/json" \
+  -d '{"patientId":"ABC200023","patientUuid":"REPLACE-WITH-REAL-PATIENT-UUID",
+       "currentVisitUuid":"REPLACE-WITH-REAL-VISIT-UUID","paymentMethod":"cash","modeOfPayment":"cash"}'
+# Expected: {"status":"error","errorType":"patient_sync_failed","patientSynced":false,
+#            "message":"Unable to reach the billing system (Odoo) ... after 3 attempt(s): ..."}
+
+# 3. Restore the real URL
+curl -sk -b /tmp/omrs.txt -X POST "https://localhost/openmrs/ws/rest/v1/systemsetting/${GP_UUID}" \
+  -H "Content-Type: application/json" \
+  -d '{"value":"https://bdsec.grace-erp-consultancy.com"}'
+
+# 4. Re-post the same payload (this is what clicking "Retry" in the popup does) — expect success
+```
+
+### Step 7: Trigger an order-level rejection (patient may already be synced, order is not)
+
+```bash
+curl -v -b /tmp/omrs.txt \
+  -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/consultation-fee" \
+  -H "Content-Type: application/json" \
+  -d '{"patientId":"ABC200023","patientUuid":"REPLACE-WITH-REAL-PATIENT-UUID",
+       "currentVisitUuid":"REPLACE-WITH-REAL-VISIT-UUID","paymentMethod":"free","modeOfPayment":"free"}'
+# Expected: {"status":"error","errorType":"order_failed","patientSynced":false,
+#            "error":"Failed to create sale order.","details":"Wrong value for sale.order.payment_type: 'free'",
+#            "message":"Failed to create sale order. Wrong value for sale.order.payment_type: 'free'"}
+```
+
 ---
 
 ## 7. OpenMRS Log Verification
@@ -345,9 +448,23 @@ INFO  ConsultationFeeOdooService - [ConsultationFee] Odoo sales response — HTT
 INFO  ConsultationFeeOdooService - [ConsultationFee] Sale order created successfully — sale_order_id=76 sale_order_name=S00076 patient_name=...
 ```
 
-On Odoo unreachability:
+On a connection-level failure, each attempt and the final outcome are logged (live capture,
+2026-06-17 — note the ~1.5s then ~3s gaps matching `retryBackoffMillis × attempt`):
 ```
-ERROR ConsultationFeeOdooService - [ConsultationFee] Failed to reach Odoo — encounter already saved, payload not forwarded: ...
+WARN  ConsultationFeeOdooService - [ConsultationFee] Attempt 1 failed for patientUuid=... — unreachable...: Name or service not known — retrying after backoff
+WARN  ConsultationFeeOdooService - [ConsultationFee] Attempt 2 failed for patientUuid=... — unreachable... — retrying after backoff
+WARN  ConsultationFeeOdooService - [ConsultationFee] Attempt 3 failed for patientUuid=... — unreachable... — giving up
+ERROR ConsultationFeeOdooService - [ConsultationFee] Patient sync to Odoo FAILED after 3 attempt(s) for patientUuid=... — encounter already saved, payload not forwarded: ...
+```
+
+On an order-level rejection (patient may or may not be synced; Odoo returned a structured error):
+```
+WARN  ConsultationFeeOdooService - [ConsultationFee] Odoo rejected the ORDER (structured error, patient status unknown) — patientId=... patientUuid=... httpCode=500 message=Failed to create sale order. ...
+```
+
+On a genuine patient-sync rejection (Odoo's response had no patient fields and no structured error):
+```
+WARN  ConsultationFeeOdooService - [ConsultationFee] Patient sync FAILED — patientId=... patientUuid=... httpCode=...
 ```
 
 ---
@@ -355,13 +472,21 @@ ERROR ConsultationFeeOdooService - [ConsultationFee] Failed to reach Odoo — en
 ## 8. End-to-End Test Checklist
 
 - [ ] Register a new patient (page 1: name, DOB, gender, patient ID)
-- [ ] On page 2 fill: Consultation Fee, Payment Method (`free` or `cash`), Mode of Payment (`CBHI` or `OOP`)
+- [ ] On page 2 fill: Payment Method (`free` or `cash`), Mode of Payment (`CBHI`/`cash`/`insurance`)
 - [ ] Click **Save**
+- [ ] Popup immediately shows the loading state: "Synchronizing Patient with Billing System..."
 - [ ] Browser console shows: `[ConsultationFee] Preparing to sync — patientId: ABC2XXXXX`
-- [ ] Browser console shows: `[ConsultationFee] Synced to Odoo connector successfully`
+- [ ] Popup turns to "Consultation Order Sent to Billing" (success) showing Status/Message/Patient Name
 - [ ] `openmrs.log` shows auth succeeded and sale order created
 - [ ] Odoo back-office shows a new draft sale order (S000XX) for the patient
-- [ ] Repeat with Odoo temporarily unreachable: encounter still saves, browser shows warning toast, log shows `consultation_logged`
+- [ ] Simulate Odoo unreachable (systemsetting REST call, see §6 Step 6): popup shows
+      **"Patient Sync Failed"** with the specific reachability message and a **Retry** button —
+      it must NOT say anything about a generic billing/order error
+- [ ] Restore the real Odoo URL, click **Retry** in the popup: registration is NOT re-submitted
+      (no new encounter created), only the sync re-attempts, and it succeeds
+- [ ] Trigger an order-level rejection (Mode of Payment = `free`, see §6 Step 7): popup shows
+      **"Consultation Order Failed"** with Odoo's actual validation message (e.g. "Wrong value for
+      sale.order.payment_type: 'free'"), not a generic patient-sync message
 - [ ] Test with missing `patientUuid` in payload: controller returns `{"status":"rejected",...}`
 
 ---
@@ -371,12 +496,116 @@ ERROR ConsultationFeeOdooService - [ConsultationFee] Failed to reach Odoo — en
 - `default_code` is always `"consultation"` — hardcoded in `ConsultationFeeOdooService.buildSalesPayloadJson()`. Odoo resolves the product price from this code.
 - `quantity` is always `1` — hardcoded alongside `default_code`.
 - `shop_id` comes from the `odooconnector.consultation.shopId` global property (integer, default `1`).
-- The Bahmni encounter save is **never blocked** by Odoo failures. If Odoo is down, the service logs the error and returns `status=consultation_logged`.
+- The Bahmni encounter save is **never blocked** by Odoo failures. If Odoo is down, the service retries (see §10) and ultimately returns `status: "error", errorType: "patient_sync_failed"` — the encounter itself is already saved regardless.
 - Session authentication is performed fresh on every request. Odoo sessions are short-lived; caching was deliberately not added to avoid stale-session bugs.
 - `Mode of Payment` concept answers are automatically lowercased before sending (`"Cash"` → `"cash"`) to satisfy Odoo's case-sensitive Payment_type validation.
 - The sync fires on every Save regardless of whether a "Consultation Fee" observation exists — Odoo determines the price from the `consultation` product code.
 
 ---
+
+## 10. Patient-Sync vs. Order Classification, Retry & Timeout Behavior
+
+`/api/bdsec/sales` does two things in one call — finds/creates the Odoo customer ("patient sync")
+and creates the sale order ("billing"). Its response shape is the only signal available to
+distinguish which part failed, so `ConsultationFeeOdooService.postSalesOrder()` classifies it like
+this (in order):
+
+1. **Connection-level failure** (DNS, refused connection, connect-phase timeout) before any data
+   reached Odoo → retried automatically (see §2 GP table: `maxRetries`, `retryBackoffMillis`),
+   then `errorType: "patient_sync_failed"`.
+2. Response contains `patient_id` / `patient_name` / `bahmni_patient_id` **and** `sale_order_id` /
+   `sale_order_name` **and** HTTP was successful → success.
+3. Response contains patient fields but **no** sale fields → `errorType: "order_failed"` (patient
+   confirmed synced, order step failed).
+4. Response has no patient fields but **does** contain `status` or `error`/`details` → Odoo's
+   application code ran and explicitly rejected the order (e.g. invalid `Payment_type`) →
+   `errorType: "order_failed"`, with Odoo's own `error`/`details` text surfaced as the message.
+   **Confirmed empirically (2026-06-17): Odoo's `/api/bdsec/sales` does not echo back any
+   patient_* fields on this kind of rejection, even though the customer record may already exist.**
+   Treating it as `patient_sync_failed` would have been misleading and non-actionable (retrying
+   with the same bad value fails identically every time).
+5. Anything else (unparseable body, no recognizable fields at all) → conservative default,
+   `errorType: "patient_sync_failed"`.
+
+**What gets auto-retried and what doesn't:** only connection-level failures (`UnknownHostException`,
+`ConnectException`, or any `IOException` whose message contains "connect") are retried — these
+happen before any data reaches Odoo, so retrying is always safe. A read-timeout on the sales call
+itself is **not** auto-retried, because Odoo may have already created the sale order and a blind
+retry could create a duplicate (`/api/bdsec/sales` has no idempotency key, unlike the inbound
+`billing/orders` endpoint — see Part B). This is the same business risk a clerk re-clicking Save
+already carries today.
+
+**Frontend Retry button:** on any `errorType` (or a total `$http` failure reaching our own
+controller), `visitController.js` shows a popup with **Retry** and **OK**. Retry re-POSTs the same
+payload — the encounter is already saved at this point, so nothing about registration is re-run.
+OK gives up and lets the user continue; the billing desk can reconcile manually. No silent
+client-side auto-retry was added on top of the backend's own retry loop — the single `$http` call
+already legitimately takes longer (up to `connectTimeoutSeconds × (maxRetries+1)` in the worst
+case) instead of failing fast, which is what avoids flashing "Error" while sync is still genuinely
+in progress.
+
+---
+
+## 11. Auto-Replication into `odoo_billing_payment_status` (PENDING)
+
+As soon as `ConsultationFeeOdooService.postSalesOrder()` classifies the Odoo response as a full
+success (patient synced **and** sale order created, see §10 step 2), it now also replicates that
+same response into `odoo_billing_payment_status` with `payment_status=PENDING`, via the exact same
+persistence path Part B's inbound `billing/orders` endpoint uses (`BillingOrderService`) — so the
+payment gate (`BillingPaymentGateInterceptor`, the Patient Queue gate in Part C, and
+`/odoo/billing/is-paid`) has a row to find immediately, instead of waiting for Odoo to
+asynchronously push the real payment confirmation back later via Part B.
+
+- **Trigger:** only the full-success branch in `postSalesOrder()` — `errorType=patient_sync_failed`
+  and `errorType=order_failed` responses are never replicated, since there is no real sale order to
+  record yet.
+- **Mapping:** `sale_id` ← Odoo's `sale_order_id`, `sale_name` ← `sale_order_name`, `patient_id` ←
+  the Bahmni `patient_unique_id` already in scope, `patient_uuid`/`visit_uuid` ← the same values
+  sent to Odoo, `customer_type` ← Odoo's `payment_type` if present, `services` ← a single
+  `Consultation` entry (matching the hardcoded `default_code` sent to Odoo). `amountDue`/
+  `amountPaid`/`currency` are left to `BillingOrderService`'s own defaults (`0.00`/`0.00`/`ETB`),
+  since Odoo's `/api/bdsec/sales` response carries no price information.
+- **New internal entry point:** `BillingOrderService.processBillingOrder(Map<String, Object> body)`
+  — an overload of the existing `processBillingOrder(body, httpResponse)` for callers with no
+  `HttpServletResponse` (i.e. not an inbound HTTP request from Odoo). Validation/error paths behave
+  identically; they just have no HTTP status code to set.
+- **Failure isolation:** the replication call is wrapped in try/catch — any failure is logged as a
+  WARN and swallowed. It can never change the `consultation-fee` response already being returned to
+  the Bahmni frontend, consistent with the rest of this service's non-fatal design (§9).
+- **Idempotency / future PAID push:** the row is keyed on `(sale_id, payment_status)` exactly as in
+  Part B. When Odoo later pushes the real payment confirmation through `billing/orders` with
+  `payment_status=paid` (or `waived`), that is a status **transition** for the same `sale_id`, not a
+  duplicate — it is persisted as a brand-new history row per §9, and the gate's
+  `ORDER BY odooSyncTimestamp DESC LIMIT 1` picks up the newer PAID/WAIVED row automatically. The
+  PENDING row is never overwritten in place.
+
+**Live-tested (2026-06-18):** new patient `BDSEC200028` (uuid
+`ad4ed236-ce0e-4c2e-a01d-0e309bdc96dd`), visit uuid `6fd5663e-df0b-4cee-8c47-4a088428b532`, posted to
+`/odooconnector/consultation-fee` with `paymentMethod=cash`, `modeOfPayment=cash`:
+
+```json
+{
+  "status": "success",
+  "sale_order_id": 172,
+  "sale_order_name": "S00186",
+  "patient_name": "Claude TestPatient",
+  "bahmni_patient_id": "BDSEC200028",
+  "patientSynced": true
+}
+```
+
+Resulting row in `odoo_billing_payment_status`:
+
+```
+id=29 patient_id=BDSEC200028 visit_id=42 service_type=CONSULTATION
+service_reference_id=172 odoo_invoice_id=S00186 payment_status=PENDING
+amount_paid=0.00 amount_due=0.00 currency=ETB
+```
+
+`GET /odoo/billing/is-paid?patientUuid=ad4ed236-...&visitUuid=6fd5663e-...&serviceType=CONSULTATION`
+immediately afterward → `{"paid":false,"patientId":"BDSEC200028","visitId":42,"serviceType":"CONSULTATION"}`
+— confirming the gate sees the PENDING row right away and continues to block until Odoo separately
+pushes a `paid`/`waived` status through Part B's endpoint.
 
 ---
 
@@ -478,11 +707,11 @@ All fields and their behaviour:
 
 | Field | Type | Required | Notes |
 |-------|------|----------|-------|
-| `sale_id` | integer | **Yes** | Odoo sale order ID — used as the idempotency key |
+| `sale_id` | integer | **Yes** | Odoo sale order ID — idempotency key together with `payment_status` (see §9) |
 | `sale_name` | string | No | e.g. `"S00042"` — stored as `odoo_invoice_id` |
 | `patient_name` | string | No | Informational — not stored |
-| `patient_id` | string | No | Bahmni identifier e.g. `"BDSEC200010"` — informational |
-| `patient_uuid` | string (UUID) | **Yes** | Resolved to OpenMRS patient integer ID |
+| `patient_id` | string | No | Bahmni identifier e.g. `"BDSEC200010"` — cross-checked against the identifier resolved from `patient_uuid`; **never used directly for persistence**. A numeric value here is ignored with a WARN log (see §9) |
+| `patient_uuid` | string (UUID) | **Yes** | Resolved to a `Patient`; its **preferred identifier string** (e.g. `"BDSEC200024"`) is what gets stored as `patient_id` — never the numeric database ID |
 | `visit_uuid` | string (UUID) | **Yes** | Resolved to OpenMRS visit integer ID |
 | `amountDue` | number | No | Remaining balance — default `0.00` |
 | `amountPaid` | number | No | Amount paid — default `0.00` |
@@ -513,7 +742,10 @@ The following patients and visits exist in the local Bahmni instance and can be 
 
 ### 5. curl Test Scripts (Part B)
 
-Use `sale_id` values that have not been used before — each `sale_id` can only be submitted once (idempotency). Increment the number for each new test run.
+Use `sale_id` values that have not been used before. A `sale_id` can be re-submitted any number of
+times **as long as `payment_status` changes** — each distinct (`sale_id`, `payment_status`) pair
+gets its own append-only history row (see §9); only re-sending the exact same pair is treated as a
+duplicate.
 
 #### Test 1 — No credentials → HTTP 401
 ```bash
@@ -608,9 +840,9 @@ curl -k -s \
 # Expected: two rows in odoo_billing_payment_status, internal_billing_id points to first row
 ```
 
-#### Test 6 — Duplicate sale_id → same BILL-XXXXXX returned
+#### Test 6 — Duplicate (sale_id, payment_status) → same BILL-XXXXXX returned
 ```bash
-# Re-send Test 3 payload exactly (sale_id=201)
+# Re-send Test 3 payload exactly (sale_id=201, payment_status=paid)
 curl -k -s \
   -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/billing/orders" \
   -H "Content-Type: application/json" \
@@ -622,8 +854,44 @@ curl -k -s \
     "payment_status": "paid",
     "services": [{"serviceType": "Consultation"}]
   }'
-# Expected: {"message":"Billing order already processed (duplicate sale_id)","internal_billing_id":"BILL-XXXXXX",...}
+# Expected: {"message":"Billing order already processed (duplicate sale_id + payment_status)","internal_billing_id":"BILL-XXXXXX",...}
 # internal_billing_id MUST match the one from Test 3
+```
+
+#### Test 6b — Status transition for the same sale_id → NEW row, NOT a duplicate (live-tested 2026-06-17)
+```bash
+# First push: PENDING
+curl -k -s -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/billing/orders" \
+  -H "Content-Type: application/json" -H "Authorization: Bearer test-token-123" \
+  -d '{"sale_id":555,"sale_name":"S00555","patient_id":"BDSEC200024",
+       "patient_uuid":"5d2216ac-00a7-460e-9bd6-a3f0ea97fbc4","visit_uuid":"bf625a64-7a01-4e64-bda1-1e299a345a9e",
+       "amountDue":500.00,"amountPaid":0.00,"currency":"ETB","payment_status":"pending",
+       "services":[{"serviceType":"Consultation","price_unit":500.00}]}'
+# -> {"internal_billing_id":"BILL-000022", ...}  (new row, id=22, payment_status=PENDING)
+
+# Second push, SAME sale_id, status now PAID — NOT treated as a duplicate
+curl -k -s -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/billing/orders" \
+  -H "Content-Type: application/json" -H "Authorization: Bearer test-token-123" \
+  -d '{"sale_id":555,"sale_name":"S00555","patient_id":"BDSEC200024",
+       "patient_uuid":"5d2216ac-00a7-460e-9bd6-a3f0ea97fbc4","visit_uuid":"bf625a64-7a01-4e64-bda1-1e299a345a9e",
+       "amountDue":0.00,"amountPaid":500.00,"currency":"ETB","payment_status":"paid",
+       "services":[{"serviceType":"Consultation","price_unit":500.00}]}'
+# -> {"internal_billing_id":"BILL-000023", ...}  (a SECOND new row, id=23, payment_status=PAID — id=22 is untouched)
+
+# Re-sending the PAID payload a third time IS a duplicate (same sale_id + same status)
+# -> {"message":"... (duplicate sale_id + payment_status)","internal_billing_id":"BILL-000023", ...}  (still id=23, no third row)
+```
+
+#### Test 6c — Numeric patient_id in the payload is ignored, not stored (live-tested 2026-06-17)
+```bash
+curl -k -s -X POST "https://localhost/openmrs/ws/rest/v1/odooconnector/billing/orders" \
+  -H "Content-Type: application/json" -H "Authorization: Bearer test-token-123" \
+  -d '{"sale_id":556,"patient_id":"12345",
+       "patient_uuid":"5d2216ac-00a7-460e-9bd6-a3f0ea97fbc4","visit_uuid":"bf625a64-7a01-4e64-bda1-1e299a345a9e",
+       "payment_status":"pending","services":[{"serviceType":"Consultation"}]}'
+# Succeeds (HTTP 200) but logs:
+# WARN [BillingOrder] Payload patient_id='12345' is numeric — ignoring it, using resolved Bahmni identifier 'BDSEC200024' instead
+# SELECT patient_id FROM odoo_billing_payment_status WHERE service_reference_id='556' -> 'BDSEC200024', NOT '12345'
 ```
 
 #### Test 7 — Unknown patient_uuid → HTTP 400
@@ -667,14 +935,22 @@ curl -k -s -w "\nHTTP %{http_code}" \
 }
 ```
 
-**Success — duplicate sale_id (HTTP 200, same `internal_billing_id`):**
+**Success — duplicate (sale_id, payment_status) pair (HTTP 200, same `internal_billing_id`):**
 ```json
 {
   "status": "success",
-  "message": "Billing order already processed (duplicate sale_id)",
+  "message": "Billing order already processed (duplicate sale_id + payment_status)",
   "external_sale_id": 201,
   "internal_billing_id": "BILL-000017",
   "processed_at": "2026-05-29T11:32:00Z"
+}
+```
+
+**Patient has no identifier (HTTP 400):**
+```json
+{
+  "status": "error",
+  "message": "Patient <uuid> has no identifier — cannot process billing order"
 }
 ```
 
@@ -722,9 +998,14 @@ INFO  BillingOrderService    - [BillingOrder] Mapped — patientId=82 visitId=25
 INFO  BillingOrderService    - [BillingOrder] Saved record — id=17 serviceType=CONSULTATION status=PAID
 ```
 
-**Duplicate sale_id:**
+**Duplicate (sale_id, payment_status):**
 ```
-INFO  BillingOrderService    - [BillingOrder] Duplicate sale_id=201 — returning cached response (record id=17)
+INFO  BillingOrderService    - [BillingOrder] Duplicate sale_id=201 payment_status=PAID — returning cached response (record id=17)
+```
+
+**Numeric patient_id in payload (live capture, 2026-06-17):**
+```
+WARN  BillingOrderService    - [BillingOrder] Payload patient_id='12345' is numeric — ignoring it, using resolved Bahmni identifier 'BDSEC200024' instead
 ```
 
 **Auth failure:**
@@ -742,25 +1023,137 @@ WARN  BillingOrderController - [BillingOrder] 401 Unauthorized — sale_id=201
 - [ ] Test 3: cash patient, `payment_status=paid` → HTTP 200, `internal_billing_id` returned
 - [ ] Test 4: CBHI patient, `payment_status=waived` → HTTP 200
 - [ ] Test 5: two services in one payload → HTTP 200, two rows in `odoo_billing_payment_status`
-- [ ] Test 6: same `sale_id` re-submitted → HTTP 200, **identical** `internal_billing_id`, message "already processed"
+- [ ] Test 6: same `sale_id` + same `payment_status` re-submitted → HTTP 200, **identical** `internal_billing_id`, message "already processed"
+- [ ] Test 6b: same `sale_id`, **different** `payment_status` (e.g. PENDING then PAID) → HTTP 200 both times, **two different** `internal_billing_id` values, **both** rows present in the table (history preserved, not overwritten)
+- [ ] Test 6c: payload `patient_id` is a numeric string (e.g. `"12345"`) → HTTP 200, WARN logged, but the stored `patient_id` is the resolved Bahmni identifier, never `"12345"`
 - [ ] Test 7: unknown `patient_uuid` → HTTP 400, message "Patient not found"
 - [ ] Test 8: missing `sale_id` → HTTP 400, message lists all required fields
 - [ ] Update `inboundBearerToken` in Global Properties → old token rejected, new token accepted (no restart needed)
-- [ ] Verify `odoo_billing_payment_status` table rows via SQL:
+- [ ] Verify `odoo_billing_payment_status` table rows via SQL — `patient_id` must always look like a Bahmni identifier (e.g. `BDSEC200024`), never a bare integer:
   ```sql
   SELECT id, patient_id, visit_id, service_type, service_reference_id,
          odoo_invoice_id, payment_status, amount_paid, currency
   FROM odoo_billing_payment_status
   ORDER BY id DESC LIMIT 10;
   ```
+- [ ] For one `sale_id` pushed twice with different statuses, confirm both rows survive in order:
+  ```sql
+  SELECT id, patient_id, payment_status FROM odoo_billing_payment_status
+  WHERE service_reference_id = '555' ORDER BY id;
+  -- Expected: id=22 PENDING, id=23 PAID — both present, neither overwritten
+  ```
 
 ---
 
 ### 9. Implementation Notes (Part B)
 
-- **Idempotency key:** `sale_id` is stored as `service_reference_id`. On a duplicate submission the endpoint short-circuits and returns the original `internal_billing_id` without writing any new rows.
-- **UUID resolution:** `patient_uuid` and `visit_uuid` are resolved to OpenMRS integer IDs via `PatientService` / `VisitService`. If either UUID is not found, the request is rejected with HTTP 400 before any data is written.
-- **Proxy privileges:** The endpoint uses a custom Bearer token, not an OpenMRS session. `Context.addProxyPrivilege("Get Patients")` and `Context.addProxyPrivilege("Get Visits")` are applied only for the duration of the UUID lookups, then immediately removed. This is the standard OpenMRS pattern for cross-cutting access without a user context.
-- **services[] fan-out:** Each entry in `services[]` produces one `odoo_billing_payment_status` row keyed on (patientId, visitId, serviceType). The `internal_billing_id` in the response is `"BILL-"` + the database ID of the first row, zero-padded to 6 digits.
-- **Payment status normalisation:** `payment_status` is uppercased on ingestion (`"paid"` → `"PAID"`) to match the gate-check values `PAID` and `WAIVED` used by `BillingPaymentGateInterceptor`.
+- **Idempotency key:** `(sale_id, payment_status)` — stored as `service_reference_id` + `payment_status`. A duplicate submission (same sale_id, same status) short-circuits and returns the original `internal_billing_id` without writing any new rows. A status **transition** for the same `sale_id` (e.g. PENDING → PAID) is *not* a duplicate and is persisted as a brand new row — see `OdooBillingPaymentStatusDao.getLatestByServiceReferenceIdAndStatus()`.
+- **Append-only history:** `saveOrUpdatePaymentStatus()` never looks up and updates an existing row — every call inserts a new one. The full payment lifecycle for a (patient, visit, service) combination is preserved; gate checks (`isServicePaid`, `getPaymentStatus`) automatically pick up the most recent row via `ORDER BY odooSyncTimestamp DESC LIMIT 1` in `getByPatientVisitService()`, so no query logic changed to support this.
+- **patient_id is always the Bahmni identifier string:** Resolved from `patient_uuid` via `patient.getPatientIdentifier().getIdentifier()` — never the internal numeric patient PK. The payload's own `patient_id` field is validated but never trusted for persistence: a numeric value is logged as a WARN and ignored; a non-numeric value that doesn't match the resolved identifier is logged as a WARN but the resolved value is still what's stored. A patient with no identifier at all is rejected with HTTP 400 rather than silently storing something wrong.
+- **Schema migration (2026-06-17):** `odoo_billing_payment_status.patient_id` changed from `INT` (FK to `patient.patient_id`) to `VARCHAR(50)` holding the preferred patient identifier. Existing rows were backfilled from `patient_identifier WHERE preferred = 1`. There is no FK back to `patient` anymore (a string column can't reference a numeric PK) — referential correctness for `patient_id` is now enforced in `BillingOrderService`, not the database.
+- **UUID resolution:** `patient_uuid` and `visit_uuid` are resolved via `PatientService` / `VisitService`. If either UUID is not found (or the patient has no identifier), the request is rejected with HTTP 400 before any data is written.
+- **Proxy privileges:** The endpoint uses a custom Bearer token, not an OpenMRS session. `Context.addProxyPrivilege("Get Patients")` and `Context.addProxyPrivilege("Get Visits")` are applied only for the duration of the UUID/identifier lookups, then immediately removed.
+- **services[] fan-out:** Each entry in `services[]` produces one new `odoo_billing_payment_status` row. The `internal_billing_id` in the response is `"BILL-"` + the database ID of the first row inserted in that request, zero-padded to 6 digits.
+- **Payment status normalisation:** `payment_status` is uppercased on ingestion (`"paid"` → `"PAID"`) before it's used for the idempotency check or persisted, to match the gate-check values `PAID` and `WAIVED` used by `BillingPaymentGateInterceptor`.
+- **BillingPaymentGateInterceptor** was updated alongside this change: it now resolves and compares the Bahmni identifier string (via `patient.getPatientIdentifier()`), not the numeric patient ID, since that's what `odoo_billing_payment_status.patient_id` now stores. A numeric `patientId` request param from a legacy caller is still accepted but resolved to the identifier with a WARN log.
 - **No restart required:** Token changes via Global Properties take effect on the next request. The service reads the property fresh on each call.
+
+---
+---
+
+## Part C — Consultation Payment Gate on the Patient Queue
+
+### Scope
+
+This gate applies to the **Patient Queue** screen only — the literal route
+`#/default/patient/search` in the clinical app (the UI's own label for this screen, see
+`PATIENT_QUEUE_TRANSLATION_KEY`), backed by `common/patient-search/controllers/patientsListController.js`
+and `common/patient-search/views/patientsList.html`. It does **not** apply to the ADT ward list or
+the registration module's own patient search — those are different workflows (inpatient bed
+management, and finding/registering a patient before any visit exists).
+
+It only gates the **CONSULTATION** queue tab. Other queue types configured via the
+`org.bahmni.patient.search` extension (TRIAGE, COUNSELLING, INVESTIGATION) are not consultation
+billing and navigate exactly as before.
+
+### End-to-End Workflow
+
+```
+Patient Queue (clinical, CONSULTATION tab)
+  ├─▶ List renders → markNotPaidForConsultationQueue() runs per visible row
+  │         └─▶ GET /odoo/billing/is-paid?patientUuid=&visitUuid=&serviceType=CONSULTATION
+  │               └─▶ row.notPaidForConsultation = !paid  →  "Not Paid" badge shown/hidden
+  └─▶ Row clicked → $scope.forwardPatient()
+        ├─▶ not CONSULTATION queue           → navigate immediately (unchanged)
+        ├─▶ CONSULTATION, no active visit    → blocking popup, no navigation
+        ├─▶ CONSULTATION, GET /is-paid=false → blocking popup, no navigation
+        └─▶ CONSULTATION, GET /is-paid=true  → navigate to dashboard (unchanged)
+```
+
+### 1. Backend — extended `/is-paid` endpoint
+
+```
+GET /openmrs/ws/rest/v1/odoo/billing/is-paid
+    ?(patientId=<identifier> | patientUuid=<uuid>)
+    &(visitId=<int>           | visitUuid=<uuid>)
+    &serviceType=CONSULTATION
+```
+
+Either form of patient/visit identification works — `patientUuid`/`visitUuid` (what the Patient
+Queue has on hand) or the original `patientId`/`visitId` (still supported, unchanged, for any
+existing caller). Resolution is shared with `BillingPaymentGateInterceptor` via the new
+`PatientVisitResolver` class (`omod/.../web/PatientVisitResolver.java`) — both now resolve a
+numeric-or-UUID patient/visit reference the same way, instead of duplicating the logic.
+
+**Fail-safe behaviour:** if either side can't be resolved, the endpoint returns `200
+{"paid": false, "reason": "Could not resolve patient and/or visit"}` rather than an error — an
+ambiguous patient/visit blocks access just like a missing payment record does.
+
+**Live-tested (2026-06-17):**
+```bash
+# PAID — real patient/visit with a PAID CONSULTATION record
+curl -k -s -b /tmp/omrs.txt "https://localhost/openmrs/ws/rest/v1/odoo/billing/is-paid?patientUuid=5d2216ac-00a7-460e-9bd6-a3f0ea97fbc4&visitUuid=bf625a64-7a01-4e64-bda1-1e299a345a9e&serviceType=CONSULTATION"
+# -> {"paid":true,"patientId":"BDSEC200024","visitId":36,"serviceType":"CONSULTATION"}
+
+# No record at all for this visit/service
+curl -k -s -b /tmp/omrs.txt "https://localhost/openmrs/ws/rest/v1/odoo/billing/is-paid?patientUuid=b6bd5037-4450-4bc0-912e-5f6124a38ec8&visitUuid=a1c2cdd2-a8fe-4866-964d-41a75d6fcf14&serviceType=CONSULTATION"
+# -> {"paid":false,"patientId":"BDSEC200023","visitId":33,"serviceType":"CONSULTATION"}
+
+# Legacy patientId/visitId form still works unchanged
+curl -k -s -b /tmp/omrs.txt "https://localhost/openmrs/ws/rest/v1/odoo/billing/is-paid?patientId=BDSEC200024&visitId=36&serviceType=CONSULTATION"
+# -> {"paid":true,...}
+
+# Unresolvable patient/visit -> fail-safe block, not an error
+curl -k -s -b /tmp/omrs.txt "https://localhost/openmrs/ws/rest/v1/odoo/billing/is-paid?patientUuid=00000000-0000-0000-0000-000000000000&visitUuid=00000000-0000-0000-0000-000000000000&serviceType=CONSULTATION"
+# -> {"paid":false,"reason":"Could not resolve patient and/or visit"}
+```
+
+### 2. Frontend — files touched
+
+- `common/patient-search/services/consultationPaymentGateService.js` (new) — `isConsultationPaid(patientUuid, visitUuid)`, always resolves to a boolean; any HTTP failure resolves to `false` (fail-safe).
+- `common/patient-search/controllers/patientsListController.js` — `forwardPatient()` now gates on the CONSULTATION queue type before calling the existing navigation logic (renamed internally to `proceedToDashboard()`); a new `markNotPaidForConsultationQueue()` populates the badge flag on every visible row.
+- `common/patient-search/views/patientsList.html` — a `not-paid-indication` icon added next to the existing bed (`ipd-indication`) icon, in both the table and tile views.
+- `styles/clinical/_patientSearch.scss` (+ compiled `styles/clinical.css`, since this dev setup serves checked-in compiled CSS directly rather than running a Sass build) — red badge styling.
+- `i18n/clinical/locale_en.json` — `PAYMENT_REQUIRED_BEFORE_DASHBOARD_TRANSLATION_KEY` (popup message, exact text from spec) and `NOT_PAID_TRANSLATION_KEY` (badge tooltip). The popup's OK button reuses the existing generic `OKAY_LABEL` key.
+- Every `index.html` that loads `patientsListController.js` (clinical, adt, bedmanagement, orders, document-upload, registration, ot) got a matching `<script>` tag for the new service — this app has no bundler/auto-discovery for `ui/app/`, each page lists its scripts explicitly.
+
+The popup itself reuses the existing `confirmBox` service (`common/ui-helper/services/confirmBoxService.js`) — the same blocking-modal-with-button(s) mechanism already used elsewhere in the app (e.g. `consultationController.js`'s save confirmation) — no new popup mechanism was built.
+
+### 3. Existing backend enforcement (unchanged)
+
+`BillingPaymentGateInterceptor` already blocks POST/PUT to `/bahmniencounter`, `/order`, etc. with
+HTTP 402 when the relevant service isn't paid — that's the "API-level" enforcement layer the task
+asked for, and it required no behavioral changes here (only the de-duplication into
+`PatientVisitResolver`). The Patient Queue gate is an additional **UX-level** guard that stops a
+clinician from wasting time entering an unpaid patient's dashboard in the first place; the actual
+security boundary for clinical actions remains the interceptor.
+
+### 4. Manual Test Checklist (Part C)
+
+- [ ] Open the Patient Queue, CONSULTATION tab: patients with no PAID record show the red "Not Paid" badge next to the bed icon
+- [ ] Click an unpaid patient → popup appears immediately with the exact message: "This patient has not paid the consultation fee. Please complete payment before proceeding." → clicking OK dismisses it, dashboard does **not** open
+- [ ] Push a PAID billing order for that patient/visit (`POST /odooconnector/billing/orders`), refresh the queue → badge disappears
+- [ ] Click the now-paid patient → dashboard opens normally, no popup
+- [ ] A patient with no active visit on the CONSULTATION tab → badge shown, click blocked (no `/is-paid` call needed — no visit, no record possible)
+- [ ] Switch to a non-CONSULTATION tab (if configured, e.g. TRIAGE) → no badges shown, clicking any patient navigates immediately
+- [ ] Temporarily break connectivity to the `/is-paid` endpoint (or stop the OpenMRS container) → clicking a patient on the CONSULTATION tab is blocked (fail-safe), not silently allowed through
