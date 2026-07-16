@@ -1,4 +1,13 @@
 -- void default wards [Emergency, General Ward, Pediatric Ward]
+
+-- Check first what the columns are actually named
+
+-- If you see bed_row_number / bed_column_number, run:
+ALTER TABLE bed_location_map
+    CHANGE COLUMN bed_row_number `row_number` INT NOT NULL,
+    CHANGE COLUMN bed_column_number `column_number` INT NOT NULL;
+
+
 UPDATE location
     SET retired = 1
     WHERE name IN ("Emergency", "Emergency Ward",  "General Ward", "General Ward Room-1", "General Ward Room-2", "Pediatric Ward", "Pediatric Ward Room-1");
